@@ -29,7 +29,7 @@ function T($template='',$layer=''){
         // 解析模版资源地址
         if(false === strpos($template,'://')){
             $template   =   APP_NAME.'://'.str_replace(':', '/',$template);
-        }        
+        }
         $info   =   parse_url($template);
         $file   =   $info['host'].(isset($info['path'])?$info['path']:'');
         $group  =   isset($info['user'])?$info['user'].'/':(defined('GROUP_NAME')?GROUP_NAME.'/':'');
@@ -41,7 +41,7 @@ function T($template='',$layer=''){
             $baseUrl    =   $list[$app].'/'.$group.$layer.'/';
         }elseif(1==C('APP_GROUP_MODE')){ // 独立分组模式
             $baseUrl    =   dirname(BASE_LIB_PATH).'/'.$group.$layer.'/';
-        }else{ 
+        }else{
             $baseUrl    =   TMPL_PATH.$group;
         }
 
@@ -62,7 +62,7 @@ function T($template='',$layer=''){
  * I('id',0); 获取id参数 自动判断get或者post
  * I('post.name','','htmlspecialchars'); 获取$_POST['name']
  * I('get.'); 获取$_GET
- * </code> 
+ * </code>
  * @param string $name 变量的名称 支持指定类型
  * @param mixed $default 不存在的时候默认值
  * @param mixed $filter 参数过滤方法
@@ -78,7 +78,7 @@ function I($name,$default='',$filter=null) {
         case 'get'     :   $input =& $_GET;break;
         case 'post'    :   $input =& $_POST;break;
         case 'put'     :   parse_str(file_get_contents('php://input'), $input);break;
-        case 'param'   :  
+        case 'param'   :
             switch($_SERVER['REQUEST_METHOD']) {
                 case 'POST':
                     $input  =  $_POST;
@@ -111,14 +111,14 @@ function I($name,$default='',$filter=null) {
         }
     }
     if(empty($name)) { // 获取全部变量
-        $data       =   $input; 
+        $data       =   $input;
         $filters    =   isset($filter)?$filter:C('DEFAULT_FILTER');
         if($filters) {
             $filters    =   explode(',',$filters);
             foreach($filters as $filter){
                 $data   =   array_map($filter,$data); // 参数过滤
             }
-        }        
+        }
     }elseif(isset($input[$name])) { // 取值操作
         $data       =	$input[$name];
         $filters    =   isset($filter)?$filter:C('DEFAULT_FILTER');
@@ -155,7 +155,7 @@ function I($name,$default='',$filter=null) {
  * </code>
  * @param string $start 开始标签
  * @param string $end 结束标签
- * @param integer|string $dec 小数位或者m 
+ * @param integer|string $dec 小数位或者m
  * @return mixed
  */
 function G($start,$end='',$dec=4) {
@@ -167,11 +167,11 @@ function G($start,$end='',$dec=4) {
         if(!isset($_info[$end])) $_info[$end]       =  microtime(TRUE);
         if(MEMORY_LIMIT_ON && $dec=='m'){
             if(!isset($_mem[$end])) $_mem[$end]     =  memory_get_usage();
-            return number_format(($_mem[$end]-$_mem[$start])/1024);          
+            return number_format(($_mem[$end]-$_mem[$start])/1024);
         }else{
             return number_format(($_info[$end]-$_info[$start]),$dec);
-        }       
-            
+        }
+
     }else{ // 记录时间和内存使用
         $_info[$start]  =  microtime(TRUE);
         if(MEMORY_LIMIT_ON) $_mem[$start]           =  memory_get_usage();
@@ -186,7 +186,7 @@ function G($start,$end='',$dec=4) {
  * N('read',1); // 记录读取次数
  * echo N('db'); // 获取当前页面数据库的所有操作次数
  * echo N('read'); // 获取当前页面读取次数
- * </code> 
+ * </code>
  * @param string $key 标识位置
  * @param integer $step 步进值
  * @return mixed
@@ -342,7 +342,7 @@ function load($name, $baseUrl='', $ext='.php') {
  * 快速导入第三方框架类库 所有第三方框架的类库文件统一放到 系统的Vendor目录下面
  * @param string $class 类库
  * @param string $baseUrl 基础目录
- * @param string $ext 类库后缀 
+ * @param string $ext 类库后缀
  * @return boolean
  */
 function vendor($class, $baseUrl = '', $ext='.php') {
@@ -391,8 +391,10 @@ function D($name='',$layer='') {
         $app        =   C('DEFAULT_APP');
         $name       =   $app.'/'.$layer.'/'.$name;
     }
+
     if(isset($_model[$name]))   return $_model[$name];
     $path           =   explode('/',$name);
+
     if($list = C('EXTEND_GROUP_LIST') && isset($list[$app])){ // 扩展分组
         $baseUrl    =   $list[$app];
         import($path[2].'/'.$path[1].'/'.$path[3].$layer,$baseUrl);
@@ -401,7 +403,7 @@ function D($name='',$layer='') {
         import($path[2].'/'.$path[1].'/'.$path[3].$layer,$baseUrl);
     }else{
         import($name.$layer);
-    } 
+    }
     $class          =   basename($name.$layer);
     if(class_exists($class)) {
         $model      =   new $class(basename($name));
@@ -475,7 +477,7 @@ function A($name,$layer='',$common=false) {
 /**
  * 远程调用模块的操作方法 URL 参数格式 [项目://][分组/]模块/操作
  * @param string $url 调用地址
- * @param string|array $vars 调用参数 支持字符串和数组 
+ * @param string|array $vars 调用参数 支持字符串和数组
  * @param string $layer 要调用的控制层名称
  * @return mixed
  */
@@ -607,7 +609,7 @@ function tag($tag, &$params=NULL) {
  * 动态添加行为扩展到某个标签
  * @param string $tag 标签名称
  * @param string $behavior 行为名称
- * @param string $path 行为路径 
+ * @param string $path 行为路径
  * @return void
  */
 function add_tag_behavior($tag,$behavior,$path='') {
@@ -733,7 +735,7 @@ function array_define($array,$check=true) {
  * 添加和获取页面Trace记录
  * @param string $value 变量
  * @param string $label 标签
- * @param string $level 日志级别 
+ * @param string $level 日志级别
  * @param boolean $record 是否记录日志
  * @return void
  */

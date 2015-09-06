@@ -340,6 +340,7 @@ class Model {
         }
         // 分析表达式
         $options =  $this->_parseOptions($options);
+
         // 数据处理
         foreach ($dataList as $key=>$data){
             $dataList[$key] = $this->_facade($data);
@@ -415,10 +416,10 @@ class Model {
         }
         if(is_array($options['where']) && isset($options['where'][$pk])){
             $pkValue    =   $options['where'][$pk];
-        }        
+        }
         if(false === $this->_before_update($data,$options)) {
             return false;
-        }        
+        }
         $result     =   $this->db->update($data,$options);
         if(false !== $result) {
             if(isset($pkValue)) $data[$pk]   =  $pkValue;
@@ -967,17 +968,17 @@ class Model {
                     // 判断验证条件
                     switch($val[3]) {
                         case self::MUST_VALIDATE:   // 必须验证 不管表单是否有设置该字段
-                            if(false === $this->_validationField($data,$val)) 
+                            if(false === $this->_validationField($data,$val))
                                 return false;
                             break;
                         case self::VALUE_VALIDATE:    // 值不为空的时候才验证
                             if('' != trim($data[$val[0]]))
-                                if(false === $this->_validationField($data,$val)) 
+                                if(false === $this->_validationField($data,$val))
                                     return false;
                             break;
                         default:    // 默认表单存在该字段就验证
                             if(isset($data[$val[0]]))
-                                if(false === $this->_validationField($data,$val)) 
+                                if(false === $this->_validationField($data,$val))
                                     return false;
                     }
                 }
@@ -1074,7 +1075,7 @@ class Model {
                 $range   = is_array($rule)? $rule : explode(',',$rule);
                 return $type == 'in' ? in_array($value ,$range) : !in_array($value ,$range);
             case 'between': // 验证是否在某个范围
-            case 'notbetween': // 验证是否不在某个范围            
+            case 'notbetween': // 验证是否不在某个范围
                 if (is_array($rule)){
                     $min    =    $rule[0];
                     $max    =    $rule[1];
@@ -1083,7 +1084,7 @@ class Model {
                 }
                 return $type == 'between' ? $value>=$min && $value<=$max : $value<$min || $value>$max;
             case 'equal': // 验证是否等于某个值
-            case 'notequal': // 验证是否等于某个值            
+            case 'notequal': // 验证是否等于某个值
                 return $type == 'equal' ? $value == $rule : $value != $rule;
             case 'length': // 验证长度
                 $length  =  mb_strlen($value,'utf-8'); // 当前数据长度
@@ -1462,7 +1463,7 @@ class Model {
         }elseif(is_array($scope)){ // 直接传入命名范围定义
             $options        =   $scope;
         }
-        
+
         if(is_array($options) && !empty($options)){
             $this->options  =   array_merge($this->options,array_change_key_case($options));
         }
@@ -1491,13 +1492,13 @@ class Model {
             $map    =   array();
             $map['_string']   =   $where;
             $where  =   $map;
-        }        
+        }
         if(isset($this->options['where'])){
             $this->options['where'] =   array_merge($this->options['where'],$where);
         }else{
             $this->options['where'] =   $where;
         }
-        
+
         return $this;
     }
 
