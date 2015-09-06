@@ -11,15 +11,15 @@ class ConfigAction extends BaseAction
 		}
 
 		$group_list = $database_config_group->field(true)->where($condition_config_group)->order('`gsort` DESC,`gid` ASC')->select();
-		
+
 		$this->assign('group_list', $group_list);
 
 		if (empty($_GET['galias'])) {
 			$gid = $this->_get('gid');
 		}
 		else {
-			foreach ($group_list as $value) {	
-				
+			foreach ($group_list as $value) {
+
 				if($_GET['galias'] == $value['galias']){
 					$gid = $value['gid'];
 				}
@@ -96,7 +96,7 @@ class ConfigAction extends BaseAction
 
             foreach ($config_list as $pigcms_key => $pigcms_value ) {
                 if ($has_tab) {
-                    
+
                     $config_tab_html .= "<li " . ($pigcms_auto_key == 1 ? "class=\"active\"" : "") . "><a data-toggle=\"tab\" href=\"#tab_" . $pigcms_key . "\">" . $pigcms_value["name"] . "</a></li>";
                 }
 
@@ -286,7 +286,7 @@ class ConfigAction extends BaseAction
         $http = new Http();
         $data = array("domain" => $host, "label" => "", "from" => "2", "wx_app_id" => $this->config["wechat_appid"], "wx_app_secret" => $this->config["wechat_appsecret"], "activity_url" => $this->config["site_url"] . "/wap.php?g=Wap&c=Api&a=activity", "my_url" => $this->config["site_url"] . "/wap.php?g=Wap&c=Api&a=my", "msg_tip_url" => $this->config["site_url"] . "/wap.php?g=Wap&c=Api&a=index");
         $return["err_code"] = false ;//Http::curlPost("http://im-link.meihua.com/api/app_create.php", $data);
-            
+
         if ($return["err_code"]) {
             exit(json_encode(array("error_code" => true, "msg" => $return["err_msg"])));
         }

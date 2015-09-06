@@ -1,14 +1,9 @@
 <?php
 
-/*
- * 登录页
- *
- * 
- */
-
-class LoginAction extends BaseAction {
-
-    public function index() {
+class LoginAction extends BaseAction
+{
+    public function index()
+    {
         if (IS_POST) {
             $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
             $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : '';
@@ -26,12 +21,14 @@ class LoginAction extends BaseAction {
         }
     }
 
-    public function reg() {
+    public function reg()
+    {
         if (IS_POST) {
             $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
             $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : '';
-
-            $result = D('User')->checkreg($phone, $pwd);
+            $invitecode = isset($_POST['invitecode']) ? $_POST['invitecode'] : '';
+            $recomment = isset($_POST['recomment']) ? $_POST['recomment'] : '';
+            $result = D('User')->checkreg($phone, $pwd, $invitecode, $recomment);
 
             if (!empty($result['user'])) {
                 session('user', $result['user']);
@@ -46,7 +43,8 @@ class LoginAction extends BaseAction {
         }
     }
 
-    public function forgetpwd() {
+    public function forgetpwd()
+    {
         $accphone = isset($_GET['accphone']) ? trim($_GET['accphone']) : '';
         $this->assign('accphone', $accphone);
         $this->display();
@@ -54,17 +52,24 @@ class LoginAction extends BaseAction {
 
     /*     * *生成短信**** */
 
-    public function Generate() {
+    public function Generate()
+    {
         $phone = trim($_POST['phone']);
         $tmpid = intval($_POST['tmpid']);
         $vfycode = trim($_POST['vfycode']);
-        if (empty($phone))
+        if (empty($phone)) {
             exit(json_encode(array('error_code' => 1, 'msg' => '手机账号不能为空')));
-        if (!is_numeric($phone) || (strlen($phone) != 11))
+        }
+
+        if (!is_numeric($phone) || (strlen($phone) != 11)) {
             exit(json_encode(array('error_code' => 1, 'msg' => '请输入正确手机账号')));
+        }
+
         $Userarr = M('User')->where(array('phone' => $phone))->find();
-        if (empty($Userarr))
+        if (empty($Userarr)) {
             exit(json_encode(array('error_code' => 3, 'msg' => '手机账号不存在，请先去注册吧！')));
+        }
+
         $user_modifypwdDb = M('User_modifypwd');
         if (($tmpid > 0) && !empty($vfycode)) {
             $modifypwd = $user_modifypwdDb->where(array('vfcode' => $vfycode, 'telphone' => $phone))->find();
@@ -96,12 +101,13 @@ class LoginAction extends BaseAction {
 
     /*     * *修改密码**** */
 
-    public function pwdModify() {
+    public function pwdModify()
+    {
         $pm = trim($_GET['pm']);
         if (!empty($pm)) {
             $pm = str_replace(' ', '+', $pm);
             $tmpstr = Encryptioncode($pm, 'DECODE');
-            $modfyinfo = json_decode(base64_decode($tmpstr), TRUE);
+            $modfyinfo = json_decode(base64_decode($tmpstr), true);
             if (!empty($modfyinfo)) {
                 $phone = $modfyinfo['phone'];
                 $tmp = session($phone . 'Generate_Pwd_Modify');
@@ -123,7 +129,8 @@ class LoginAction extends BaseAction {
 
     /*     * *修改密码**** */
 
-    public function pwdModifying() {
+    public function pwdModifying()
+    {
         $pm = trim($_GET['pm']);
         $newpwd = trim($_POST['newpwd']);
         $new_pwd = trim($_POST['new_pwd']);
@@ -133,7 +140,7 @@ class LoginAction extends BaseAction {
         if (!empty($pm)) {
             $pm = str_replace(' ', '+', $pm);
             $tmpstr = Encryptioncode($pm, 'DECODE');
-            $modfyinfo = json_decode(base64_decode($tmpstr), TRUE);
+            $modfyinfo = json_decode(base64_decode($tmpstr), true);
             if (!empty($modfyinfo)) {
                 $phone = $modfyinfo['phone'];
                 $tmp = session($phone . 'Generate_Pwd_Modify');
@@ -150,7 +157,8 @@ class LoginAction extends BaseAction {
         //exit(json_encode(array('error_code' => 2, 'msg' => '参数出错！')));
     }
 
-    public function weixin() {
+    public function weixin()
+    {
         $weixin_state = md5(uniqid());
         $_SESSION['weixin']['state'] = $weixin_state;
         $_SESSION['weixin']['referer'] = !empty($_GET['referer']) ? htmlspecialchars_decode($_GET['referer']) : $this->config['site_url'];
@@ -159,7 +167,8 @@ class LoginAction extends BaseAction {
         redirect('https://open.weixin.qq.com/connect/qrconnect?appid=' . $this->config['login_weixin_appid'] . '&redirect_uri=' . $return_url . '&response_type=code&scope=snsapi_login&state=' . $weixin_state . '#wechat_redirect');
     }
 
-    public function weixin_back() {
+    public function weixin_back()
+    {
         $referer = !empty($_SESSION['weixin']['referer']) ? $_SESSION['weixin']['referer'] : $this->config['site_url'];
         if (isset($_GET['code']) && isset($_GET['state']) && ($_GET['state'] == $_SESSION['weixin']['state'])) {
             unset($_SESSION['weixin']['state']);
@@ -205,7 +214,8 @@ class LoginAction extends BaseAction {
         }
     }
 
-    public function weixin_bind() {
+    public function weixin_bind()
+    {
         if (empty($_SESSION['weixin']['user'])) {
             $this->error('微信授权失效，请重新登录！');
         }
@@ -244,7 +254,8 @@ class LoginAction extends BaseAction {
         }
     }
 
-    public function weixin_nobind() {
+    public function weixin_nobind()
+    {
         if (empty($_SESSION['weixin']['user'])) {
             $this->error('微信授权失效，请重新登录！');
         }
@@ -267,13 +278,15 @@ class LoginAction extends BaseAction {
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         session('user', null);
         $pigcms_referer = !empty($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : U('Index/Index/index');
         redirect($pigcms_referer);
     }
 
-    protected function autologin($field, $value, $referer) {
+    protected function autologin($field, $value, $referer)
+    {
         $result = D('User')->autologin($field, $value);
         if (empty($result['error_code'])) {
             $now_user = $result['user'];
@@ -285,7 +298,8 @@ class LoginAction extends BaseAction {
         }
     }
 
-    public function frame_login() {
+    public function frame_login()
+    {
         $pigcms_assign['referer'] = !empty($_GET['referer']) ? strip_tags($_GET['referer']) : (!empty($_SERVER['HTTP_REFERER']) ? strip_tags($_SERVER['HTTP_REFERER']) : U('Index/Index/index'));
         $pigcms_assign['url_referer'] = urlencode($pigcms_assign['referer']);
         $this->assign($pigcms_assign);
@@ -293,7 +307,8 @@ class LoginAction extends BaseAction {
         $this->display();
     }
 
-    public function ajax_weixin_login() {
+    public function ajax_weixin_login()
+    {
         for ($i = 0; $i < 6; $i++) {
             $database_login_qrcode = D('Login_qrcode');
             $condition_login_qrcode['id'] = $_GET['qrcode_id'];
@@ -322,7 +337,8 @@ class LoginAction extends BaseAction {
         }
     }
 
-    public function frame_phone() {
+    public function frame_phone()
+    {
         if (empty($this->user_session)) {
             echo json_encode(array('error_code' => true, 'msg' => '请先进行登录！'));
             exit;
@@ -359,8 +375,6 @@ class LoginAction extends BaseAction {
             }
         }
 
-
         $this->display();
     }
-
 }

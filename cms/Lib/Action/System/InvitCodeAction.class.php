@@ -85,4 +85,28 @@ class InvitcodeAction extends BaseAction
             $this->error('生成失败');
         }
     }
+
+    /**
+     * 使用邀请码
+     * @method used
+     * @param  string $code 邀请码
+     * @return bool       是否使用成功
+     */
+    public function used($code)
+    {
+        $model = D('Invitcode');
+
+        $map['code'] = $code;
+
+        $data['utime'] = date('Y-m-d H:i:s', time());
+        $data['is_used'] = 1;
+
+        $result = $model->where($map)->save($data);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
