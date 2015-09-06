@@ -1,5 +1,5 @@
 <?php
-class UserModel extends Model
+class UserModel extends BaseModel
 {
     /*得到所有用户*/
     public function get_user($uid, $field = 'uid')
@@ -108,6 +108,7 @@ class UserModel extends Model
                 return array('error_code' => true, 'msg' => '推荐人不存在');
             }
         }
+
         //判断邀请码是否正确
         $checkInviteCode = D('InviteCode')->checkCode($invitecode, 1);
         if (!$checkInviteCode) {
@@ -125,16 +126,16 @@ class UserModel extends Model
 
         $data_user['add_time'] = $data_user['last_time'] = $_SERVER['REQUEST_TIME'];
         $data_user['add_ip'] = $data_user['last_ip'] = get_client_ip(1);
-        $data_user['invitecode'] = $invitecode;
-        $data_user['recomment'] = $recomment;
-
+        $data_user['invitcode'] = $invitecode;
+        $data_user['recomment'] = $recomment['uid'];
         $uid = $this->data($data_user)->add();
-
         if ($uid) {
             //注册成功开始返现
             if (!empty($recomment)) {
-                $this->member_reg_rebate($recomment);
+                $this->member_reg_rebate($recomment['uid']);
             }
+            //更改验证码状态
+            D('InviteCode')->usedCode($invitecode);
             $return = $this->checkin($phone, $pwd);
 
             if (empty($return['error_code'])) {
@@ -265,29 +266,30 @@ class UserModel extends Model
             $level = $level + 1;
         }
 
-        $a_rebate_ratio = C('reg_a_rebate');
-        $b_rebate_ratio = C('reg_b_rebate');
-        $c_rebate_ratio = C('reg_c_rebate');
-        $d_rebate_ratio = C('reg_d_rebate');
-
+        $a_rebate_ratio = (float)$this->config['reg_a_rebate']/100;
+        $b_rebate_ratio = (float)$this->config['reg_b_rebate']/100;
+        $c_rebate_ratio = (float)$this->config['reg_c_rebate']/100;
+        $d_rebate_ratio = (float)$this->config['reg_d_rebate']/100;
+        $reg_invitecode_price = $this->config['reg_invitecode_price'];
         switch ($level) {
             case 1:    //只有一层,则只给d返
-                $d_money = number_format(C('reg_invitecode_price') * C('reg_a_rebate'), 2);
+                $d_money = number_format($reg_invitecode_price * $a_rebate_ratio, 2);
+                dump($a_rebate_ratio);
                 $d_info['now_money'] = number_format($d_info['now_money'] + $d_money, 2);
                 $data[0] = $d_info;
                 break;
             case 2:    //给d和c返现
-                $c_money = number_format(C('reg_invitecode_price') * C('reg_a_rebate'), 2);
-                $d_money = number_format(C('reg_invitecode_price') * C('reg_b_rebate'), 2);
+                $c_money = number_format($reg_invitecode_price * $a_rebate_ratio, 2);
+                $d_money = number_format($reg_invitecode_price * $b_rebate_ratio, 2);
                 $c_info['now_money'] = number_format($c_info['now_money'] + $c_money, 2);
                 $d_info['now_money'] = number_format($d_info['now_money'] + $d_money, 2);
                 $data[0] = $c_info;
                 $data[1] = $d_info;
                 break;
             case 3:    //给d,c,b返现
-                $b_money = number_format(C('reg_invitecode_price') * C('reg_a_rebate'), 2);
-                $c_money = number_format(C('reg_invitecode_price') * C('reg_b_rebate'), 2);
-                $d_money = number_format(C('reg_invitecode_price') * C('reg_c_rebate'), 2);
+                $b_money = number_format($reg_invitecode_price * $a_rebate_ratio, 2);
+                $c_money = number_format($reg_invitecode_price * $b_rebate_ratio, 2);
+                $d_money = number_format($reg_invitecode_price * $c_rebate_ratio, 2);
 
                 $b_info['now_money'] = number_format($b_info['now_money'] + $b_money, 2);
                 $c_info['now_money'] = number_format($c_info['now_money'] + $c_money, 2);
@@ -298,10 +300,10 @@ class UserModel extends Model
                 $data[2] = $d_info;
                 break;
             case 4:    //给d,c,b,a返现
-                $a_money = number_format(C('reg_invitecode_price') * C('reg_a_rebate'), 2);
-                $b_money = number_format(C('reg_invitecode_price') * C('reg_b_rebate'), 2);
-                $c_money = number_format(C('reg_invitecode_price') * C('reg_c_rebate'), 2);
-                $d_money = number_format(C('reg_invitecode_price') * C('reg_d_rebate'), 2);
+                $a_money = number_format($reg_invitecode_price * $a_rebate_ratio, 2);
+                $b_money = number_format($reg_invitecode_price * $b_rebate_ratio, 2);
+                $c_money = number_format($reg_invitecode_price * $c_rebate_ratio, 2);
+                $d_money = number_format($reg_invitecode_price * $d_rebate_ratio, 2);
 
                 $a_info['now_money'] = number_format($a_info['now_money'] + $a_money, 2);
                 $b_info['now_money'] = number_format($a_info['now_money'] + $b_money, 2);

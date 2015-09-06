@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-field form-field--icon" >
                         <i class="icon icon-password"></i>
-                        <input type="text" id="login-recomment" class="f-text" name="login-recomment" placeholder="请输入推荐人手机号"/>
+                        <input type="text" id="login-recomment" class="f-text" name="recomment" placeholder="请输入推荐人手机号"/>
                     </div>
                     <div class="form-field form-field--ops">
                         <input type="hidden" name="fingerprint" class="J-fingerprint"/>
@@ -108,7 +108,7 @@
                     error_tips('请输入邀请码','login-invitcode');
                     return false;
                 }
-                $.post("{pigcms{:U('Index/Login/reg')}", {'phone':phone,'pwd':pwd,'invitecode':invitecode,'recomment':recomment}, function(data){
+                $.post("{pigcms{:U('Index/Login/reg')}", {'phone':phone,'pwd':pwd,'invitecode':invitcode,'recomment':recomment}, function(data){
                     if(data.error_code){
                         $("#commit").val('注册').prop('disabled',false);
                         $('.validate-info').html('<i class="tip-status tip-status--opinfo"></i>'+data.msg).css('visibility','visible');

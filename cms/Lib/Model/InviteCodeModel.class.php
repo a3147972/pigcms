@@ -1,5 +1,5 @@
 <?php
-class InviteCode extends BaseAction
+class InviteCodeModel extends Model
 {
     protected $tableName = 'invitcode';
 
@@ -17,6 +17,28 @@ class InviteCode extends BaseAction
         $map['is_used'] = 0;
 
         $result = $this->where($map)->field('code')->find();
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /**
+     * 使用邀请码
+     * @method usedCode
+     * @param  string   $code 邀请码
+     * @return bool         成功返回true
+     */
+    public function usedCode($code)
+    {
+
+        $map['code'] = $code;
+
+        $data['utime'] = date('Y-m-d H:i:s', time());
+        $data['is_used'] = 1;
+
+        $result = $this->where($map)->save($data);
 
         if ($result) {
             return true;

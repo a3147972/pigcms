@@ -307,6 +307,7 @@ class Model {
                 return false;
             }
         }
+
         // 分析表达式
         $options    =   $this->_parseOptions($options);
         // 数据处理
