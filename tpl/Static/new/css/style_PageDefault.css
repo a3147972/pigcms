@@ -1,0 +1,249 @@
+.content_left {
+	height: auto;
+	overflow: hidden;
+	width: 95%;
+	margin: 0 auto;
+}
+#setdiv{padding-top: 3%;
+  background: #f0f4f7;
+  padding-bottom: 3%;
+  border-bottom: 1px solid #D4D8DB;}
+.content_left .settab {
+	margin: 0 auto;
+	width: 80;
+}
+.content_left .settab #J_setTabANav {
+ 
+  width: 80%;
+    border: 1px solid #E6243C;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.content_left .settab #J_setTabABox {
+	clear: both;
+	min-height: 200px;
+	float: left;
+}
+.content_left .settab .tab-menu {
+	margin-right: 0px;
+	text-align: center;
+	float: left;
+	width: auto;
+}
+.content_left .settab .tab-menu span {
+	line-height: 30px;
+	text-align: center;
+	float: left;
+	font-size: 15px;
+	cursor: pointer;
+	margin-bottom: -1px;
+	color: #000;
+	width: 100%;
+	background: #fff
+}
+.content_left .settab #J_setTabANav .hover span {
+	border-bottom: 0;
+	background: #E6243C;
+	color: #fff;
+	z-index: 100;
+	width: 100%;
+	font-weight: normal;
+}
+.content_left .settab #productsindex1,  .settab #featuredProducts {
+	width: 100%;
+}
+.content_left .settab #productsindex1 .pule {
+	overflow: hidden;
+	width: 100%;
+	border: 0;
+}
+.detail {
+	margin: 0%;
+	width: 100%;
+}
+#ProductReviews_1 {
+	color: #3D3D3D;
+	float: left;
+	font-size: 12px;
+	margin: 0%;
+	padding: 1%;
+	width: 98%;
+}
+#ProductReviews_1 ul {
+	float: left;
+	width: 100%;
+	text-transform: capitalize;
+}
+#ProductReviews_1 #foot_reviews_box {
+	float: left;
+	clear: both;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	width: 100%;
+}
+#ProductReviews_1 #foot_reviews_content {
+	float: left;
+	width: 100%;
+}
+#ProductReviews_1 #foot_reviews_name {
+	float: left;
+	width: 100%;
+	caption-side: bottom;
+	text-align: right;
+}
+#ProductReviews_1 p {
+	height: 100px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 11px;
+	color: #000;
+	text-transform: capitalize;
+	line-height: 50px;
+}
+#ProductReviews {
+	color: #3D3D3D;
+	float: left;
+	font-size: 12px;
+	margin: 0%;
+	padding: 1%;
+	width: 98%;
+}
+#reviewsSaid {
+	float: left;
+	width: 100%;
+	padding-bottom: 10px;
+	border-bottom: 1px dotted #666;
+	margin-bottom: 20px;
+}
+#reviewsSaid #productReviewsDefaultNoReviews {
+	border: 3px solid #ccc;
+	background: #eee;
+	text-align: center;
+	margin: 20px 0;
+	padding: 5px;
+}
+#ProductReviews #reviewsWrite {
+	float: left;
+	width: 100%;
+	height: auto;
+}
+#ProductReviews #reviewsWrite form {
+	width: 98%;
+	padding: 1%;
+}
+#ProductReviews #reviewsWrite span {
+	float: left;
+}
+#ProductReviews #reviewsWrite h2 {
+	float: left;
+	width: auto;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	margin: 0px 3px;
+}
+#ProductReviews #reviewsWrite #review-text {
+	min-width: 98%;
+	max-width: 98%;
+	min-height: 50px;
+	max-height: 100px;
+	border: 1px solid #E9E5E2;
+}
+ 
+#J_setTabABox .Related-w {
+	background: none;
+	border: 0;
+}
+#J_setTabABox .keyword_content {
+	background: none;
+}
+ 
+
+.detail .Related-w {
+	border-top: 1px solid #292929;
+}
+.detail .keyword_title {
+	font-size: 11px;
+	text-indent: 0px;
+	color: #000;
+}
+.detail .keyword_content {
+	min-height: inherit;
+}
+.detail .keyword_content a,  .detail .keyword_content li {
+	text-indent: 0px;
+	width: 21%;
+	margin-right: 3%;
+}
+/*----------------------*/
+
+.product_rz {
+	overflow: hidden;
+}
+.product_rz span1 {
+	text-align: left;
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+#Pro_About_brand {
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 10px 0px;
+}
+.reviewsWriteName {
+	width: 250px;
+	float: left;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	color: #666;
+}
+#indexDefault {
+	float: left;
+	margin-top: 7px;
+	width: 784px;
+}
+.image {
+	float: left;
+	height: 80px;
+	overflow: hidden;
+	width: 80px;
+}
+.proname {
+	height: 32px;
+	line-height: 16px;
+	overflow: hidden;
+	padding-top: 5px;
+}
+.proname a {
+	color: #333333;
+	font-size: 11px;
+	line-height: 16px;
+	text-decoration: none;
+}
+#bestsellers {
+	margin-top: 5px;
+}
+.price {
+	line-height: 20px;
+	overflow: hidden;
+}
+.currenciesbox {
+	bottom: 5px;
+	float: right;
+	font-size: 11px;
+	font-weight: bold;
+	height: auto;
+	line-height: 30px;
+	right: 0;
+	text-transform: uppercase;
+	padding-left: 5px;
+}
+#Content {
+	padding-top: 5px;
+	float: right;
+}
+#Content select {
+	border: 1px solid #999
+}

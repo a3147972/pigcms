@@ -1,0 +1,61 @@
+* {margin:0;padding:0;}
+
+.link_tel{
+    display:block!important;
+    line-height:40px!important;
+    /*margin:10px 10px 0 10px;
+    margin-top:10px!important;*/
+    background:#ea5946;
+    color:#fff!important;
+    text-align:center;
+   /* border-radius:5px;*/
+    word-spacing:nowrap;
+    overflow:hidden;
+    font-size:18px;
+    position:relative;
+}
+.link_tel:before{
+    font-size:20px;
+    margin-left:0;
+    position:absolute;
+    left:10px;
+    top:2px;
+    font-size:25px;
+}
+
+.box{width:96%; margin:10px 2% 100px; border-radius:5px; float:left;}
+.box{ background:#fff; padding:4%; width:88%; margin-bottom:2px; overflow:hidden;}
+/*box-list*/
+.box-list{ position:relative;}
+.box-list .hd,
+.box-list .bd,
+.box-list .ft{ float:left; overflow:hidden;}
+.box-list .hd{ width:40%; border-radius:5px;}
+.box-list .hd img{ max-width:100%;}
+.box-list .bd{ width:55%; padding:0 0 0 5%;}
+.box-list .bd.fw{ width:100%; padding:0;}
+.box-list .bd b{ color:#333; font-size:15px; padding:0 0 5px 0;}
+.box-list .bd p{ color:#999; overflow:hidden; padding:0 0 5px 0;}
+.box-list .bd p span{ width:70%;}
+.box-list .bd p b,
+.box-list .bd b span{ float:left;}
+.box-list .bd p.list-number b{ line-height:32px;}
+.box-list .ft{ border-top:1px solid #eaeaea; padding:10px 0 0 0; width:100%; margin:10px 0 0 0;}
+.box-list .ft a{ width:32%; border-right:1px solid #eaeaea; text-align:center; height:20px; line-height:20px; color:#e8645a;}
+.box-list .ft a:last-child{ border:0;}
+.box-list .ft img{ max-height:18px; padding:0 5px 0 0; vertical-align:top;}
+/*table*/
+.table {
+	height: 100%;
+	width: 100%;
+	display: table;
+	text-align: center;
+}
+.tr{ display:table-row;}
+.td {
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.box-list .bd b{ color:#333; font-size:15px; padding:0 0 5px 0;font-weight: bold;}
+.box-list .bd p{ color:#999; overflow:hidden; padding:0 0 5px 0;}

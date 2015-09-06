@@ -1,0 +1,144 @@
+.c_campaign {
+	display: block;
+	font-size: .24rem;
+	color: #999;
+	padding-left: .1rem;
+}
+
+.buy-wrapper {
+	margin: .3rem .2rem;
+	padding: 0;
+}
+
+.more h6 {
+	font-size: .3rem;
+	display: inline-block;
+	font-weight: normal;
+}
+
+#normal-fieldset {
+	overflow: hidden;
+	height: 0;
+}
+
+#normal-fieldset dd {
+	border-bottom: 0;
+}
+
+#normal-fieldset dd:last-child .pay-wrapper {
+	border-bottom: none;
+}
+
+#normal-fieldset .pay-wrapper {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 1rem;
+	padding: .28rem 0;
+	padding-right: .2rem;
+	border-bottom: 1px solid #CEC9BF;
+}
+
+.pay-wrapper input {
+	float: right;
+}
+
+h4 small {
+	color: #999;
+	display: inline-block;
+	padding-left: .2rem;
+}
+
+#use-credit {
+	margin-left: .2rem;
+}
+
+strong {
+	color: #FF9435;
+}
+
+.msg-dialog .msg-bd small {
+	font-size: .28rem;
+}
+
+.msg-dialog .msg-bd .btn-weak {
+	padding-left: .1rem;
+	padding-right: .1rem;
+	font-size: .24rem;
+	margin-left: .2rem;
+}
+
+.msg-dialog .input-strong {
+	margin-top: .2rem;
+}
+
+.msg-dialog description {
+	color: #FF9435;
+	font-size: .28rem;
+}
+
+.bank-icon {
+  width: .6rem;
+  display: inline-block;
+  height: .6rem;
+  background-image: url(img/pay.png);
+  background-size: 100%;
+  margin: -.15rem 0;
+  margin-right: .2rem;
+  background-position-y: -.7rem; }
+
+.icon-alipay{background-position-y:-9.8rem;}
+
+.icon-tenpay{background-position-y:0rem;}
+.icon-yeepay{background-position-y:-15.48rem;}
+.icon-allinpay{background-position-y:-14.78rem;}
+.icon-chinabank{background-position-y:-14.08rem;}
+.icon-weixin{background-position-y:-13.35rem;}
+
+
+.icon-bank-CREDITCARD_CMB, .icon-bank-DEBITCARD_CMB {
+  background-position-y: -9.1rem; }
+
+.icon-bank-3106, .icon-bank-2013, .icon-bank-DEBITCARD_CCB, .icon-bank-CREDITCARD_CCB {
+  background-position-y: -4.9rem; }
+
+.icon-bank-3003, .icon-bank-DEBITCARD_ICBC, .icon-bank-CREDITCARD_ICBC {
+  background-position-y: -2.1rem; }
+
+.icon-bank-3109, .icon-bank-CREDITCARD_GDB {
+  background-position-y: -3.5rem; }
+
+.icon-bank-3107, .icon-bank-DEBITCARD_BOC, .icon-bank-CREDITCARD_BOC {
+  background-position-y: -10.53rem; }
+
+.icon-bank-CREDITCARD_CIB {
+  background-position-y: -8.4rem; }
+
+.icon-bank-CREDITCARD_CMBC {
+  background-position-y: -5.6rem; }
+
+.icon-bank-4186, .icon-bank-DEBITCARD_ABC {
+  background-position-y: -6.3rem; }
+
+.icon-bank-3110, .icon-bank-DEBITCARD_SPABANK, .icon-bank-CREDITCARD_SPABANK {
+  background-position-y: -7.03rem; }
+
+.icon-bank-CREDITCARD_CITIC, .icon-bank-DEBITCARD_CITIC {
+  background-position-y: -11.24rem; }
+
+.none-bank {
+  background-position-y: -4.2rem; }
+
+.icon-bank-3108, .icon-bank-2014, .icon-bank-CREDITCARD_CEB, .icon-bank-DEBITCARD_CEB {
+  background-position-y: -2.8rem; }
+
+.none-bank {
+  background-position-y: -7.7rem; }
+
+.icon-bank-DEBITCARD_COMM {
+  background-position-y: -11.94rem; }
+
+.icon-bank-DEBITCARD_PSBC {
+  background-position-y: -12.64rem; }

@@ -1,0 +1,457 @@
+html{ height:100%; width:100%; -webkit-text-size-adjust: 100%;	-ms-text-size-adjust: 100%; }
+body{height:100%; width:100%; font-size:12px; background:#e5e5e5;}
+*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box; margin:0; padding:0; -webkit-tap-highlight-color:rgba(255,0,0,0); outline:none}
+.container{min-width:320px;margin:auto;min-height:100%;	position:relative;	display:block;	background-size:100% 100%;	-webkit-box-sizing: border-box; min-width:320px; }
+body{min-height:100%;position:relative;display:block; font-size:12px; min-width:320px;}
+a{ text-decoration:none;}
+ul{ list-style:none;}
+.icon{ display:block; float:left; width:18px; height:20px; }
+.btn{ text-align:center;  display:block;  width:100%; float:left; border-radius:5px;  }
+.btn.mt{margin-top:10px;}
+.btn.bigfont{font-size:16px; font-weight:bold;}
+.icon_right{ font-size:20px; display:block; float:right; margin-right:15px;font-weight: bold;}
+.right_adron{ display:block; width:10px; height:10px;  -webkit-transform:rotate(45deg); border: 1px solid #848484; margin-top:20px;border-left: none;border-bottom: none;}
+input[type="button"], input[type="submit"],  input[type="tel"],input[type="reset"], input[type="text"] ,textarea ,input[type="number"] {-webkit-appearance: none; border-radius:0;}
+input[type="radio"]{-webkit-appearance: none; width:22px; height:22px; border:none;}
+
+/*���ݵķ��򱳾�*/
+.sawtooth{ display:block;  width:54px ; height:54px; line-height:54px;  text-align:center; float:left; margin:5px;}
+.sawtooth.twoline{ line-height:14px; padding:12px 0;}
+.sawtooth.hasicon{line-height:15px; padding:9px 0;}
+.sawtooth.hasicon>label{ display:block; width:16px; height: 16px; margin:0 auto;  margin-bottom:5px; text-align:center; }
+/*�ŵ��б�*/
+ul.list{ width:100%; height:100%;}
+ul.list li{ width:100%; float:left;  position:relative; border-left:none; border-right:none;margin-bottom:10px;  padding: 13px 14px;}
+ul.list li > a{ display:block; width:100%; float:left  }
+ul.list li > a  table{ width:100%;}
+ul.list li > a  table img{ width:55px; height:55px;}
+ul.list li > a  table .img{ width:55px; vertical-align: middle;}
+ul.list li > a  table .info { vertical-align:top; padding-left:15px; padding-right:5px }
+ul.list li > a  table .info .name{ line-height:18px; font-size:14px; font-weight:bold; margin-bottom:10px;}
+ul.list li > a  table .info .address{line-height:16px;}
+ul.list li > a  table .info .address .icon{ width:17px}
+ul.list li > a  table .info .address label{ display:block; padding-top:2px;}
+ul.list li > a  table .opt{ width:70px; vertical-align:middle; text-align:center}
+ul.list li > a  table .opt >div{ margin-top:6px; float:left; width:100%}
+ul.list li > a  table .btn{width: 65px; height:30px; line-height:30px; text-align:center; font-size:13px }
+ul.list.order li .distance{right: 15px;top: 50px;height: 20px;position: absolute;min-width: 70px;text-align: center; line-height:20px;}
+/*֧���б�*/
+ul.pay{ padding-left:14px; border-bottom:1px solid ; float:left; width:100%;}
+ul.pay li{ float:left; border-bottom:1px solid; line-height:42px; float:left; width:100%; }
+ul.pay li.title{ font-size:14px; font-weight:bold;}
+ul.pay li:last-child{ border-bottom:none; }
+ul.pay li> label{ float: right;
+display: block;
+padding-right: 30px;
+width: 100%;
+text-align: right;
+height:100%
+}
+ul.pay li> label>span{ display:block; float:left;}
+/*�ײ����ﳵ*/
+.g_nav{	height:50px;	text-align:center;}
+.g_nav div{	line-height:34px;	height:50px;	position:fixed;	z-index:200; 	bottom:0;	left:0;	width:100%; padding:11px 10px; border-top:1px solid; }
+.g_nav div span{ display:block; float:left; font-size:15px; line-height:29px}
+.g_nav div span .money{ font-size:16px;}
+.g_nav div .cart{display:block ;width:29px;height:29px; float:left; line-height:30px; margin-right:8px; font-size:15px;  }
+.g_nav div .btn{ float:right; width:90px; font-weight:bold; margin-left:8px; height: 30px;
+border: none; border-radius:5px;  margin-top:-1px; font-size:14px;}
+.g_nav div a>{ width:50%; display:block; float:left;}
+.g_nav div a> .btn{ width:100%;}
+.g_nav .count{display:block ;width:29px;height:29px; float:left; line-height:30px; margin-right:8px; font-size:15px; background:url(../image/m_b.png?v=11) no-repeat center center; background-size:29px 29px;  }
+/*�ύ����ʾ*/
+.sad{ width:85px; height:85px; display:block; margin:0 auto;}
+.sad img{ width:100%; height:100%;}
+.result .btndiv{ padding:0 15px;}
+.result section{ text-align:center; padding:60px 20px 30px;}
+.result section .message{ line-height:38px; font-size:15px; font-weight:bold; padding:15px 0 20px; display:block;}
+.result section .message span{ font-size:21px;}
+.result section .btn{width:100%; height:44px; line-height:44px; font-size:16px;margin-top:24px;}
+.result section .btn.one{ margin-top:60px}
+/*store list*/
+.searchdiv input::-webkit-search-decoration,
+.searchdiv input::-webkit-search-cancel-button {
+display: none;
+}
+
+.searchdiv .del{ width:54px; height:100%;background:url(../image/del.png) no-repeat center; position:absolute; right:0px; top:0px; background-size:14px 14px;}
+.container.list header.searchdiv{  height:50px; width:100%; padding: 8px 10px; position:relative}
+.container.list header input{ width:100%; height:100%;border:1px solid ;border-radius:5px; -webkit-appearance: none;  padding-left:22px; outline:none; padding-right: 30px;}
+.container.list header form{ width:100%; height:100%;}
+.container.list section{ padding:10px 0 60px;; float:left; width:100%;}
+.list .tips{height: 300px;text-align: center;line-height: 300px;color: #999;}
+/*������*/
+.layer.on{ display:block;}
+.layer{ width:100%; position:fixed;top:0; display:none;  bottom:0;}
+.layer.transparent{  opacity: 0.5;  z-index:2000;  }
+.layer.popup {  top:20%;   z-index:2001; width:80%;}
+.layer.popup > div{ border-radius:5px;}
+.layer.popup > div >span{ margin:0 10px; border-bottom:1px solid ; display:block; line-height:40px; text-align:center; font-size:16px; font-weight:bold;}
+.layer.popup > div >ul{ max-height:280px; overflow:auto; }
+.layer.popup > div >ul li{ border-bottom:1px solid;  line-height:44px; padding:0 10px; cursor:hand;}
+.layer.popup > div >ul li>label{ display:block; float:left; height:34px; padding:3px 5px 0 0 ;}
+.layer.popup > div.dialogX{  line-height:38px;float:left;  text-align:center; width:280px; }
+.bookInfo .layer.popup > div.timestr{ background:none; color:#fff; font-size:12px; line-height:20px; padding:10px }
+.layer.popup > div.dialogX .timestr >label{ font-size:12px; display:block; float:left; width:100%;padding-left: 70px;margin-top: -17px;line-height: 14px;}
+.layer.popup > div.list{  text-align:left;}
+.layer.popup > div.list li{ padding:0 20px;}
+.layer.popup > div.pay{ width:250px; text-align:left;}
+.layer.popup > div >ul li>label{ float:left;}
+.layer.popup > div.dialogX .content{ width:100%; padding:0 15px; border-bottom:1px solid ; float:left;}
+.layer.popup > div.dialogX .content .title{ border-bottom:1px solid; font-size:15px; }
+.layer.popup > div.dialogX .content .message{ padding:20px 0; line-height:20px; font-size:13px;}
+.layer.popup > div.dialogX  .button{width:100%; float:left; }
+.layer.popup > div.dialogX  .button a{ width:50%; display:block; float:left; line-height:44px; }
+.layer.popup > div.dialogX  .button .cancel{ border-right:1px solid;}
+.layer.popup .see{ padding:0 20px; height:44px;}
+.layer.popup .see a{ display:block; width:100%; height:100%; line-height:34px;}
+.layer.popup .see label{ display:block; float:left; height:34px; padding:3px 5px 0 0 ;}
+.menulist .title{ border-bottom:1px solid;}
+.menulist{ width:100%; padding-left:14px; float:left; margin-top:10px;}
+.menulist>div{ height:30px; line-height:30px; font-size:16px;  font-weight:bold;}
+.menulist>label{width:100%; height:8px;  border-radius:5px; display:block; padding: 4px 8px 0;}
+.menulist>span>span{ height:1px; border-top:1px solid ;  display:block; position:absolute; z-index:3;left:8px; right:8px; margin-top:-2px;}
+.menulist>span{ display:block; padding:0 8px; position:relative;   line-height:38px; float:left; width:100%;}
+.menulist>span>.list{ border-top:none;float:left; width:100%; }
+.menulist>span>.list ul{  border-bottom:1px solid ;  padding-right:17px;  float: left;width: 100%;}
+.menulist>span>.list ul li{   float: left;width: 100%; padding:12px 0;}
+.menulist>span>.list ul li:last-child{ border-bottom:none;}
+.menulist>span>.list span{ display:block; float:left; line-height:20px;}
+.menulist>span>.list .col1{ width:60%;}
+.menulist>span>.list .col2{ width:25%;}
+.menulist>span>.list .col3{ width:40%; text-align:right }
+.menulist>span>.list >div{ float:left; width:100%;  padding:2px 17px 13px 0  ; line-height:35px;  }
+.menulist>span>.list >div span{ line-height:35px;}
+.menulist>span>.tips{ height:250px; width:100%; line-height:160px; text-align:center; font-size:14px; }
+.menulist>span >.line{  height: 5px;width: 100%;display: block;float: left;}
+.menulist .editbtndiv .pay_over{ display:none;}
+.menulist .editbtndiv .edit{ display:block;}
+.menulist>span>.list .ispay{ display:none}
+/*introduction.html*/
+.intro{ padding:15px;}
+.intro header{ border-bottom:1px solid ; padding-bottom:10px;; line-height:19px; padding-left:7px; font-weight:bold; font-size:15px;}
+.intro  section{ padding-top:15px;}
+.intro  section > article{ padding:15px;  line-height:22px;}
+.intro  section > article img{ width:100%;}
+/*storeDetails.html*/
+.storeDetails header{ overflow:hidden}
+.storeDetails header span{ font-size:14px; margin-top:-32px; display:block;  padding-left:15px; font-weight:bold; float:left}
+.storeDetails header img{ width:100%; float:left}
+.storeDetails section{   padding-bottom:0;}
+.storeDetails  ul.linklist{ border-top:1px solid ; border-bottom:1px solid ; margin-bottom:10px; padding-left:12px; line-height:20px; }
+.storeDetails  ul.linklist li{ border-bottom:1px solid ; position:relative;}
+.storeDetails  ul.linklist li a{ padding:13px 0; display:block; width:100%; font-size:14px; }
+.storeDetails  ul.linklist li:last-child{border-bottom:none;}
+.storeDetails  ul.linklist li .icon{  margin-right:8px; }
+.storeDetails  ul.linklist li span.textIcon{ width:20px; height:20px; border-radius:2px;  text-align:center; font-size:14px; line-height:20px;  display:block; float:left; margin-right:8px; font-weight:bold;}
+.storeDetails  .btndiv{ padding:0 8px; width:100%; height:70px;}
+.storeDetails  .btndiv>div{ width:50%; float:left; display:block; padding:10px 6px;}
+.storeDetails   .btndiv a { display:block; width:100%;}
+.storeDetails   .btndiv a .btn{  height:40px; line-height:40px; }
+.storeDetails   .btndiv .g_nav{ height:40px;}
+.storeDetails   .btndiv .g_nav div{ padding:0; background:none; height:40px;}
+.storeDetails .imglist{ position:relative}
+.storeDetails .imglist >div{ position:absolute; bottom:0; height:10px; width:100%; z-index:666;}
+.storeDetails .imglist ul{ width:50px; margin:auto;height:10px;}
+.storeDetails .imglist ul li{ width:5px; height:5px; border-radius:50%; float:left; margin:0 1px;}
+.storeDetails  .right_adron{ position:absolute; right:16px; top:0; }
+/*businessHours.html*/
+.businessHours > section{ padding:10px 0;}
+.businessHours  ul{margin-bottom:10px; padding:0 12px; }
+.businessHours  ul li{ line-height:18px; padding:10px 0}
+.businessHours  ul li .icon{ margin-right:8px; }
+/*menu.html*/
+.menu  section{ width:100%; height:100%; position:absolute; padding-bottom:50px; }
+.menu .left{ width:27%; float:left;  height:100%;overflow:auto;}
+.menu .left .top{ padding:15px 0px 0; }
+.menu .left .top >div{ width:100%; min-width:74px;  height:37px; line-height:35px; margin:8px auto; text-align:center }
+.menu .left .top >div .icon{ margin:9px 4px 0 2px;}
+.menu .left .top >div a{ display:block; width:78px; margin:0 auto;height:100%; text-align:left}
+.menu .left .content ul li{  line-height:20px; text-align:center; font-size:14px; padding:10px 0;}
+.menu .right{ width:73%; float:left;overflow:auto;  height:100%; }
+.menu .right ul{ width:100%; padding-left:10px; float:left;}
+.menu .right ul li { width:100%; border-bottom:1px solid ;  padding:14px 0 ; position:relative; float:left;}
+.menu .right ul li >span{ display:block; height:59px; width:59px; float:left; position:relative; border:2px solid; border-radius:50%;}
+.p_ts{ width:30px;height: 12px;line-height: 12px;font-size:9px; text-align:center;}
+.menu .right ul li >span img{ width:100%; height:100%; border-radius:50%;}
+.menu .right ul li >label{ display:block; margin-left:72px; right:0; height:72px;padding:0 1px;}
+.menu .right ul li >label>span{ width: 100%;line-height: 16px;font-size: 14px;font-weight: bold;padding-left: 3px;height: 36px;display: table-cell;vertical-align: middle; padding-bottom:8px;}
+.menu .right ul li >label>label{ display:block; width:100%; height:26px; line-height:24px; padding-right:10px; }
+.menu .right ul li >label>label span{ display:block; float:left; }
+.menu .right ul li >label>label span.price{ font-size:16px }
+.menu .right ul li >label>label >label{ float:right;height:24px; border:0;}
+.menu .right ul li >label>label >label.border{   border: 1px solid #ccc; }
+.menu .right ul li >label>label span.btn{ width:24px; height:24px; font-size:18px; font-weight:bold; margin-top: -1px; border-radius:2px;
+ }
+.menu .right ul li >label>label >label.border span.plus{border-radius:0px 2px 2px 0 ; margin-right: -2px;  }
+.menu .right ul li >label>label span.num input{ width:22px; height:21px; text-align:center;border:0;outline:0;}
+.menu .right ul li >label>label >label.border span.minus{border-radius:0px 2px 2px 0 ;  margin-left: -1px;border-radius:2px;}
+.menu .details{position: fixed;left: 0;top: 0;width: 100%; height:100%; z-index:202; display:none; padding:100px 0; overflow:auto;}
+.menu .details .content{ width:300px; margin:0 auto; position:relative;}
+.menu .details .content h2 {font-size: 16px;padding: 10px 15px 9px 15px;margin-top: -5px;font-weight: normal; position:relative;}
+.menu .details .content h2 .name{ display:block; max-width:210px;}
+.menu .details .content h2 i {font-style: normal;font-size: 12px;display: inline-block;margin-left: 10px; }
+.menu .details .content p {padding: 10px 15px 12px 15px;font-size: 13px;line-height: 18px;}
+.menu .details .content .heart{ float:right; display:block; width:22px; height:22px; margin-right:10px; position:absolute; top:12px; right:0;}
+.menu .details .content  .heart.red{ margin-right:0px; right:40px}
+.menu .details .content img{ width:100%; height:225px;border-radius: 5px 5px 0 0;}
+.menu .details a.x {display: inline-block;width: 30px;height:30px;text-indent: -9999px;position: absolute; top:0px;  right:0px;}
+.menu .details .content>label{ display:block; width:100%; height:46px; line-height:24px; padding-right:10px; border-radius: 0 0 5px 5px; padding:5px 15px 15px; }
+.menu .details .content>label span{ display:block; float:left; }
+.menu .details .content>label span.price{ font-size:16px }
+.menu .details .content>label >label{ float:right;height:24px; border:0;}
+.menu .details .content>label >label.border{   border: 1px solid #ccc; }
+.menu .details .content>label span.btn{ width:24px; height:24px; font-size:18px; font-weight:bold; margin-top: -1px; border-radius:2px;
+ }
+.menu .details .content>label >label.border span.plus{border-radius:0px 2px 2px 0 ; margin-right: -2px;  }
+.menu .details .content>label span.num input{ width:22px; height:21px; text-align:center;border:0;outline:0;}
+.menu .details .content>label >label.border span.minus{border-radius:0px 2px 2px 0 ;  margin-left: -1px;border-radius:2px;}
+
+.menu .details .bottom{ width:100%; height:60px; background:url(../image/mdlg_btn_x_M.png?v=11) no-repeat center center; background-size:auto 60px;}
+/*myMenu*/
+.myMenu  section{ width:100%; bottom:50px; top:0px; position:absolute; padding:10px; overflow:auto ;}
+.myMenu .main{ width:100%; float:left; border-radius:5px; }
+.myMenu .main .top{ height:52px; padding:0 3px 6px;}
+.myMenu .main .top >span{ display:block; height:100%; border-bottom:1px  solid ;}
+.myMenu .main .top >span>div{ line-height:46px; font-size:16px;font-weight:bold; float:left; margin-left:12px;}
+.myMenu .main .top >span >a{ display:block; float:right; margin-right:10px; margin-top:6px; width:48px; height:30px; text-align:right; font-size:14px; line-height:30px;}
+.myMenu .main ul{ width:100%; padding-left:10px; float:left}
+.myMenu .main ul li { width:100%; border-bottom:1px solid ; float:left; padding:16px 10px 16px 0 ; position:relative; }
+.myMenu .main ul li:last-child{border-bottom:none;}
+.myMenu .main ul li >span{ display:block; height:60px; width:60px; float:left; position:relative;border: 2px solid;  border-radius:50%;}
+.myMenu .main ul li >span img{ width:100%; height:100%; border-radius:50%;}
+.myMenu .main ul li >label{ display:block; margin-left:68px; right:0; height:60px;}
+.myMenu .main ul li >label>span{ width: 100%;
+line-height: 16px;
+font-size: 14px;
+font-weight: bold;
+padding-left: 3px;
+height: 36px;
+display: table-cell;
+vertical-align: middle;
+padding-bottom: 8px; }
+.myMenu .main ul li >label>label{ display: block;
+width: 100%;
+height: 26px;
+line-height: 24px;
+padding-right: 10px;}
+
+.myMenu .main ul li >label>label{ display:block; width:100%; height:26px; line-height:24px; padding-right:10px; }
+.myMenu .main ul li >label>label span{ display:block; float:left; }
+.myMenu .main ul li >label>label span.price{ font-size:16px }
+.myMenu .main ul li >label>label >label{ float:right;height:24px; border:0;}
+.myMenu .main ul li >label>label >label.border{   border: 1px solid #ccc; }
+.myMenu .main ul li >label>label span.btn{ width:24px; height:24px; font-size:18px; font-weight:bold; margin-top: -1px; border-radius:2px;
+ }
+.myMenu .main ul li >label>label >label.border span.plus{border-radius:0px 2px 2px 0 ; margin-right: -2px;  }
+.myMenu .main ul li >label>label span.num input{ width:22px; height:21px; text-align:center;border:0;outline:0;}
+.myMenu .main ul li >label>label >label.border span.minus{border-radius:0px 2px 2px 0 ;  margin-left: -1px;border-radius:2px;}
+
+
+
+.myMenu .main ul li >label>label span.collect{ width:22px; height:22px; }
+.myMenu .main ul li >label>label span.addmark{ width:50px; height:20px;text-align:center; line-height:20px;margin-left:10px; margin-top:3px; font-size:10px; border-radius:3px;}
+.myMenu .main ul li >label>label >label{ float:right;}
+.myMenu .main .mark{ padding:13px 10px; width:100%; height: 70px; border-top:1px solid ; float:left;}
+.myMenu .main .mark textarea{padding:0;border-radius:3px;  padding-top:5px;  border:none;  width:100%;  height:100%; text-indent:5px;  outline:none}
+.myMenu .main .markinput{width: 100%;float: left;margin-top:10px; background:#f0f0f2; border:none; border-radius:5px; height:30px; line-height:30px; outline:none; padding:0 10px; display:none; }
+/*queueInfo.html*/
+.queueInfo  .list{ overflow:hidden; padding:0 16px;}
+.queueInfo  .list .title{ height:44px; line-height:44px;  font-size:15px; font-weight:bold;}
+.queueInfo  .list>ul{  border-top:1px solid ;  float:left; width:100%;}
+.queueInfo  .list>ul li{ line-height:44px; float:left; width:100%; font-size:13px;}
+.queueInfo span{ display:block; float:left;}
+.queueInfo .col1{ width:40%; padding-left:20px;}
+.queueInfo .col2{ width:30%; text-align:center}
+.queueInfo .col3{ width:25%; text-align:center;}
+.queueInfo section>.info{ }
+.queueInfo section>.info>form>div{  width:100%; float:left; padding-bottom:20px; padding:15px 25px 25px;}
+.queueInfo section>.info>form>div>span{ height:50px; line-height:50px; width:100%;}
+.queueInfo section>.info>form>div>span:last-child{ padding:0 50px}
+.queueInfo section>.info>form>div> span .title{ width:25%; font-size:14px;  }
+.queueInfo section>.info>form>div> span .content{ width:75%; padding-left:10px;}
+.queueInfo section>.info>form>div> span .content>input[type='text']{ border:none; border-bottom:1px solid ; width:100%; height:18px; outline:none}
+.queueInfo section>.info>form>div> span .content>input[type='tel']{ border:none; border-bottom:1px solid ; width:100%; height:18px; outline:none; font-size:14px}
+.queueInfo section>.info>form>div> span .content>input[type='number']{ border:none; border-bottom:1px solid ; width:100%; height:18px; outline:none}
+.queueInfo section>.info>form>div> span .content.radio{ padding-left:25px; font-size:14px;}
+.queueInfo section>.info>form>div> span .content.radio >span{ display:block; margin-right:30px;}
+.queueInfo section>.info>form>div> span .content span{ margin-right:15px;}
+.queueInfo section>.info>form>div> span .content span label{ display:block; margin-top:5px; float:left; margin-right:10px}
+.queueInfo section>.info>form>div> span .content span label input[type="radio"]{ width:18px; height:18px; background-size:18px 18px;}
+.queueInfo section>.info>form>div> span>label{ width:100%;height:40px; line-height:40px; margin:0 auto; margin-top:30px;}
+.queueInfo #getNum{ width:100%; height:100%; background:none; border:0;}
+.queueInfo section>.info>form>div>span.tips{ line-height: 15px;height: 15px; display:none}
+/*pay.html*/
+.pay header{height:44px; padding-left:14px; line-height:42px; font-size:14px; font-weight:bold; }
+.pay  section{ padding-bottom:60px; float:left; width:100%;}
+.pay ul.pay li{ height:50px; line-height:50px; font-size:14px;}
+.pay input[type="radio"]{ width:22px; height:50px;}
+/*orderList.html*/
+.orderList{ padding-bottom:15px;}
+.orderList section .mode{ padding-left:15px;}
+.orderList section .title{ height:44px; line-height:44px; font-size:14px; font-weight:bold;font-size:15px;}
+.orderList .right_adron{ margin-top:28px;}
+.orderList .nolist_tips{ text-align:center;height:170px;border-top: 1px solid ;padding: 40px 0 ; display:block; font-size:15px; margin-bottom:10px;}
+.orderList .nolist_tips.old{ line-height:80px;}
+.orderList .nolist_tips a{ width: 156px;
+display: block;
+line-height: 39px;
+margin: 25px auto;
+float: initial; font-size:16px;
+}
+
+ul.orderlist{ width:100%;}
+ ul.orderlist li{ height:80px; border-bottom:1px solid ; padding:7px 0;}
+ ul.orderlist li > a{ display:block;  }
+ ul.orderlist li .info{  position:absolute; left:15px; right:85px;}
+ ul.orderlist li .info > span{ display:block;width:55px; height:55px; position:absolute; }
+ ul.orderlist li .info > span  img{ width:100%; height:100%;}
+ ul.orderlist li .info > label{ display:block; margin-left:70px;}
+ ul.orderlist li .info > label .name{ display:block;font-size:14px; font-weight:bold; line-height:24px;  word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis; padding:6px 0;}
+  ul.orderlist li .info > label .time{ margin-top:8px; display:block;}
+ ul.orderlist li .btn{ position:absolute; right:15px;  width: 56px; height:30px; line-height:30px; text-align:center; margin-top:17px; }
+ ul.orderlist li .icon_right{ line-height:55px;}
+ /*orderSuccessDetails*/
+ .orderDetails section{overflow: hidden;}
+ .orderDetails ul.pay { list-style:url(../image/list-stype_img.png);}
+.orderDetails ul.pay li> label{ margin-right:15px; margin-top:0px; padding-right:0; width:auto;}
+.orderDetails header{ padding-left:15px; }
+.editbtndiv{ float:right; padding-right:15px;}
+.editbtndiv>span{ display:block; width:50px; float:left; text-align:right; line-height:44px; font-size:14px;}
+.editbtndiv .cancel{ margin-right:14px;}
+.orderDetails .m_tips{ height:40px; line-height:40px; border-top:1px solid #e6e6e6;}
+.orderDetails ul.pay{ float:none; overflow:hidden; border-top:1px solid; border-bottom:none }
+.orderDetails ul.pay li{ border:none}
+
+.orderDetails .title{ height:44px; line-height:44px; font-size:14px; font-weight:bold;font-size:15px;}
+.myqueue .title{ height:44px; line-height:44px; font-size:14px; font-weight:bold;font-size:15px;}
+.orderDetails .share{ text-align:center; line-height:35px; display:block; border-bottom:1px solid; font-size:14px;}
+.orderDetails .paybtn{ padding:15px; float:left; width:100%; border-bottom:1px solid ; }
+.orderDetails .paybtn >div{ margin-top:8px; width:100%; float:left}
+.orderDetails .paybtn .btn{ line-height:35px;}
+.orderDetails .btn.left{ width:49%; float:left; margin-right:1%;}
+.orderDetails .btn.right{ width:49%; float:left;  margin-left:1%;}
+.orderDetails.finished #finished{ display:block;}
+.orderDetails.finished #processing{ display:none;}
+.orderDetails.finished #success{ display:none;}
+.orderDetails.processing #finished{ display:none;}
+.orderDetails.processing #processing{ display:block;}
+.orderDetails.processing #success{ display:none;}
+.orderDetails.processing.pay_over .menulist .editbtndiv .pay_over{ display:block;}
+.orderDetails.processing.pay_over .menulist .editbtndiv .edit{ display:none;}
+.orderDetails.processing.pay_over .menulist>span>.list .ispay{ display:block}
+.orderDetails.processing.pay_over footer .btndiv{ display:none}
+.orderDetails.success #finished{ display:none;}
+.orderDetails.success #processing{ display:none;}
+.orderDetails.success #success{ display:block;}
+.orderDetails ul li .right_adron{ float:right; margin-right:15px; margin-top:28px;}
+.orderDetails footer{  width:100%; height:60px}
+.orderDetails footer .btn{ display:block; height:38px; line-height:38px;  width:49%;; margin:11px auto; float:none}
+.btndiv_fixed{ position:fixed; height:60px; width:100%; bottom:0; background:#fff; box-shadow: -1px -2px 5px #cdd8dd;}
+.btndiv_fixed .btn{ display:block; height:38px; line-height:38px;  width:49%;; margin:11px auto; float:none}
+
+/*myqueue*/
+.myqueue section{ float:left; width:100%; padding-bottom:68px;}
+.myqueue footer{ height:60px;}
+.myqueue .menulist .editbtndiv .pay_over{ display:block}
+.myqueue .other{ text-align:center; padding:15px 0;}
+.myqueue .other > span{ line-height: 38px; font-size:16px; }
+.myqueue .other >span> span.num{ font-size:40px; margin:0 10px;}
+.myqueue .other >label{ display:block; line-height: 30px;}
+.myqueue ul.orderlist li .info > span{ text-align:left;padding-left: 9px;}
+.myqueue .sawtooth.nobg.success.twoline{ padding-top:6px; line-height:20px;}
+.myqueue .sawtooth.nobg.success.twoline label{ font-size:16px}
+.myqueue .nolist_tips{ text-align:center; padding-top:207px; display:none; height:287px}
+.myqueue .nolist_tips a{ display:block; width:78%; margin:80px auto 20px;
+height: 38px;
+line-height: 38px; border-radius:5px; color:#fff; }
+.myqueue.nomenu .nolist_tips{ display:block;}
+.myqueue.nomenu .btndiv_fixed{ display:none}
+.myqueue.nomenu header{ display:none;}
+.myqueue.nomenu .menulist{ display:none;}
+.myqueue.nomenu .btn{ }
+ .menulist .tips{ display:none}
+.myqueue .menulist .order{ display:none}
+
+ .menulist.on .tips{ display:block}
+.myqueue .menulist.on .order{ display:block}
+
+ .menulist.on .list{ display:none}
+.myqueue .menulist.on .edit{ display:none}
+.myqueue .menulist.on .pay{ display:none}
+
+.heart{ width:17px; height:16px;}
+/************/
+.intelligent { background: -webkit-gradient(linear, 0 0, 0 100%, from(#fe754b),to(#ff5e4d));}
+.intelligent header{ padding:40px 16px; }
+.intelligent .checknum{ width:100%; overflow:hidden;max-width: 640px; margin:0 auto; height:100%;position:relative;}
+.intelligent .checknum>div>span{position:absolute;width:60px;height:80px; line-height:80px;text-align:center; font-size:36px; color:#fec5cc;margin-top:-40px; top:50%;}
+.intelligent .checknum .left span{ right:45px; text-align:right} 
+.intelligent .checknum .left{ width:25%; height:100%; float:left;background:url(../image/lefticon.png?v=11) right center no-repeat; background-size:33px 25px; position:absolute; left:0; }
+.intelligent .checknum .center{ width:50%; float:left; margin-left:25%; position:relative; padding:0 15px;}
+.intelligent .checknum .center span{ left:50%;  margin-left:-30px;    font-size:70px; color:#fe6357;  font-weight:bold}
+.intelligent .checknum .center img{ width:100%;}
+.intelligent .checknum .right{ width:25%; height:100%; float:left; background:url(../image/righticon.png) left center no-repeat; background-size:33px 25px; position:absolute; right:0;}
+.intelligent .checknum .right span{ left:45px; text-align:left;} 
+.intelligent .mlist{ padding:0 16px;}
+.intelligent .mlist>li{ background:#fff; width:100%; margin-bottom:16px; border-radius:5px;}
+.intelligent .mlist>li>div{ width:100%; height:50px; padding:14px;}
+.intelligent .mlist>li>div span{ float:right }
+.intelligent .mlist>li>div div{ display:block; line-height:22px; }
+.intelligent .mlist>li>div div span{  margin-top:6px;}
+.intelligent .mlist>li>div div input{ float:left; margin-right:10px;}
+.intelligent .mlist>li ul{ display:none}
+.intelligent .mlist>li ul{ width:100%; padding:0 10px; border-top:1px solid ; border-color:#e6e6e6 }
+.intelligent .mlist>li ul li{ border-bottom:1px solid ; padding:15px 0px ; border-color:#e6e6e6}
+.intelligent .mlist>li ul li:last-child{ border-bottom:0;}
+.intelligent .mlist>li ul li table{ width:100%;}
+.intelligent .mlist>li ul li .count{ width:40px; text-align:right; vertical-align:middle}
+.intelligent .mlist>li ul li .img{ width:59px; vertical-align:top;}
+.intelligent .mlist>li ul li .img img{ border-radius:50%; border:2px solid #f5f2ec}
+.intelligent .mlist>li ul li .img span{ display:block; width:100%;  height:59px; position:relative}
+.intelligent .mlist>li ul li .img span img{ width:100%; height:100%;}
+.intelligent .mlist>li ul li .info{ padding:5px 0 5px 10px; color:#2e2e2e }
+.intelligent .mlist>li ul li .info .name{ min-height:34px; font-size:14px;line-height:18px;}
+.intelligent .mlist>li ul li .info .name label{ color:#ff7444;}
+.intelligent .mlist>li ul li .info .name span{ display:block; float:right; font-size:16px;}
+.intelligent .mlist>li ul li .info .price{ height:12px; line-height:12px; font-size:16px;}
+/************/
+.bookinfo{ background:#f2f2f2;}
+.bookinfo .info{ background:#fff; width:100%; padding:0 10px; margin-bottom:10px;}
+.bookinfo .info .line{ width:100%; height:50px;line-height:50px; border-top:1px solid #e6e6e6; font-size:14px; padding:0 7px; }
+.bookinfo .info .line.icons{ padding-left:35px; background:url(../image/b-icon.png?v=11) no-repeat 5px 17px; background-size:20px auto;}
+.bookinfo .info .line.icons.time{ background-position:5px -37px;}
+.bookinfo .info .line.icons.num{ background-position:5px -88px;}
+.bookinfo .info .line.icons.status{ background-position:5px -140px;}
+.bookinfo .info .line:first-child{ border-top:none}
+.bookinfo .info input.select{ border:0; background:none; text-align:right; width:100%; height:100%; font-size:14px}
+.bookinfo .info input.select::-webkit-input-placeholder{ color:#2e2e2e;}
+.bookinfo .info .ui_select{ position:relative;}
+.bookinfo .info .ui_select span{ border:none; background:none; height:100%; text-align:right; width:100px} 
+.bookinfo .info .ui_select select{ position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; z-index:11; font-size:14px}
+
+.bookinfo .info .line.mh{ height:36px; line-height:36px; font-size:12px; display:none}
+.bookinfo .info .line>span{ color:#a1a1a1}
+.bookinfo .info .line >label{ display:block; float:right; color:#2e2e2e}
+.bookinfo .info .line >i{ display:block; width:10px; height:10px; border:1px solid #2e2e2e; -webkit-transform:rotate(45deg); float:right; margin-left:18px;margin-top: 21px;border-width: 1px 1px 0 0;}
+.bookinfo .info .line> input{ width:100%; height:48px; border:none; font-size:14px;  color:#2e2e2e;}
+.bookinfo .info .line >input::-webkit-input-placeholder{ color:#a1a1a1;}
+.bookinfo .info .line.textarea{ height:135px; color:#2e2e2e;padding:15px 7px;}
+.bookinfo .info .line.textarea textarea{ width:100%; height:100%; border:none;  line-height:20px;font-size:14px;}
+.bookinfo .info .line textarea::-webkit-input-placeholder{ color:#a1a1a1;}
+.bookinfo .info .line.name >input[type="text"]{ width:50%; float:left}
+.bookinfo .info .line.name .sexdiv{ width:50%; float:right}
+.bookinfo .info .line.name .sexdiv>label{ display:block; width:60px; float:right; color:#2e2e2e; }
+.bookinfo .info .line.name .sexdiv>label:last-child{ margin-right:18px}
+.bookinfo .info .line.name .sexdiv>label>input{ float:left; margin:16px 11px 14px 0; width:18px; height:18px; background-size:18px 18px;}
+.bookinfo .g_nav>div{ padding:10px 24px; height:62px; line-height:38px;}
+.bookinfo .g_nav a{ width:50%;  float:left; display:block; font-size:14px;}
+.bookinfo .g_nav a label{ display:block; border-radius:5px ;  color:#fff; text-align:center;}
+.bookinfo .g_nav .left{ padding-right:10px;}
+.bookinfo .g_nav .right{ padding-left:10px;}
+.bookinfo .g_nav .green label{ background:#5fb038}
+.bookinfo .g_nav .orange label{ background:#fe7143}
+.bookinfo .info .line.name .paytypediv {float: right;}
+.bookinfo .info .line.name .paytypediv>label {display: block;float: right;color: #2e2e2e;}
+.bookinfo .info .line.name .paytypediv>label:last-child {margin-right: 18px;}
+.bookinfo .info .line.name .paytypediv>label>input {float: left;margin: 16px 11px 14px 0;width: 18px;height: 18px;background-size: 18px 18px;}

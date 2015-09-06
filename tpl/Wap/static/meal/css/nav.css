@@ -1,0 +1,133 @@
+.nav{text-align:center;height:60px;}
+.nav ul{height:60px;position:fixed;	z-index:200;bottom:0;left:0;width:100%;background: #d5d5d5;list-style-type: none;	display: -webkit-box;-webkit-box-orient: horizontal;}
+.nav li{list-style: none; -webkit-box-align: center; -webkit-box-flex: 1;}
+.nav >ul>li>a{
+	margin: 0 auto;
+	font-size:12px;
+	line-height:24px;
+	color:#848484;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	border-bottom:0;
+	display:block;
+	height:100%;
+	padding:10px 0;
+	text-align:center;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	text-decoration:none;
+	width:80px;
+}
+.nav li>a.on, .nav li>a.active{
+	color:#fff;
+}
+.nav li>a>*{
+	pointer-events:none;
+}
+.nav li>a>span{
+	display: block;
+	width:25px;
+	height:25px;
+	margin:auto;
+	background:url(../image/nav.png);
+	-webkit-background-size: auto 52px;
+}
+.nav li>a>span.book{
+	background-position:0px 0px;
+}
+.nav li>a>span.order{
+	background-position:-29px 0px
+}
+.nav li>a>span.home{
+	background-position:-105px 0px
+}
+.nav li>a>span.list{
+	background-position:-106px 0px
+}
+.nav li>a>span.introx{
+	background-position:-130px 0px
+}
+.nav li>a>span.my{
+	background-position:-81px 0px
+}
+.nav li.on>a>label{ color:#ef7f2c; }
+.nav li.on>a>span{
+	background-position-y: -27px;
+}
+
+.nav li>a label{
+	width: 100%; text-align:center;
+	display: block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.nav li.more{
+ 	position:relative;
+}
+.nav li.more ul{
+	border: 1px solid #bababa;
+	position:absolute;
+	width:100px;
+	display:none;
+	border-radius:5px;
+	background:#fafafa;
+	box-shadow: 1px 1px 1px #cfcfcf;
+	padding:10px 0;
+	bottom:73px
+	
+}
+.nav li.more ul.on{display:block;}
+.nav li.more .adron{ display:none;}
+.nav li.more .adron.on{ display:block; width:12px; height:12px;background: #fafafa; -webkit-transform:rotate(45deg); position:absolute; top:-10px; margin-left:45%; z-index:444; border: 1px solid #bababa;border-top: none;border-left: none; box-shadow: 1px 1px 1px #cfcfcf;}
+.nav li.more ul li{
+	line-height:44px;
+	float:left;
+	width:100%;
+	text-align:center;
+}
+.nav li.more ul li a{ display:block; width:100%; height:100%; padding:0 15px;
+	color:#5d5d5d;}
+.nav li.more ul li.checked a{ color:#ef7f2c}
+
+
+
+/* dialog */
+.dialog{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 2000; -webkit-box-sizing: border-box; display: -webkit-box; -webkit-box-pack: center; -webkit-box-align: center; padding:20px;}
+.dialog.mask{background-color: rgba(0, 0, 0, .2);}
+	.dialog_wrap{position: relative; width: 100%; border-radius: 5px; overflow: hidden; -webkit-animation:bounceIn .5s .2s ease both;}
+	.dialog_scroller{position: relative; float: left; width: 100%; overflow: hidden; background-color: #fff; border-radius: 0 0 5px 5px;}
+		.dialog_close{position: absolute; right: 15px; top: 9px; width: 23px; height: 23px; background-position: 0 0;}
+		.dialog_tt{height: 42px; line-height: 42px; color: #fff; text-align: center; font-size: 16px; border-radius: 5px 5px 0 0;}
+.dialog .sales{vertical-align: 0;}
+.highlight{color: #ff5f32; font-size: 16px;}
+
+@-webkit-keyframes bounceIn{
+	0%{opacity:0;-webkit-transform:scale(.3)}
+	50%{opacity:1;-webkit-transform:scale(1.05)}
+	70%{-webkit-transform:scale(.9)}
+	100%{-webkit-transform:scale(1)}
+}
+
+.dialog .addres_box{display: none;}
+.dialog .addres_box li{margin-bottom: 8px; padding:}
+.dialog #codeWrap{display: none;}
+.dialog .addres_box li span{display: table-cell; vertical-align: top;}
+.dialog .addres_box li span:first-child{width: 100%;}
+.dialog .addres_box li span:last-child{padding-left: 0px; padding-top: 6px; padding-right:5px;}
+.dialog .addres_box .btns_wrap{width: 100%; border-top:1px solid #c6cdd2; display:table; padding:0; margin-bottom:0; line-height:50px; font-size:15px; }
+.dialog .addres_box .btns_wrap .right{ border-left:1px solid #c6cdd2;}
+.dialog .addres_box .btns_wrap .right a{ color:#fc7944}
+.dialog .addres_box li.btns_wrap span{display: inline-block; width: 50%; padding: 0 4px; text-align:center;}
+.dialog .comm_btn{ padding: 0; font-size: 14px; color: #fc7944;  white-space: nowrap; border-bottom:1px solid #fc7944; margin-left:20px;}
+
+.dialog #getCode1{ cursor: default; display:none}
+.dialog .addres_box .comm_btn, .fullwidth{width: 100%; text-align: center;}
+.dialog .vali_code{ padding-top:20px;}
+.dialog .vali_code li{line-height: 31px; margin-bottom: 13px; padding: 0 18px}
+.dialog .vali_code .tips{ color: #cad0d5; line-height: 31px; height:31px;}
+.dialog .txt{-webkit-appearance: none; width: 100%; height: 37px; padding: 4px 9px; border-width: 1px; border-radius: 0px; border:1px solid #c6cdd2; outline:none}
+.dialog textarea.txt{height: 92px; line-height: 24px;}
+.dialog .txt.max{height: 140px;}
+#valiCode{ display:none}
+/****************************************/

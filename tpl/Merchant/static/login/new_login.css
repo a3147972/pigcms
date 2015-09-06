@@ -1,0 +1,119 @@
+﻿*{padding:0;margin:0;border:0;}
+body{background: url(./img/reg_repeat_bg.png) repeat-x #bee1f5;font: 14px 微软雅黑,Arial,Helvetica,sans-serif;}
+img{vertical-align:middle;}
+.W_header_line{
+height:3px;
+background-color:#FF658E;
+overflow: hidden;
+}
+#login{
+width: 900px;
+margin: 0 auto 25px;
+background-color: #fff;
+border-radius: 6px;
+box-shadow: 0px 2px 3px #98b4c4;
+-moz-box-shadow: 0px 2px 3px #98b4c4;
+-webkit-box-shadow: 0px 2px 3px #98b4c4;
+}
+#switch_btn{
+padding: 24px 0 22px 40px;
+}
+#switch_btn .vline {
+margin: 0 19px;
+color: #999;
+}
+#login p{margin-bottom:20px;}
+#login label{float:left;width:80px;line-height:33px;}
+.text-input{width:200px;border: 1px solid #ccc;color:#333;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:6px;padding:6px;outline:0;box-shadow: 0px 1px 1px 0px #eaeaea inset;height:19px;}
+#login span.check{font-size:12px;margin-left:20px;}
+#verifyImg{cursor:pointer;margin-left:5px;}
+#fleshVerify{border-bottom:1px dashed gray;padding-bottom:1px;color:#174B73;text-decoration:none;margin-left:5px;}
+#login p.btn_p{margin-bottom:0px;text-align:right;}
+.button{width:auto;background:white;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;background:#459300 url(img/button.gif) top left repeat-x !important;border:1px solid #459300 !important;padding:4px 7px 4px 7px !important;color:white !important;font-size:12px !important;cursor:pointer;}
+.notice{position:absolute;z-index:1000;letter-spacing:2px;top:5px;left:0px;padding:5px 20px 5px 10px;font-weight:bold;border:1px solid gray;color:blue;background:#FFF;background-position:3px 40%;font-family:微软雅黑,Tahoma,Helvetica,sans;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;}
+.verify_box{font-size:12px;}
+.verify_box a{text-decoration:none;}
+.clear{clear:both;}
+#hdw {
+height: 164px;
+background: url(./img/bg_reg_wave.png) no-repeat center bottom;
+width: 900px;
+margin: 0 auto;
+padding: 10px 0;
+}
+#hdw #hd{
+width: 200px;
+height: 72px;
+margin: 0 auto;
+margin-top: 26px;
+background-repeat:no-repeat;
+text-indent: -5555px;
+background-size: 100%;
+}
+#reg_form{display:none;}
+
+#box{
+padding:30px 30px 30px 70px;
+_padding-bottom:0px;
+background: url(img/reg_vline.png) no-repeat scroll 630px 0;
+height:395px;
+}
+.login_p, .reg_p {
+display: inline-block;
+font-size: 22px;
+color: #333;
+line-height: 33px;
+cursor:pointer;
+font-family: "Microsoft Yahei";
+}
+.login_p{
+background-position:0 -51px;
+}
+.login_p.on{
+border-bottom: 3px solid #ffa00a;
+}
+.reg_p{
+background-position:-181px -0px;
+}
+.reg_p.on{
+border-bottom: 3px solid #ffa00a;
+}
+.btn_login {
+border: 1px solid #ffb33b;
+background: #FFA00A;
+height: 41px;
+text-align: center;
+margin-top: 70px;
+moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+margin-top: 30px;
+margin-left: 80px;
+width: 210px;
+}
+.login_btn{
+background: none;
+height: 38px;
+width:100%;
+outline:0;
+border: none;
+cursor: pointer;
+font-size: 18px;
+font-weight: 200;
+font-family: "微软雅黑";
+color: white !important;
+}
+#reg_form .btn_login{
+margin-top:15px;
+}
+.copyright {
+width: 900px;
+margin: 0 auto;
+color: #6e9ab8;
+font-size:12px;
+text-align:center;
+}
+.copyright a{
+color:#6e9ab8;
+text-decoration:none;
+}

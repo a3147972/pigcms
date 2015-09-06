@@ -1,0 +1,61 @@
+@charset "gb2312";
+/* CSS Document */
+ 
+a{ text-decoration:none; outline:0; cursor:pointer;}
+ 
+#nav .current a {color:#1f1f1f; font-size:16px; font-weight:bold; font-family:"Microsoft Yahei";  }
+.gd_box{ width:60px; height:280px;position:absolute; }
+#gd_box{ width:60px; height:560px;}
+#gd_box1{ width:60px; height:280px; position:absolute; top:0; left:0; z-index:1;}
+#nav ul{ border:1px solid #d9d9d9; border-top:0;}
+#nav ul li{ height:65px; line-height:22px; text-align:right; position:relative; width:60px; text-align:center;border-top:1px solid #d9d9d9;}
+#nav ul li a{ width:60px; padding-top:5px; display:block; color:#4d4d4d; font-size:14px; font-family:"Microsoft Yahei"; height: 60px;}
+#nav ul li a img{width:42px;height:42px;}
+#nav ul li a:hover{ color:#1f1f1f; font-size:16px; font-weight:bold; font-family:"Microsoft Yahei";}
+
+#nav ul li .scroll_1 { display:none;}
+#nav ul li a:hover .scroll_1,#nav ul .current .scroll_1 {display: block; position:absolute; top:0; right:0; color:#fff;width:40px;padding:0 10px;height:55px; background:#6bd976; padding-top:10px;}
+
+#nav ul li .scroll_2 { display:none;}
+#nav ul li a:hover .scroll_2,#nav ul .current .scroll_2 {display: block; position:absolute; top:0; right:0; color:#fff;width:40px;padding:0 10px;height:55px; background:#ffa660; padding-top:10px;}
+
+#nav ul li .scroll_3 { display:none;}
+#nav ul li a:hover .scroll_3,#nav ul .current .scroll_3 {display: block; position:absolute; top:0; right:0; color:#fff;width:40px;padding:0 10px;height:55px; background:#ff7361; padding-top:10px;}
+
+#nav ul li .scroll_4 { display:none;}
+#nav ul li a:hover .scroll_4,#nav ul .current .scroll_4{display: block; position:absolute; top:0; right:0; color:#fff;width:40px;padding:0 10px;height:55px; background:#efd157; padding-top:10px;}
+
+#nav ul li .scroll_5 { display:none;}
+#nav ul li a:hover .scroll_5,#nav ul .current .scroll_5{display: block; position:absolute; top:0; right:0; color:#fff;width:40px;padding:0 10px;height:55px; background:#66aee8; padding-top:10px;}
+
+#nav ul li .scroll_6 { display:none;}
+#nav ul li a:hover .scroll_6,#nav ul .current .scroll_6 {display: block; position:absolute; top:0; right:0; color:#fff;width:40px;padding:0 10px;height:55px; background:#73e1b0; padding-top:10px;}
+
+#nav ul li .scroll_7 { display:none;}
+#nav ul li a:hover .scroll_7,#nav ul .current .scroll_7{display: block; position:absolute; top:0; right:0; color:#fff;width:40px;padding:0 10px;height:55px; background:#ea7273; padding-top:10px;}
+
+.gd_box2{ width:4px; height:545px; background:#dddddd; position:absolute; top:12px; right:3px;}
+.pf_gd_box2{ width:4px; height:100px; background:#dddddd; position:absolute; top:12px; right:3px;}
+
+/* 产品功能 */
+.pfuntion{ width:1000px; margin:0 auto; clear:both;}
+.top_bju{ padding-top:40px;}
+.pf_left{ width:390px; float:left;}
+
+.pf_right{ width:560px; float:left; margin-left:10px;}
+.pf_title{ font-size:30px; font-family:"Microsoft Yahei"; color:#313131;}
+.pf_content{ width:560px; margin-top:10px;}
+.ptdj_moudle{ width:560px; clear:both;}
+.ptdj_title{ font-size:18px; font-family:"Microsoft Yahei"; color:#ff7800; padding-top:15px; clear:both;}
+.ptdj_content{ width:560px; padding-top:10px; clear:both;}
+.ptdj_subm{ width:258px;}
+
+.ptdj_fdl{ float:left;}
+.ptdj_fdr{ float:right;}
+.ptdj_subt{ font-family:"Microsoft Yahei"14px; font-size:14px; font-weight:bold; color:#333333;}
+.ptdj_txt{ color:#777777; font-family:"Microsoft Yahei"; font-size:12px;}
+
+
+
+
+ 

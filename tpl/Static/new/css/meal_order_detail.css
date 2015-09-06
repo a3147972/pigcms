@@ -1,0 +1,167 @@
+.bg-for-new-index {
+  background-color: #FFF;
+}
+#bdw {
+  min-height: 500px;
+}
+#bd {
+  width: 1210px;
+  margin: 0 auto;
+  padding: 10px 0 65px;
+}
+
+#content {
+  float: left;
+  width: 1210px;
+  _display: inline;
+  padding: 0;
+}
+.cf {
+  zoom: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+#content .mainbox {
+  background: #FFF;
+  border: 1px solid #e8e8e8;
+  padding: 25px;
+  clear: both;
+  zoom: 1;
+  height: auto!important;
+  min-height: 400px;
+}
+.mine {
+  position: relative;
+  z-index: 1;
+  zoom: 1;
+}
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: 400;
+}
+#content .mainbox h2 {
+  font-size: 28px;
+  border-bottom: 1px solid #DCDCDC;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+#content .mainbox h2 span.op-area {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.info-section {
+  margin: 0 0 10px;
+  padding: 8px 16px;
+  font-size: 12px;
+  border: 1px solid #F6E0AF;
+  background: #FFFBF2;
+  overflow: hidden;
+  zoom: 1;
+}
+.info-section em {
+  font-weight: 700;
+  color: #D00;
+}
+.info-section dt {
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.info-section dd.last {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.bunch-section {
+  margin: 0 0 10px;
+  font-size: 12px;
+  background: #FFF;
+  border: 1px solid #E5E5E5;
+  overflow: hidden;
+  zoom: 1;
+}
+.bunch-section__label {
+  padding: 5px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  background: #F0F0F0;
+}
+.bunch-section__content {
+  padding: 5px 8px 10px;
+}
+.coupon-field {
+  min-height: 20px;
+  _height: 20px;
+  padding: 5px 0 1px 10px;
+  border: 1px solid #F4F4F4;
+  background-color: #F8F8F8;
+}
+.coupon-field__tip {
+  color: #999;
+  padding-bottom: 5px;
+}
+.coupon-field li.invalid {
+  color: #999;
+}
+.coupon-field li {
+  margin-bottom: 5px;
+}
+.coupon-field li span {
+  margin-left: 10px;
+  color: #999;
+}
+.info-table {
+  width: 100%;
+}
+.flow-list {
+  line-height: 1.8;
+}
+
+.bunch-section .flow-list li {
+  display: inline-block;
+  width: 215px;
+  margin-right: 2px;
+  zoom: 1;
+}
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.info-table .left {
+  text-align: left;
+}
+.info-table th {
+  font-weight: 700;
+}
+.info-table td, .info-table th {
+  padding: 3px 5px;
+  text-align: center;
+}
+.info-table .total {
+  color: #c33;
+}
+.sysmsgw {
+  width: 1150px;
+  margin: 10px auto 0;
+}
+		
+.common-tip {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  border: 1px #F5D8A7 solid;
+  border-radius: 2px;
+  background: #FFF6DB;
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+  zoom: 1;
+}

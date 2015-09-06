@@ -1,0 +1,91 @@
+.appraise_title .appraise_icon {
+  float: left;
+  padding-top: 72px;
+  padding-left: 40px;
+}
+.appraise_title .appraise_icon div {
+  width: 80px;
+  height: 16px;
+  background-image: url(../images/black_star_16.png);
+  background-repeat: repeat-x;
+  text-align: left;
+}
+.appraise_title .appraise_icon span {
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+  background-image: url(../images/star_16.png);
+  background-repeat: repeat-x;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.appraise_li-list dd {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0px 0px 20px 0px;
+  height: auto;
+  margin: 20px;
+}
+.pic-list .pic-thumbnails{position:relative;overflow:hidden}
+.pic-thumbnails .pic-thumbnail-list li{float:left;margin-right:13px}
+.pic-thumbnail{display:inline-block;zoom:1;*display:inline;position:relative;width:100px;height:100px;background:url(../images/icon-loading16x16.vecf78228.gif) no-repeat center;overflow:hidden}
+.pic-thumbnail img{height:100px;width:100px;}
+
+.appraise_li-list_img {
+  float: left;
+  padding-top: 00px;
+  width: 90px;
+}
+.appraise_li-list_icon {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+.appraise_li-list_icon img {
+  width: 100%;
+}
+.appraise_li-list_img p {
+  color: #2a2a2a;
+  padding-top: 10px;
+}
+
+.appraise_li-list_right {
+  float: left;
+  width: 970px;
+  margin-left: 20px;
+}
+.appraise_li-list_top_icon {
+  float: left;
+}
+.appraise_li-list_data {
+  float: right;
+  color: #a8a8a8;
+  font-size: 12px;
+  line-height: 12px;
+}
+.appraise_li-list_top_icon div, .priduct_pingjia_icon div {
+  width: 60px;
+  height: 12px;
+  background-image: url(../images/o2o11_66.png);
+  background-repeat: repeat-x;
+  text-align: left;
+}
+.appraise_li-list_top_icon span, .priduct_pingjia_icon span {
+  display: inline-block;
+  height: 12px;
+  line-height: 12px;
+  background-image: url(../images/o2o11_152.png);
+  background-repeat: repeat-x;
+  overflow: hidden;
+  vertical-align: top;
+}
+.appraise_li-list_txt {
+  color: #5f5f5f;
+  margin: 10px 0;
+}
+
+.biz-reply {
+  font-size: 12px;
+  color: #C6895A;
+}

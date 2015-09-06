@@ -1,0 +1,46 @@
+*{padding:0;margin:0;}
+html,body,p,table{font:normal 12PX Tahoma,Verdana,Helvetica,Arial,sans-serif;}
+body{background:#F3F3F3;}
+table{margin-bottom:10px;width:100%;}
+table tr,table th{background: url(img/hr.png) 0 bottom repeat-x;}
+table td{padding:7px 10px 9px 15px;color:#666;vertical-align:top;line-height:24px;}
+table th{padding:7px 10px 9px;background-color:#f8f8f8;border-right:1px solid #e5e3e3;font-weight:100;line-height:24px;vertical-align:top;text-align:left;}
+table tr:hover th{background-color:#eef3f6;}
+a{text-decoration:none;}
+select{height:28px;border:1px solid #ccc;min-width:80px;}
+.input{height:18px;padding:4px 4px;font-size:100%;line-height:18px;border:1px solid #ccc;background-color:#fff;box-shadow:2px 2px 2px #f0f0f0 inset;vertical-align:middle;margin:0;}
+button {
+margin-left: 15px;
+padding: 6px 8px;
+cursor: pointer;
+display: inline-block;
+text-align: center;
+line-height: 1;
+letter-spacing: 2px;
+font-family: Tahoma, Arial/9!important;
+width: auto;
+overflow: visible;
+color: #333;
+border: solid 1px #999;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background: #DDD;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD');
+background: linear-gradient(top, #FFF, #DDD);
+background: -moz-linear-gradient(top, #FFF, #DDD);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#DDD));
+text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+box-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0 -1px 0 rgba(0, 0, 0, .09);
+-moz-transition: -moz-box-shadow linear .2s;
+-webkit-transition: -webkit-box-shadow linear .2s;
+transition: box-shadow linear .2s;
+outline:0;
+}
+button:active{
+border-color: #1c6a9e;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bbee', endColorstr='#2288cc');
+background: linear-gradient(top, #33bbee, #2288cc);
+background: -moz-linear-gradient(top, #33bbee, #2288cc);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#33bbee), to(#2288cc));
+}

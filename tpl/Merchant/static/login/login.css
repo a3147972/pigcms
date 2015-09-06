@@ -1,0 +1,86 @@
+﻿*{padding:0;margin:0;border:0;font-size:14px;font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;}
+body{background:#2DB8AD;}
+img{vertical-align:middle;}
+#login{margin:0px auto;margin-top:180px;background:white;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;width: 362px;
+height: 402px;
+background: url(img/bg01.png) no-repeat;}
+#login p{margin-bottom:20px;}
+#login label{float:left;width:70px;line-height:33px;}
+.text-input{width:200px;border:1px solid #ccc;color:#333;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;padding:6px;outline:0;}
+#verifyImg{cursor:pointer;margin-left:5px;}
+#fleshVerify{border-bottom:1px dashed gray;padding-bottom:1px;color:#174B73;text-decoration:none;margin-left:5px;}
+#login p.btn_p{margin-bottom:0px;text-align:right;}
+.button{width:auto;background:white;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;background:#459300 url(img/button.gif) top left repeat-x !important;border:1px solid #459300 !important;padding:4px 7px 4px 7px !important;color:white !important;font-size:12px !important;cursor:pointer;}
+.notice{position:absolute;z-index:1000;letter-spacing:2px;top:5px;right:0;padding:5px 20px 5px 10px;font-weight:bold;border:1px solid gray;color:blue;background:#FFF;background-position:3px 40%;font-family:微软雅黑,Tahoma,Helvetica,sans;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;}
+
+.clear{clear:both;}
+#hdw {
+height: 67px;
+line-height: 67px;
+border-bottom: 3px solid #1db2a6;
+background: #23beb1;
+text-align:center;
+}
+#hdw #hd{
+font-size:24px;
+color:white;
+}
+#reg_form{display:none;}
+
+#box{padding:30px;_padding-bottom:0px;}
+.login_p, .reg_p {
+cursor: pointer;
+display: block;
+width: 50%;
+float: left;
+height: 43px;
+line-height: 40px;
+overflow: hidden;
+text-align: center;
+padding-bottom: 8px;
+font-size: 16px;
+background: url(img/login_btn.png) no-repeat;
+}
+.login_p{
+background-position:0 -51px;
+}
+.login_p.on{
+background-position:0 0;
+color: #fff;
+}
+.reg_p{
+background-position:-181px -0px;
+}
+.reg_p.on{
+background-position:-181px -51px;
+color: #fff;
+}
+.btn_login {
+background: #459300 url(img/button.gif) top left repeat-x !important;
+border: 1px solid #459300 !important;
+height: 41px;
+text-align: center;
+margin-top: 70px;
+moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+
+}
+.login_btn{
+background: none;
+height: 38px;
+width:100%;
+outline:0;
+border: none;
+cursor: pointer;
+font-size: 18px;
+font-weight: 200;
+font-family: "微软雅黑";
+color: white !important;
+}
+#reg_form p{
+margin-bottom: 10px;
+}
+#reg_form .btn_login{
+margin-top:15px;
+}

@@ -1,0 +1,64 @@
+#Position{margin-top:10px;margin-bottom:6px;font-size:12px;}
+#Position a{font:20px "Microsoft Yahei";color:#333;margin:0 5px;}
+.left {
+  float: left;
+  width: 208px;
+  color: #333;
+  margin-right: 10px;
+  background: url(../images/left-bg.png) left bottom no-repeat;
+  padding-bottom: 160px;
+  border: 1px solid #ffdfdf;
+  border-top: 1px solid #efa7a7;
+}
+.left h2 {
+  height: 48px;
+  overflow: hidden;
+  background: url(../images/contacttit.png) no-repeat;
+  font: 14px/48px "Microsoft Yahei";
+  padding-left: 15px;
+}
+.conact_side {
+  padding-top: 10px;
+}
+.conact_side li {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 7px;
+  width: 181px;
+  height: 32px;
+  border-bottom: 1px dotted #ffdfdf;
+  line-height: 32px;
+}
+.main a:link, .main a:visited {
+  color: #005ea7;
+}
+.main .right {
+  width: auto;
+  color: #000;
+  line-height: 22px;
+  overflow: hidden;
+  float: none;
+  _float: right;
+}
+.main .content {
+  padding: 30px 68px;
+  min-height: 358px;
+  _height: 358px;
+  border: 1px solid #dddddd;
+  color: #333;
+  width:852px;
+}
+.main .content .tit {
+  margin-bottom: 30px;
+  font-size: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-family: "Microsoft Yahei";
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebebeb;
+  font-weight: normal;
+}
+.main .content p{
+  margin: 10px 0;
+}
