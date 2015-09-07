@@ -71,11 +71,10 @@ class LoginAction extends Action
      */
     public function reg_check()
     {
-        // if ($this->isAjax()) {
-        if (true) {
-            // if (md5($_POST['verify']) != $_SESSION['merchant_reg_verify']) {
-            //     exit(json_encode(array('error' => '1', 'msg' => '验证码不正确！', 'dom_id' => 'verify')));
-            // }
+        if ($this->isAjax()) {
+            if (md5($_POST['verify']) != $_SESSION['merchant_reg_verify']) {
+                exit(json_encode(array('error' => '1', 'msg' => '验证码不正确！', 'dom_id' => 'verify')));
+            }
 
             //帐号
             $database_merchant = D('Merchant');
