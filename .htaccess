@@ -1,0 +1,90 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^group.php$ index.php?g=Group
+RewriteRule ^meal.php$ index.php?g=Meal
+
+RewriteRule ^topic/(\w+).html$ index.php?g=Index&c=Topic&a=$1
+
+#关于我们
+RewriteRule ^intro/(\d+).html$ index.php?g=Index&c=Intro&a=index&id=$1
+
+
+#团购
+RewriteRule ^group/(\d+).html$ index.php?g=Group&c=Detail&a=index&group_id=$1
+RewriteRule ^group/buy/(\d+).html$ index.php?g=Group&c=Detail&a=buy&group_id=$1
+RewriteRule ^category/(\w+)/(\w+)/(.*)$ index.php?g=Group&c=Index&a=index&cat_url=$1&area_url=$2&order=$3
+RewriteRule ^category/(\w+)/(\w+)$ index.php?g=Group&c=Index&a=index&cat_url=$1&area_url=$2
+RewriteRule ^category/(\w+)$ index.php?g=Group&c=Index&a=index&cat_url=$1
+
+RewriteRule ^group/around/$ index.php?g=Group&c=Around&a=around
+RewriteRule ^group/around/(.*)$ index.php?g=Group&c=Around&a=around&order=$1
+
+#搜索
+RewriteRule ^search/group/(.*)/(.*)$ index.php?g=Group&c=Search&a=index&w=$1&order=$2
+
+#订餐
+RewriteRule ^meal/(\d+).html$ index.php?g=Meal&c=Detail&a=index&store_id=$1
+RewriteRule ^meal/(\d+)/(\d+).html$ index.php?g=Meal&c=Detail&a=index&sort_type=$1&store_id=$2
+RewriteRule ^meal/order/(\d+).html$ index.php?g=Meal&c=Order&a=index&store_id=$1
+RewriteRule ^meal/reply/(\d+).html$ index.php?g=Meal&c=Reply&a=index&store_id=$1
+RewriteRule ^meal/info/(\d+).html$ index.php?g=Meal&c=Info&a=index&store_id=$1
+
+RewriteRule ^meal/(\w+)/(\w+)/(.*)$ index.php?g=Meal&c=Index&a=index&cat_url=$1&area_url=$2&order=$3
+RewriteRule ^meal/(\w+)/(\w+)$ index.php?g=Meal&c=Index&a=index&cat_url=$1&area_url=$2
+RewriteRule ^meal/(\w+)$ index.php?g=Meal&c=Index&a=index&cat_url=$1
+
+#活动
+RewriteRule ^lottery/(\w+)/(\w+)/(.*)$ index.php?g=Lottery&c=Index&a=index&cat_url=$1&area_url=$2&order=$3
+RewriteRule ^lottery/(\w+)/(\w+)$ index.php?g=Lottery&c=Index&a=index&cat_url=$1&area_url=$2
+RewriteRule ^lottery/(\w+)$ index.php?g=Lottery&c=Index&a=index&cat_url=$1
+
+#分类信息
+RewriteRule ^classify/?$ index.php?g=Release&c=Classify&a=index [NC]
+
+RewriteRule ^classify/list-(\d+)-(\d+).html(.*) index.php?g=Release&c=Classify&a=Lists&cid=$1&sub3dir=$2$4 [NC,QSA]
+RewriteRule ^classify/list-(\d+).html(.*) index.php?g=Release&c=Classify&a=Lists&cid=$1$3 [NC,QSA]
+
+RewriteRule ^classify/(\d+).html$ index.php?g=Release&c=Classify&a=ShowDetail&vid=$1 [NC]
+RewriteRule ^classify/selectsub.html$ index.php?g=Release&c=Classify&a=SelectSub [NC]
+RewriteRule ^classify/select2sub-(\d+).html$ index.php?g=Release&c=Classify&a=Select2Sub&cid=$1 [NC]
+RewriteRule ^classify/fabu-(\d+)-(\d+).html$ index.php?g=Release&c=Classify&a=fabu&cid=$1&fcid=$2 [NC]
+
+RewriteRule ^classify/subdirectory-(\d+).html$ index.php?g=Release&c=Classify&a=Subdirectory&cid=$1 [NC]
+RewriteRule ^classify/searchlist-(\d+)-(\d+).html(.*) index.php?g=Release&c=Classify&a=searchList&cid=$1&subdir=$2$4 [NC,QSA]
+RewriteRule ^classify/searchlist.html(.*) index.php?g=Release&c=Classify&a=searchList$2 [NC,QSA]
+
+RewriteRule ^classify/userindex.html$ index.php?g=User&c=Index&a=index [NC]
+RewriteRule ^classify/userlogout.html$ index.php?g=Index&c=Login&a=logout [NC]
+RewriteRule ^classify/mycenter.html$ index.php?g=Release&c=Classify&a=myCenter [NC]
+
+RewriteRule ^classify/myfabu-(\d+).html(.*) index.php?g=Release&c=Classify&a=myfabu&uid=$1$3 [NC,QSA]
+RewriteRule ^classify/myfabu.html(.*) index.php?g=Release&c=Classify&a=myfabu$2 [NC,QSA]
+
+RewriteRule ^classify/mycollect-(\d+).html$ index.php?g=Release&c=Classify&a=myCollect&uid=$1 [NC]
+RewriteRule ^classify/mycollect.html$ index.php?g=Release&c=Classify&a=myCollect [NC]
+
+
+RewriteRule ^merindex/(\d+).html$ index.php?g=Index&c=Merchant&a=index&merid=$1 [NC]
+RewriteRule ^merintroduce/(\d+).html$ index.php?g=Index&c=Merchant&a=merintroduce&merid=$1 [NC]
+RewriteRule ^mernews/(\d+).html(.*)$ index.php?g=Index&c=Merchant&a=mernews&merid=$1$2 [NC,QSA]
+RewriteRule ^newsdetail/(\d+).html(.*)$ index.php?g=Index&c=Merchant&a=newsdetail&merid=$1$2 [NC,QSA]
+RewriteRule ^mergallery/(\d+).html$ index.php?g=Index&c=Merchant&a=mergallery&merid=$1 [NC]
+RewriteRule ^merclient/(\d+).html$ index.php?g=Index&c=Merchant&a=merclient&merid=$1 [NC]
+RewriteRule ^merjoin/(\d+).html$ index.php?g=Index&c=Merchant&a=merjoin&merid=$1 [NC]
+RewriteRule ^mermap/(\d+).html(.*)$ index.php?g=Index&c=Merchant&a=mermap&merid=$1$2 [NC,QSA]
+
+RewriteRule ^merreviews/(\d+).html(.*)$ index.php?g=Index&c=Merchant&a=merreviews&merid=$1$2 [NC,QSA]
+RewriteRule ^meractivity/(\d+).html$ index.php?g=Index&c=Merchant&a=meractivity&merid=$1 [NC]
+RewriteRule ^mergoods/(\d+).html(.*)$ index.php?g=Index&c=Merchant&a=mergoods&merid=$1$2 [NC,QSA]
+RewriteRule ^mergoods/(\d+)/(\d+).html(.*)$ index.php?g=Index&c=Merchant&a=mergoods&merid=$1&sid=$2$3 [NC,QSA]
+
+
+#平台活动
+RewriteRule ^activity/(\w+)/(\w+)/(.*)$ index.php?c=Activity&a=index&type=$1&area=$2&page=$3
+RewriteRule ^activity/(\w+)/(\w+)$ index.php?c=Activity&a=index&type=$1&area=$2
+RewriteRule ^activity/(\d+).html$ index.php?c=Activity&a=detail&id=$1
+RewriteRule ^activity/$ index.php?c=Activity&a=index
+
+Options -Indexes

@@ -274,7 +274,6 @@ class UserModel extends BaseModel
         switch ($level) {
             case 1:    //只有一层,则只给d返
                 $d_money = number_format($reg_invitecode_price * $a_rebate_ratio, 2);
-                dump($a_rebate_ratio);
                 $d_info['now_money'] = number_format($d_info['now_money'] + $d_money, 2);
                 $data[0] = $d_info;
                 break;
