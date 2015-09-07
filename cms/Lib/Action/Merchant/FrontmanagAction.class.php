@@ -5,32 +5,37 @@
  *
  * @  Writers    LiHongShun
  * @  BuildTime  2015/06/06
- * 
+ *
  */
 
-class FrontmanagAction extends BaseAction {
+class FrontmanagAction extends BaseAction
+{
 
     public $mer_id = 0;
 
-    public function _initialize() {
+    public function _initialize()
+    {
         parent::_initialize();
         $this->mer_id = $this->merchant_session['mer_id'];
     }
 
     /* 商家介绍设置 */
 
-    public function index() {
+    public function index()
+    {
         $this->introduce();
     }
 
-    public function introduce() {
+    public function introduce()
+    {
         $merchant_inDb = D('Merchant_introduce');
         $introduce = $merchant_inDb->field('id,mer_id,title,sort,isfabu,addtime')->where(array('mer_id' => $this->mer_id, 'comefrom' => '0'))->order('sort DESC,id ASC')->select();
         $this->assign('introduce', $introduce);
         $this->display('introduce');
     }
 
-    public function fbintroduce() {
+    public function fbintroduce()
+    {
         $merchant_inDb = D('Merchant_introduce');
         if (IS_POST) {
             $id = intval($_POST['idx']);
@@ -59,8 +64,10 @@ class FrontmanagAction extends BaseAction {
             $where = array('id' => $id, 'mer_id' => $this->mer_id, 'comefrom' => '0');
             $fbintroduce = $merchant_inDb->where($where)->find();
             //echo $merchant_inDb->getLastSql();
-            if (empty($fbintroduce))
+            if (empty($fbintroduce)) {
                 $fbintroduce = array('id' => 0, 'mer_id' => $this->mer_id, 'title' => '', 'content' => '', 'sort' => 0, 'isfabu' => 1);
+            }
+
             $this->assign('notitle', 0);
             $this->assign('fbintroduce', $fbintroduce);
             $this->display('fbintroduce');
@@ -69,7 +76,8 @@ class FrontmanagAction extends BaseAction {
 
     /*     * ****导航内容发布****** */
 
-    public function fbcontent() {
+    public function fbcontent()
+    {
         $navid = intval($_GET['navid']);
         $Db_navset = D('Merchant_navset');
         $merchant_inDb = D('Merchant_introduce');
@@ -93,7 +101,8 @@ class FrontmanagAction extends BaseAction {
         $this->display('fbintroduce');
     }
 
-    public function fbStatus() {
+    public function fbStatus()
+    {
         $id = intval($_POST['idx']);
         if ($id > 0) {
             $insert_id = D('Merchant_introduce')->where(array('id' => $id, 'mer_id' => $this->mer_id))->save(array('isfabu' => 1));
@@ -104,7 +113,8 @@ class FrontmanagAction extends BaseAction {
         $this->dexit(array('error' => 1));
     }
 
-    public function delintroduce() {
+    public function delintroduce()
+    {
         $id = intval($_POST['idx']);
         if ($id > 0) {
             $insert_id = D('Merchant_introduce')->where(array('id' => $id, 'mer_id' => $this->mer_id))->delete();
@@ -115,7 +125,8 @@ class FrontmanagAction extends BaseAction {
         $this->dexit(array('error' => 1));
     }
 
-    public function renews() {
+    public function renews()
+    {
         $merchant_inDb = D('Merchant_introduce');
         $jointable = C('DB_PREFIX') . 'merchant_classify';
         $merchant_inDb->join('as mi LEFT JOIN ' . $jointable . ' as mc on mi.cyid=mc.id');
@@ -124,7 +135,8 @@ class FrontmanagAction extends BaseAction {
         $this->display();
     }
 
-    public function fbrenews() {
+    public function fbrenews()
+    {
         $merchant_cyDb = D('Merchant_classify');
         $merchant_inDb = D('Merchant_introduce');
         if (IS_POST) {
@@ -153,8 +165,10 @@ class FrontmanagAction extends BaseAction {
             $id = intval($_GET['id']);
             $fbintroduce = $merchant_inDb->where(array('id' => $id, 'mer_id' => $this->mer_id, 'comefrom' => '1'))->find();
             //echo $merchant_inDb->getLastSql();
-            if (empty($fbintroduce))
+            if (empty($fbintroduce)) {
                 $fbintroduce = array('id' => 0, 'mer_id' => $this->mer_id, 'title' => '', 'content' => '', 'sort' => 0, 'isfabu' => 1, 'cyid' => 0);
+            }
+
             $classifyarr = $merchant_cyDb->where(array('mer_id' => $this->mer_id, 'typ' => '0'))->order('sort DESC,id ASC')->select();
             $this->assign('classifyarr', $classifyarr);
             $this->assign('fbintroduce', $fbintroduce);
@@ -164,7 +178,8 @@ class FrontmanagAction extends BaseAction {
 
     /*     * *****分类管理******** */
 
-    public function mclassify() {
+    public function mclassify()
+    {
         /*         * *typ 0商家动态1相册***** */
         $merchant_cyDb = D('Merchant_classify');
         $classifyarr = $merchant_cyDb->where(array('mer_id' => $this->mer_id))->order('sort DESC,id ASC')->select();
@@ -172,7 +187,8 @@ class FrontmanagAction extends BaseAction {
         $this->display();
     }
 
-    public function classify() {
+    public function classify()
+    {
         $merchant_cyDb = D('Merchant_classify');
         if (IS_POST) {
             $id = intval($_POST['idx']);
@@ -200,14 +216,17 @@ class FrontmanagAction extends BaseAction {
             $typ = intval($_GET['typ']);
             $classify = $merchant_cyDb->where(array('id' => $id, 'mer_id' => $this->mer_id))->find();
             //echo $merchant_cyDb->getLastSql();
-            if (empty($classify))
+            if (empty($classify)) {
                 $classify = array('id' => 0, 'mer_id' => $this->mer_id, 'cyname' => '', 'sort' => 0, 'typ' => $typ);
+            }
+
             $this->assign('classify', $classify);
             $this->display();
         }
     }
 
-    public function gallery() {
+    public function gallery()
+    {
         /*         * *typ 0商家动态1相册***** */
         $merchant_cyDb = D('Merchant_classify');
         $classifyarr = $merchant_cyDb->where(array('mer_id' => $this->mer_id, 'typ' => 1))->order('sort DESC,id ASC')->select();
@@ -222,7 +241,8 @@ class FrontmanagAction extends BaseAction {
         $this->display();
     }
 
-    public function navmanag() {
+    public function navmanag()
+    {
         $merchant_inDb = D('Merchant_navcom');
         $navmanag = $merchant_inDb->where('22=22')->order('navid ASC')->select();
         $tmp = array();
@@ -234,7 +254,7 @@ class FrontmanagAction extends BaseAction {
         if (!empty($navset)) {
             foreach ($navset as $vv) {
                 $tmp[$vv['navid']]['isshow'] = $vv['isshow'];
-				!empty($vv['zhname']) && $tmp[$vv['navid']]['zhname'] = $vv['zhname'];
+                !empty($vv['zhname']) && $tmp[$vv['navid']]['zhname'] = $vv['zhname'];
             }
         }
         unset($navmanag, $navset);
@@ -242,7 +262,8 @@ class FrontmanagAction extends BaseAction {
         $this->display();
     }
 
-    public function upnavS() {
+    public function upnavS()
+    {
         $navid = intval($_POST['idx']);
         $s = intval($_POST['num']);
         $msg = '';
@@ -270,20 +291,25 @@ class FrontmanagAction extends BaseAction {
         $this->dexit(array('error' => 0, 'msg' => $msg));
     }
 
-    public function upnavN() {
-	    $navid = intval($_POST['idx']);
+    public function upnavN()
+    {
+        $navid = intval($_POST['idx']);
         $navm = trim($_POST['navm']);
-		if(empty($navm)) $this->dexit(array('error' => 1, 'msg' =>'导航名不能为空！'));
+        if (empty($navm)) {
+            $this->dexit(array('error' => 1, 'msg' => '导航名不能为空！'));
+        }
+
         $Db_navset = D('Merchant_navset');
         $navset = $Db_navset->where(array('navid' => $navid, 'mer_id' => $this->mer_id))->find();
-		if(!empty($navset)){
-			$Db_navset->where(array('navid' => $navid, 'mer_id' => $this->mer_id))->save(array('zhname' => $navm));
-		}else{
-		   $Db_navset->add(array('navid' => $navid, 'mer_id' => $this->mer_id, 'isshow' => 1,'zhname' => $navm));
-		}
-		$this->dexit(array('error' => 0, 'msg' => '修改成功'));
-	}
-    public function save_pic() {
+        if (!empty($navset)) {
+            $Db_navset->where(array('navid' => $navid, 'mer_id' => $this->mer_id))->save(array('zhname' => $navm));
+        } else {
+            $Db_navset->add(array('navid' => $navid, 'mer_id' => $this->mer_id, 'isshow' => 1, 'zhname' => $navm));
+        }
+        $this->dexit(array('error' => 0, 'msg' => '修改成功'));
+    }
+    public function save_pic()
+    {
         $cyid = intval($_POST['cyid']);
         $imgurl = trim($_POST['imgurl']);
         $insert_id = 0;
@@ -295,11 +321,14 @@ class FrontmanagAction extends BaseAction {
         $this->dexit(array('error' => 0, 'insertid' => $insert_id));
     }
 
-    public function allpic() {
+    public function allpic()
+    {
         $cyid = intval($_GET['cyid']);
         $where = array('mer_id' => $this->mer_id);
-        if ($cyid > 0)
+        if ($cyid > 0) {
             $where['cyid'] = $cyid;
+        }
+
         $merchant_imgDb = D('Merchant_imgs');
         $img_count = $merchant_imgDb->where($where)->count();
         import('@.ORG.merchant_page');
@@ -323,7 +352,8 @@ class FrontmanagAction extends BaseAction {
 
     /*     * ****删除分类****** */
 
-    public function delclassify() {
+    public function delclassify()
+    {
         $id = intval($_POST['idx']);
         $classify_Db = D('Merchant_classify');
         $tmpCY = $classify_Db->where(array('id' => $id, 'mer_id' => $this->mer_id))->find();
@@ -343,7 +373,8 @@ class FrontmanagAction extends BaseAction {
         $this->dexit(array('error' => 1));
     }
 
-    public function delImg() {
+    public function delImg()
+    {
         $id = intval($_POST['idx']);
         $imgs_Db = D('Merchant_imgs');
         $tmpImg = $imgs_Db->where(array('id' => $id, 'mer_id' => $this->mer_id))->find();
@@ -356,7 +387,8 @@ class FrontmanagAction extends BaseAction {
 
     /*     * json 格式封装函数* */
 
-    private function dexit($data = '') {
+    private function dexit($data = '')
+    {
         if (is_array($data)) {
             echo json_encode($data);
         } else {
@@ -365,6 +397,39 @@ class FrontmanagAction extends BaseAction {
         exit();
     }
 
-}
+    /**
+     * 申请提现
+     * @method withdraw
+     */
+    public function withdraw()
+    {
+        if (IS_POST) {
+            $balance = I('post.balance');
+            $info = D('Merchant')->getInfo(session('merchant.account'));
+            $now_balance = $info['balance'];
 
-?>
+            if ($balance <=0 ) {
+                $this->error('提现金额必须大于0');
+            }
+
+            if ($balance > $now_balance) {
+                $this->error('提现金额不得大于自己的余额');
+            }
+
+            if ($balance%100 != 0) {
+                $this->error('请输入100的倍数');
+            }
+
+            $result = D('Withdraw')->addWithdraw(session('merchant.mer_id'), 2, $balance);
+
+            if ($result) {
+                $this->success('提交申请成功');
+            } else {
+                $this->error('提交申请失败,请联系管理员');
+            }
+        } else {
+            $this->assign('balance', session('merchant.balance'));
+            $this->display();
+        }
+    }
+}

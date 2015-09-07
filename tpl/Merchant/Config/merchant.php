@@ -224,7 +224,7 @@ KindEditor.ready(function(K){
 			});
 		});
 	});
-	
+
 	$('#edit_form').submit(function(){
 		$.post("{pigcms{:U('Config/merchant')}",$('#edit_form').serialize(),function(result){
 			if(result.status == 1){
@@ -236,7 +236,7 @@ KindEditor.ready(function(K){
 		})
 		return false;
 	});
-	
+
 	$('#indexsort_edit_btn').click(function(){
 		$(this).prop('disabled',true).html('提交中...');
 		$.post("{pigcms{:U('Config/merchant_indexsort')}",{group_indexsort:$('#group_indexsort').val(),indexsort_groupid:$('#indexsort_groupid').val()},function(result){
