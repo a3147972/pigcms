@@ -22,7 +22,7 @@
    DD_belatedPNG.fix('.enter,.enter a,.enter a:hover');
 </script>
 <script type="text/javascript">DD_belatedPNG.fix('*');</script>
-<style type="text/css"> 
+<style type="text/css">
 body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 .category_list li:hover .bmbox {filter:alpha(opacity=50);}
 .gd_box{display: none;}
@@ -33,7 +33,7 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 </head>
 <body id="orders" class="has-order-nav" style="position:static;">
 <include file="Public:header_top"/>
- <div class="body pg-buy-process"> 
+ <div class="body pg-buy-process">
 	<div id="doc" class="bg-for-new-index">
 		<article>
 			<div class="menu cf">
@@ -99,7 +99,7 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 									<div class="order-title">订单编号：<a href="{pigcms{:U('Index/group_order_view',array('order_id'=>$vo['order_id']))}" target="_blank">{pigcms{$vo.order_id}</a><if condition="empty($vo['paid'])"><a class="del order-cancel" href="{pigcms{:U('Index/group_order_del',array('order_id'=>$vo['order_id']))}"></a></if></div>
 									<div class="order-row">
 										<div class="order-cell order-op order-cell--right">
-										   <if condition="$vo['status'] eq 3">	
+										   <if condition="$vo['status'] eq 3">
 											<elseif condition="empty($vo['paid'])" />
 												<a class="btn-hot btn-mini" href="{pigcms{:U('Index/Pay/check',array('type'=>'group','order_id'=>$vo['order_id']))}">付款</a>
 											<elseif condition="$vo['status'] == 1"/>
@@ -134,14 +134,14 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 				</div>
 			</div> <!-- bd end -->
 		</div>
-	</div>	
+	</div>
 	<include file="Public:footer"/>
 	<script>
 		$(function(){
 			$('.J-orders-filter').change(function(){
 				window.location.href = "{pigcms{:U('Index/index')}"+'&status='+$(this).val();
 			});
-			
+
 			$('.order-cancel').click(function(){
 				if(!confirm('确定删除订单？删除后本订单将从订单列表消失，且不能恢复。')){
 					return false;

@@ -80,7 +80,7 @@ a.btn {
    DD_belatedPNG.fix('.enter,.enter a,.enter a:hover');
 </script>
 <script type="text/javascript">DD_belatedPNG.fix('*');</script>
-<style type="text/css"> 
+<style type="text/css">
 body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 .category_list li:hover .bmbox {filter:alpha(opacity=50);}
 .gd_box{display: none;}
@@ -91,7 +91,7 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 </head>
 <body id="credit" class="has-order-nav" style="position:static;">
 <include file="Public:header_top"/>
- <div class="body pg-buy-process"> 
+ <div class="body pg-buy-process">
 	<div id="doc" class="bg-for-new-index">
 		<article>
 			<div class="menu cf">
@@ -130,7 +130,7 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 				</div>
 			</div>
 		</article>
-		
+
 		<div id="bdw" class="bdw">
 			<div id="bd" class="cf">
 				<link rel="stylesheet" type="text/css" href="{pigcms{$static_path}css/order-nav.v0efd44e8.css" />
@@ -139,7 +139,8 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 				<include file="Public:sidebar"/>
 				<div id="content" class="coupons-box">
 					<div class="mainbox mine">
-						<div class="balance">您当前的余额： <strong>¥{pigcms{$now_user.now_money}</strong> <a class="btn" id="recharge_amount">充值</a></div>
+						<div class="balance">您当前的余额： <strong>¥{pigcms{$now_user.now_money}</strong> <a class="btn" id="recharge_amount">充值</a><a class="btn" id="withdraw_amount">提现</a></div>
+
 						<ul class="filter cf">
 							<li class="current"><a href="{pigcms{:U('Credit/index')}">余额记录</a></li>
 						</ul>
@@ -242,6 +243,47 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
 						}else{
 							$('#money_tips').empty();
 							window.location.href = '{pigcms{:U('Credit/recharge')}&money='+money;
+						}
+					},
+					cancel:true
+				});
+			});
+
+$('#withdraw_amount').click(function(){
+				art.dialog({
+					id: 'pay_handle',
+					title:'账户提现',
+					padding: 0,
+					width: 380,
+					height: 200,
+					lock: true,
+					resize: false,
+					background:'black',
+					init:function(){
+						$('#recharge_money').focus();
+					},
+					fixed: false,
+					left: '50%',
+					top: '38.2%',
+					opacity:'0.4',
+					content:'<div class="pay_form"><div class="pay_tip">提现最小金额为100,只能提现整百数</div><div class="form-field"><label for="recharge_money">提现金额：</label><input type="text" name="withdraw_amount" autocomplete="off" id="withdraw_amount"/><span class="inline-link">元</span></div><div id="money_tips" style="color:red;"></div></div>',
+					ok:function(){
+						var money = parseFloat($('#withdraw_amount').val());
+						if(isNaN(money)){
+							$('#money_tips').html('请输入合法的金额！');
+							$('#recharge_money').focus();
+							return false;
+						}else if(money > 10000){
+							$('#money_tips').html('单次提现金额最高不能超过1万元');
+							$('#recharge_money').focus();
+							return false;
+						}else if(money < 100){
+							$('#money_tips').html('单次提现金额最低不能低于 100 元');
+							$('#recharge_money').focus();
+							return false;
+						}else{
+							$('#money_tips').empty();
+							window.location.href = '{pigcms{:U('Withdraw/recharge')}&money='+money;
 						}
 					},
 					cancel:true

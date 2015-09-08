@@ -8,7 +8,7 @@
 				<div class="info__name" style="height:36px;line-height:36px;">{pigcms{$now_user.nickname}</div>
 			</div>
 			<div>等级：<a href="{pigcms{:U('Level/index')}">
-				<php>if(isset($levelarr[$now_user['level']])){ 
+				<php>if(isset($levelarr[$now_user['level']])){
 				$imgstr='';
 				if(!empty($levelarr[$now_user['level']]['icon'])) $imgstr='<img src="'.$config['site_url'].$levelarr[$now_user['level']]['icon'].'" width="15" height="15">';
 				echo $imgstr.' '.$levelarr[$now_user['level']]['lname'];
