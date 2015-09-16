@@ -1,0 +1,36 @@
+body{color:#666;font:400 14px/1.5 Tahoma,Helvetica,arial,sans-serif;}
+table {width:100%; margin-top:0px; border:none; font-size:14px; color:#222; }
+table .name { width:auto; text-align:left; border-left:none; }
+table .price { width:15%; text-align:center; }
+table .amount { width:15%; text-align:center; }
+table .subtotal { width:15%; text-align:right; border-right:none; font-family: arial, sans-serif; }
+table caption,table th,table td { padding:8px 10px; background:#FFF; border:1px solid #E8E8E8; border-top:none; word-break:break-all; word-wrap:break-word; }
+table caption { background:#F0F0F0; }
+table caption .title,table .subline .title { font-weight:bold; }
+table th { color:#333; background:#F0F0F0; font-weight:bold; border-left-style:none; border-right-style:none;}
+table td { color:#666;border-bottom-style:dotted;font-size:14px;}
+table .subline { background:#fff; text-align:center; border-left:none; border-right:none; }
+table .subline-left { width:22%; text-align:left;border-right: 1px #e8e8e8 dotted; }
+
+.deal-menu-summary {
+padding: 0 10px 10px;
+text-align: right;
+border-bottom: 1px #e8e8e8 solid;
+}
+.deal-menu-summary .worth {
+display: inline-block;
+min-width: 10px;
+_width: 10px;
+padding-right: 20px;
+text-align: left;
+word-break: normal;
+word-wrap: normal;
+font-weight: bold;
+}
+.deal-menu-summary .price {
+color: #ea4f01;
+padding-right: 0;
+}
+img{
+max-width: 702px;
+}

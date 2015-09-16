@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'cat_id', 1 => 'cat_name', 2 => 'cat_key', '_autoinc' => true, '_pk' => 'cat_id', '_type' => array ( 'cat_id' => 'int(11)', 'cat_name' => 'char(20)', 'cat_key' => 'char(20)', ), );?>

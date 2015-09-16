@@ -1,0 +1,157 @@
+@charset "utf-8";
+.can_cat .hd .s,.header_cart .buy_cart,.header_cart .h_cart_inner .arrow,.header_cart .del,.header_cart .num .reduce,.header_cart .num .increase,.module_s .hd .s { background: url(../images/dianpu_46.png) no-repeat 0 0;}
+.w-1200{ width:1210px;}
+.can_cat {}
+.can_cat .hd {  color: #383838;
+  font-size: 18px;
+  border-bottom: 1px solid #d9d9d9;
+  width: 1150px;
+  height: 50px;
+  position: relative;
+  margin-top: 20px;}
+.can_cat_txt{ border-bottom:1px solid #fe5842; width:112px; float:left; height:50px; position:absolute;} 
+.can_cat .hd .s { display:block; top:40px; left:50px; width:14px; height:8px; background-position:-235px -23px; overflow:hidden;}
+.can_cat .bd {   font-size:16px; width:100%; height:60px; line-height:60px;}
+.can_cat .bd li { float:left;   /* margin: 5px 10px; */
+  /* width: 100px; */
+  margin-left: 40px;
+  color: #4c4c4c;
+  font-size: 14px;}
+.can_cat .bd li span { font-size:12px; color:#999;}
+.can_cat .bd .cur a { color:#f60; cursor:default;}
+.can_cat .bd .cur a:hover { color:#f60; text-decoration:none;}
+.clearfix a:link {
+	color: #4c4c4c;
+	text-decoration: none;
+}
+.clearfix a:visited {
+	text-decoration: none;
+	color: #4c4c4c;
+}
+.clearfix a:hover {
+	text-decoration: none;
+	color: #FE5842;
+}
+.clearfix a:active {
+	text-decoration: none;
+	color: #4c4c4c;
+}
+.header_cart { padding:4px 0; z-index:999; width:100%; background-color:#fff; top:0;}
+.header_cart .logo { width:195px;}
+.header_cart .logo img { height:40px;}
+.header_cart .subLogo { margin-top:4px;}
+.header_cart .login_info { margin-top:3px;}
+.header_cart .sys_btn { padding:4px 20px;}
+.header_cart .buy_cart { float:left; display:inline; margin:5px 0 0 15px; background-position:-142px -61px; font-size:14px; padding-left:31px;}
+.header_cart .buy_cart .num { color:#d00; font-weight:bold;}
+.header_cart .h_cart_inner { width:290px; position:absolute; right:0; top:45px; border:1px solid #e4e4e4; border-top:2px solid #4c4c4c; box-shadow:0 1px 2px 0 rgba(0,0,0,0.3); background-color:#fff;}
+.header_cart .h_cart_inner .arrow { display:block; position:absolute; top:-8px; right:40px; width:11px; height:6px; overflow:hidden; background-position:-235px -32px;}
+.header_cart .h_cart_inner .coupon { padding:8px 8px 0 0; text-align:right; font-size:14px; color:#999;}
+.header_cart .h_cart_inner .other { padding:8px 8px 8px 0; text-align:right; font-size:14px; color:#999; line-height:30px;}
+.header_cart .h_cart_inner .other .chrmoneyAll,.header_cart .h_cart_inner .other .chrmoneyyouhui,.header_cart .h_cart_inner .other .chrmoneyYunfei,.header_cart .h_cart_inner .other .daijinnum { display:block;}
+.header_cart .h_cart_inner .other .em2 { display:none;}
+.header_cart .h_cart_inner .other em { color:#d00;}
+
+.header_cart .h_cart_inner .total { width:278px; padding-left:12px; height:45px; line-height:45px; background-color:#f3f0eb; color:#e5573f; font-size:16px;}
+.header_cart .h_cart_inner .total em { font-weight:bold;}
+.header_cart .h_cart_inner .total .btn { float:right; display:inline; margin:8px 8px 0 0; padding:2px 26px; line-height:24px; background-color:#77ae49; border-bottom:1px solid #5f9534; color:#fff;}
+.header_cart .h_cart_inner .total .btn:hover { color:#fff; text-decoration:none; background-color:#6a9f3d; border-bottom:1px solid #53842b;}
+.header_cart .h_cart_inner .total .disabled,.header_cart .h_cart_inner .total .disabled:hover { background-color:#ddd; border-bottom:1px solid #ccc; cursor:default;}
+.header_cart .h_cart_inner .list { width:290px; height:260px; overflow:auto; background:url(../images/shoppingcartnull.png) no-repeat 50% 15px;}
+.header_cart li { border-bottom:1px solid #eee; padding:2px 0 2px 2px; overflow:hidden; *zoom:1; position:relative; z-index:1; background-color:#fff;}
+.header_cart li img { float:left; width:60px; height:60px; vertical-align:top; display:inline; margin-right:10px;}
+.header_cart .tit { float:left; width:190px; font-size:14px; margin-top:3px;}
+.header_cart .tit .inner { height:18px; overflow:hidden; color:#999;}
+.header_cart .tit .price { color:#d00; margin-top:13px;}
+.header_cart .del { display:block; position:absolute; top:35px; right:10px; width:16px; height:16px; overflow:hidden; background-position:-250px -23px; text-indent:-999em; overflow:hidden;}
+.header_cart .del:hover { background-position:-250px -43px;}
+.header_cart .num { left:150px; top:38px;}
+.header_cart .num .reduce,.header_cart .num .increase { display:block; float:left; width:18px; height:19px; text-indent:-999em; overflow:hidden;}
+.header_cart .num .reduce { background-position:-267px -23px;}.header_cart .num .reduce:hover { background-position:-267px -43px;}
+.header_cart .num .increase { background-position:-286px -23px;}.header_cart .num .increase:hover { background-position:-286px -43px;}
+.header_cart .num .n_ipt { display:block; float:left; width:36px; height:17px; line-height:17px; overflow:hidden; text-align:center; border:1px solid #ececec; background-color:#f2f3f2;}
+.header_cart .num .reduce.disabled { background-position:-267px -63px;}
+.header_cart .num .increase.disabled { background-position:-286px -63px;}
+
+.module_s { margin-top:25px;}
+.module_s .hd { color:#fff; font-size:18px;  height:60px; line-height:60px; position:relative; z-index:1; *zoom:1; padding-right:20px; overflow:hidden;}
+.module_s .hd .s {   display: block;
+  position: absolute;
+  top: 6px;
+  right: 15px;
+  left: auto;
+  width: 26px;
+  height: 26px;
+  text-indent: -999em;
+  overflow: hidden;
+  z-index: 3;}
+.module_s .hd .line {   position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 4px;
+  right: 42px;
+  display: block;
+  overflow: hidden;
+  height: 1px;
+  width: 1176px;
+  background-color: #fe4832;}
+.module_s .hd .line2 { position:absolute; z-index:3; top:0; left:0; display:block; overflow:hidden; height:60px; }
+.module_s_open .hd .s {background: url(../images/dianpu_50.png)  }
+.module_s .hd .tit { display:block;  position:relative; z-index:3; float:left; background:url(../images/dianpu_43.png); width:142px; height:36px; line-height:36px; text-align:center;}
+.module_s .hd .tit a{color:white;}
+.module_s .hd .tit a:hover{color:white;}
+.module_s .hd .small { font-size:14px; color:#888;}
+.module_s .bd { display:none; background-color:#fff;}
+.module_s_open .bd { display:block;  width: 1209px;
+  overflow: hidden;}
+  .module_s_open .bd ul{ width:1230px;}
+.module_s .img {  }
+.module_s .img li { position:relative; z-index:1; *zoom:1; width:285px; float:left; overflow:hidden;border:1px solid #d9d9d9; margin-right:20px; margin-bottom:15px;border-bottom:none;}
+.module_s .img img { width: 285px;
+  height: 213px; display:block; vertical-align:top;}
+.module_s .img .tit {   cursor: pointer;
+  padding-left: 12px;
+  font-size: 20px;
+  display: block;
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+  color: #424242;
+  font-size: 16px;  padding-top: 10px;}
+.module_s .img .price { padding-left:12px; font-size:14px; color:#f60;}
+.module_s .img .buycar,.module_s .img .buycar2 { display:none; position:absolute;top: 86px;left: 130px; width:100px; height:50px; line-height:50px; text-align:center; background:rgba(0,0,0,0.7); *background-color:#000; FILTER: alpha(opacity=50); color:#fff; font-size:18px; border-radius:5px; margin-left:-30px; cursor:pointer;}
+.module_s .img .product_info{
+	position:relative;
+}
+.module_s .img .product_info .add_btn{
+	position:absolute;
+	right:20px;
+	top:24px;
+	width:32px;
+	height:32px;
+	background:url(../images/iconfont-ouerjiahao.png) no-repeat;
+}
+.module_s .img a:hover .product_info .add_btn{
+	background-position:0 -36px;
+}
+
+
+.module_s .img a { display:block;border-bottom:1px solid #d9d9d9;  padding-bottom: 10px;}
+.module_s .txt { margin-top:-1px;} 
+.module_s .txt li { vertical-align:top; border-top:1px solid #f3f3f3; position:relative; z-index:1; *zoom:1; }
+.module_s .txt .tit {font-size:18px; padding-left:16px;}
+.module_s .txt a { display:block; padding:10px 0;}
+.module_s .txt .price { display:block; position:absolute; top:13px; right:15px; color:#f60; font-size:14px;}
+.module_s .txt .btn{ *zoom:1; display:none; position:absolute; top:4px; left:50%; width:60px; padding:4px 0; text-align:center; color:#fff; font-size:16px;  line-height:30px; border-radius:5px; margin-left:-30px; cursor:pointer;}
+.module_s .img a:hover,.module_s .txt a:hover { opacity:.9; text-decoration:none; color:#555; border-bottom:1px solid #fe5842;}
+.module_s .img a:hover .buycar { display:block; _background-color:#aaa;}
+.module_s .txt a:hover .buycar { display:block; background-color:#aaa;}
+.footer { margin-top:0;}
+
+.norate-tip {
+  padding-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  margin: 50px 0;
+  float:none;
+}

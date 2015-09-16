@@ -1,0 +1,455 @@
+html{ height:100%; width:100%; -webkit-text-size-adjust: 100%;	-ms-text-size-adjust: 100%; }
+body{height:100%; width:100%; font-size:12px; /*background:#e5e5e5;*/}
+*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box; margin:0; padding:0; -webkit-tap-highlight-color:rgba(255,0,0,0); }
+.container{min-width:320px;margin:auto;min-height:100%;	position:relative;	display:block;	background-size:100% 100%;	-webkit-box-sizing: border-box; min-width:320px; }
+body{min-height:100%;position:relative;display:block; font-size:12px; min-width:320px;}
+a{ text-decoration:none;}
+ul{ list-style:none;}
+.icon{ display:block; float:left; width:18px; height:20px; }
+.btn{ text-align:center;  display:block;  width:100%; float:left;  }
+.btn.mt{margin-top:10px;}
+.btn.bigfont{font-size:16px; font-weight:bold;}
+.icon_right{ font-size:20px; display:block; float:right; margin-right:15px;font-weight: bold;}
+.right_adron{ display:block; width:10px; height:10px;  -webkit-transform:rotate(45deg); border: 1px solid #cdcdcd; margin-top:20px;border-left: none;border-bottom: none;}
+input[type="button"], input[type="submit"],  input[type="tel"],input[type="reset"], input[type="text"] ,textarea ,input[type="number"] {-webkit-appearance: none; border-radius:0;}
+/*带锯齿的方框背景*/
+.sawtooth{ display:block;  width:54px ; height:54px; line-height:54px;  text-align:center; float:left; margin:5px;}
+.sawtooth.twoline{ line-height:14px; padding:12px 0;}
+.sawtooth.hasicon{line-height:15px; padding:9px 0;}
+.sawtooth.hasicon>label{ display:block; width:16px; height: 16px; margin:0 auto; border:1px solid; border-radius: 10px; margin-bottom:5px; text-align:center; }
+/*门店列表*/
+ul.list{ width:100%; height:100%;}
+ul.list li{ width:100%; float:left;  position:relative;  border:solid 1px; border-left:none; border-right:none;margin-bottom:10px;  padding: 10px;}
+ul.list li > a{ display:block; width:100%; float:left  }
+ul.list li > a  table{ width:100%;}
+ul.list li > a  table img{ width:55px; height:55px;}
+ul.list li > a  table .img{ width:55px; vertical-align: middle;}
+ul.list li > a  table .info { vertical-align:top; padding-left:15px; padding-right:5px }
+ul.list li > a  table .info .name{ line-height:18px; font-size:14px; font-weight:bold; margin-bottom:10px;}
+ul.list li > a  table .info .address{line-height:16px;}
+ul.list li > a  table .info .address .icon{ width:14px}
+ul.list li > a  table .info .address label{ display:block; padding-top:2px;}
+ul.list li > a  table .opt{ width:70px; vertical-align:middle; text-align:center}
+ul.list li > a  table .opt >div{ margin-top:10px; float:left; width:100%}
+ul.list li > a  table .btn{width: 70px; height:30px; line-height:30px; text-align:center; }
+ul.list.order li .distance{right: 15px;top: 50px;height: 20px;position: absolute;min-width: 70px;text-align: center; line-height:20px;}
+/*支付列表*/
+ul.pay{ padding-left:14px; border-bottom:1px solid ; float:left; width:100%;}
+ul.pay li{ float:left; border-bottom:1px solid; line-height:42px; float:left; width:100%; }
+ul.pay li.title{ font-size:14px; font-weight:bold;}
+ul.pay li:last-child{ border-bottom:none; }
+ul.pay li> label{ float: right;
+display: block;
+padding-right: 30px;
+width: 100%;
+text-align: right;
+}
+ul.pay li> label>span{ display:block; float:left;}
+/*底部购物车*/
+.g_nav{	height:50px;	text-align:center;}
+.g_nav div{	line-height:34px;	height:50px;	position:fixed;	z-index:200; 	bottom:0;	left:0;	width:100%; padding:10px;  }
+.g_nav div span{ display:block; float:left; font-size:14px;}
+.g_nav div span .money{ font-size:16px;}
+.g_nav div .cart{ display:block;width:30px; height:30px;  }
+.g_nav div .btn{ float:right; width:90px; font-weight:bold; margin-left:8px; height: 34px;
+border: none;}
+.g_nav div a>{ width:50%; display:block; float:left;}
+.g_nav div a> .btn{ width:100%;}
+/*提交后提示*/
+.sad{ width:60px; height:60px; display:block; margin:0 auto;}
+.sad img{ width:100%; height:100%;}
+.result section{ text-align:center; padding:70px 15px 30px;}
+.result section .message{ line-height:38px; font-size:24px; font-weight:bold; padding:15px 0 40px; display:block;}
+.result section .btn{width:100%; height:44px; line-height:44px; font-size:18px;margin-top:20px;}
+/*store list*/
+.searchdiv input::-webkit-search-decoration,
+.searchdiv input::-webkit-search-cancel-button {
+display: none;
+}
+
+.searchdiv .del{ width:54px; height:100%;background:url(../../img/Catering/del.png) no-repeat center; position:absolute; right:0px; top:0px; background-size:14px 14px;}
+.container.list header.searchdiv{  height:50px; width:100%; padding: 8px 10px; position:relative}
+.container.list header input{ width:100%; height:100%;border:1px solid ;border-radius:5px; -webkit-appearance: none;  padding-left:22px; outline:none; padding-right: 15px;}
+.container.list header form{ width:100%; height:100%;}
+.container.list section{ padding:10px 0 60px;; float:left; width:100%;}
+.list .tips{height: 300px;text-align: center;line-height: 300px;color: #999;}
+/*弹出层*/
+.layer.on{ display:block;}
+.layer{ width:100%; position:fixed;top:0; display:none;  bottom:0;}
+.layer.transparent{  opacity: 0.5;  z-index:2000;  }
+.layer.popup {  top:20%;   z-index:2001; width:80%;}
+.layer.popup > div{ border-radius:5px;}
+.layer.popup > div >span{ margin:0 10px; border-bottom:1px solid ; display:block; line-height:40px; text-align:center; font-size:16px; font-weight:bold;}
+.layer.popup > div >ul{ max-height:280px; overflow:auto; }
+.layer.popup > div >ul li{ border-bottom:1px solid;  line-height:44px; padding:0 10px; cursor:hand;}
+.layer.popup > div >ul li>label{ display:block; float:left; height:34px; padding:3px 5px 0 0 ;}
+.layer.popup > div.dialogX{  line-height:38px;float:left;  text-align:center; width:280px; }
+.bookInfo .layer.popup > div.timestr{ background:none; color:#fff; font-size:12px; line-height:20px; padding:10px }
+.layer.popup > div.dialogX .timestr >label{ font-size:12px; display:block; float:left; width:100%;padding-left: 70px;margin-top: -17px;line-height: 14px;}
+.layer.popup > div.list{  text-align:left;}
+.layer.popup > div.list li{ padding:0 20px;}
+.layer.popup > div.pay{ width:250px; text-align:left;}
+.layer.popup > div >ul li>label{ float:left;}
+.layer.popup > div.dialogX .content{ width:100%; padding:0 15px; border-bottom:1px solid ; float:left;}
+.layer.popup > div.dialogX .content .title{ border-bottom:1px solid; font-size:15px; }
+.layer.popup > div.dialogX .content .message{ padding:20px 0; line-height:20px; font-size:13px;}
+.layer.popup > div.dialogX  .button{width:100%; float:left; }
+.layer.popup > div.dialogX  .button a{ width:50%; display:block; float:left; line-height:44px; }
+.layer.popup > div.dialogX  .button .cancel{ border-right:1px solid;}
+.layer.popup .see{ padding:0 20px; height:44px;}
+.layer.popup .see a{ display:block; width:100%; height:100%; line-height:34px;}
+.layer.popup .see label{ display:block; float:left; height:34px; padding:3px 5px 0 0 ;}
+.menulist{ width:100%; padding:14px; float:left;}
+.menulist>div{ height:30px; line-height:30px; font-size:16px;  font-weight:bold;}
+.menulist>label{width:100%; height:8px;  border-radius:5px; display:block; padding: 4px 8px 0;}
+.menulist>span>span{ height:1px; border-top:1px solid ;  display:block; position:absolute; z-index:3;left:8px; right:8px; margin-top:-2px;}
+.menulist>span{ display:block; padding:0 8px; position:relative;   line-height:38px; float:left; width:100%;margin-top:-3px;}
+.menulist>span>.list{ border-top:none;float:left; width:100%; }
+.menulist>span>.list ul{  border-bottom:1px solid ;  padding:0 8px;  float: left;width: 100%;}
+.menulist>span>.list ul li{ border-bottom:1px dashed ;  float: left;width: 100%; padding:9px 0;}
+.menulist>span>.list ul li:last-child{ border-bottom:none;}
+.menulist>span>.list span{ display:block; float:left; line-height:19px;}
+.menulist>span>.list .col1{ width:55%;}
+.menulist>span>.list .col2{ width:25%;}
+.menulist>span>.list .col3{ width:20%; }
+.menulist>span>.list >div{ float:left; width:100%;  padding:6px 8px; line-height:22px;  }
+.menulist>span>.tips{ height:150px; width:100%; line-height:120px; text-align:center; font-size:14px; }
+.menulist>span >.line{  height: 5px;width: 100%;display: block;float: left;}
+/*introduction.html*/
+.intro{ padding:15px;}
+.intro header{ border-bottom:1px solid ; padding-bottom:10px; line-height:18px; font-weight:bold; font-size:14px;}
+.intro  section{ padding-top:15px;}
+.intro  section > article{ padding:15px;  line-height:22px;}
+.intro  section > article img{ width:100%;}
+/*storeDetails.html*/
+.storeDetails header{ overflow:hidden}
+.storeDetails header span{ font-size:14px; margin-top:-32px; display:block;  padding-left:15px; font-weight:bold; float:left}
+.storeDetails header img{ width:100%; float:left}
+.storeDetails section{   padding-bottom:0;}
+.storeDetails  ul.linklist{ border-top:1px solid ; border-bottom:1px solid ; margin-bottom:10px; padding-left:12px; line-height:20px; }
+.storeDetails  ul.linklist li{ border-bottom:1px solid ; position:relative;}
+.storeDetails  ul.linklist li a{ padding:13px 0; display:block; width:100%; }
+.storeDetails  ul.linklist li:last-child{border-bottom:none;}
+.storeDetails  ul.linklist li .icon{  margin-right:5px; }
+.storeDetails  ul.linklist li span.textIcon{ width:20px; height:20px; border-radius:2px;  text-align:center; font-size:14px; line-height:20px;  display:block; float:left; margin-right:5px; font-weight:bold;}
+.storeDetails  .btndiv{ padding:0 8px; width:100%; height:70px;}
+.storeDetails  .btndiv>div{ width:50%; float:left; display:block; padding:10px 6px;}
+.storeDetails   .btndiv a { display:block; width:100%;}
+.storeDetails   .btndiv a .btn{  height:40px; line-height:40px; }
+.storeDetails   .btndiv .g_nav{ height:40px;}
+.storeDetails   .btndiv .g_nav div{ padding:0; background:none; height:40px;}
+.storeDetails .imglist{ position:relative}
+.storeDetails .imglist >div{ position:absolute; bottom:0; height:10px; width:100%; z-index:666;}
+.storeDetails .imglist ul{ width:50px; margin:auto;height:10px;}
+.storeDetails .imglist ul li{ width:5px; height:5px; border-radius:50%; float:left; margin:0 1px;}
+.storeDetails  .right_adron{ position:absolute; right:16px; top:0; }
+/*businessHours.html*/
+.businessHours > section{ padding:10px 0;}
+.businessHours  ul{margin-bottom:10px; padding:0 12px; }
+.businessHours  ul li{ line-height:18px; padding:10px 0}
+.businessHours  ul li .icon{ margin-right:8px; }
+/*bookInfo.html*/
+.bookInfo{ overflow:hidden}
+.bookInfo .info{ font-size:14px;  float: left; width:100%;}
+.bookInfo .info .tips{  height:20px; line-height:20px; padding:0; display:none;}
+.bookInfo .info> div{ padding:0 15px; font-size:14px; line-height:34px; font-weight:bold; }
+.bookInfo .info ul{ border-top:1px solid; border-bottom:1px solid ;  padding:15px; float:left; width:100%;}
+.bookInfo .info ul li{ padding:3px 0; line-height:40px; width:100%; float:left; position:relative;}
+.bookInfo .info ul li span{ display:block; width:85px; float:left;}
+.bookInfo .info ul li >label{ display:block; position:absolute; left:85px; right:0px; height:30px;}
+.bookInfo .info ul li >div{ display:block; position:absolute; left:85px; right:0px; height:30px;}
+.bookInfo .info ul li input[type="text"] {-webkit-appearance: none; border:none; border-left:2px solid ;  height:35px; float:left;}
+.bookInfo .info ul li input[type="tel"]{ -webkit-appearance: none; border:none; border-left:2px solid ;  height:35px; float:left;}
+.bookInfo .info ul li input[type="number"]{ -webkit-appearance: none; border:none; border-left:2px solid ;  height:35px; float:left;}
+.bookInfo .info ul li.textarea{ height:80px;}
+.bookInfo .info ul li.textarea textarea{  padding-top:5px;  border:none; border-left:2px solid ; width:100%; height:60px;}
+.bookInfo .info ul li .radio{ width:17px;}
+.bookInfo .info ul li .radiotitle{ width:55px}
+.bookInfo .info ul li .radiotitle.sex{ width:38px;}
+.bookInfo .info ul li input{ text-indent:5px;}
+.bookInfo .info ul li input.L{ width:100%;}
+.bookInfo .info ul li input.M{ width:50%;}
+#selecttime{ width:42%;}
+.bookInfo .info ul li input.S{ width:35%;}
+.bookInfo .info ul li input.S.mr{ margin-right:10px;}
+.bookInfo .info ul li input.time{ float:right;}
+.bookInfo .info .radiolist{ width:100%; height:100%; outline:none}
+.bookInfo .info .radiolist>label{ display:block; float:left; height:100%; }
+.bookInfo .footer { padding:10px 0;  float: left; width:100%;}
+.bookInfo .footer .btn{ width:50%; height:44px;line-height:44px; float:left; border:none}
+.bookInfo .layer.popup{ width:280px; height:213px; font-size:16px;}
+.bookInfo .layer.popup > div{  width:100%;}
+.bookInfo .layer.popup > div{ text-align:center}
+.bookInfo .layer.popup > div .line { border-bottom:1px solid ;height:45px; margin:0 10px; padding:0 20px;}
+.bookInfo .layer.popup > div .line.noborder{ border-bottom:none; }
+.bookInfo .layer.popup > div .line span{ display:block; float:left; width:107px; line-height:45px;;}
+.bookInfo .layer.popup > div .line span.hour{ font-size:22px; font-weight:bold}
+.bookInfo .layer.popup > div .line span.time{ font-size:22px; font-weight:bold}
+.bookInfo .layer.popup > div .line  span.colon{ width:6px;}
+.bookInfo .layer.popup > div .line span .icon{ margin:12px 44px;}
+.bookInfo .layer.popup > div .line span input{ width:30px; text-align:center; border:none; font-size:16px;}
+.bookInfo .layer.popup > div .btn{ text-align:center; padding:0 10px; line-height:44px;  border-top:1px solid ;}
+.bookInfo .layer.popup > div .btn a{ width:50%; display:block; text-align:center; float:left;} 
+.bookInfo .layer.popup > div .btn a.cancel{ border-right:1px solid ;} 
+.bookInfo .g_nav>div{ padding:0; height:44px}
+.bookInfo .g_nav>div .btn{ margin-left:0;}
+/*menu.html*/
+.menu  section{ width:100%; height:100%; position:absolute;  }
+.menu .left{ width:25%; float:left;  height:100%;overflow:auto;}
+.menu .left .top{ padding:0px 3px; }
+.menu .left .top >div{ width:100%; border:1px solid ; min-width:74px;  border-radius:5px; height:37px; line-height:35px; margin:8px auto; text-align:center }
+.menu .left .top >div .icon{ margin:9px 2px 0 2px;}
+.menu .left .top >div a{ display:block; width:75px; margin:0 auto;height:100%;}
+.menu .left .content ul li{  line-height:20px; text-align:center; font-size:14px; padding:10px 0;}
+.menu .right{ width:75%; float:left;overflow:auto;  height:100%; }
+.menu .right ul{ width:100%; padding-left:5px; border-top:1px solid; float:left;}
+.menu .right ul:fisrt-child{ border:none}
+.menu .right ul li { width:100%; border-bottom:1px solid ;  padding:10px 5px ; position:relative;}
+.menu .right ul li:last-child{ border-bottom:none}
+.menu .right ul li >label{ display:block; margin-left:72px; right:0; height:72px;padding:0 1px;}
+.menu .right ul li >label>span{ width: 100%;line-height: 16px;font-size: 14px;font-weight: bold;padding-left: 3px;height: 42px;display: table-cell;vertical-align: middle;}
+.menu .right ul li >label>label{ display:block; width:100%; height:26px; line-height:24px; padding:3px;  }
+.menu .right ul li >label>label span{ display:block; float:left; }
+.menu .right ul li >label>label span.price{ }
+.menu .right ul li >label>label >label{ float:right;}
+.menu .right ul li >label>label span.btn{ width:24px; height:24px; font-size:18px; font-weight:bold; border-radius:2px; }
+.menu .right ul li >label>label span.plus{ margin-left:3px;}
+#menuList ul li .price_wrap .plus{float: right;width: 25px;height: 24px;}
+.menu .right ul li >label>label span.num input{ width:24px; height:24px; text-align:center;border:1px solid ; border-radius:5px; outline:0;}
+.menu .right ul li >label>label span.minus{margin-right:3px;}
+#menuList ul li .price_wrap .minus{width: 23px;height: 24px;margin-left: 5px;}
+#menuList .num{margin-left: 3px;}
+#menuList .info{display:none;}
+#menuList .num input {width:26px; height:24px; text-align:center;border:1px solid #7d7d7d; border-radius:5px; outline:0;color:#2B2B2B}
+#menuList .menudesc{padding-left: 7px;}
+.menu .details{position: fixed;left: 0;top: 0;width: 100%; height:100%; z-index:202; display:none; padding:100px 0; overflow:auto;}
+.menu .details .content{ width:300px; margin:0 auto; position:relative;}
+.menu .details .content h2 {font-size: 13px;padding: 10px 20px 9px 20px;margin-top: -5px;font-weight: normal; }
+.menu .details .content h2 i {font-style: normal;font-size: 12px;display: inline-block;margin-left: 10px; }
+.menu .details .content p {padding: 10px 20px 12px 20px;font-size: 12px;line-height: 18px; }
+.menu .details .content img{ width:100%; height:225px}
+.menu .details a.x {display: inline-block;width: 27px;height: 27px;text-indent: -9999px;position: absolute; top:-6px;  right:-6px;}
+/*myMenu*/
+.myMenu  section{ width:100%; bottom:50px; top:0px; position:absolute; padding:10px; overflow:auto ;}
+.myMenu .main{ width:100%; float:left;  border:1px solid ; border-radius:3px; }
+.myMenu .main .top{ height:52px; padding:0 3px 6px;}
+.myMenu .main .top >span{ display:block; height:100%; border-bottom:1px  dashed ;}
+.myMenu .main .top >span>div{ line-height:46px; font-size:16px;font-weight:bold; float:left; margin-left:12px;}
+.myMenu .main .top >span >a{ display:block; float:right; margin-right:10px; margin-top:6px; width:77px; height:30px; text-align:center; font-size:14px; line-height:30px;}
+.myMenu .main ul{ width:100%; padding-left:10px; float:left}
+.myMenu .main ul li { width:100%; border-bottom:1px solid ; float:left; padding:18px 10px 18px 0 ; position:relative; }
+.myMenu .main ul li:last-child{border-bottom:none;}
+.myMenu .main ul li >span{ display:block; height:72px; width:72px; float:left; position:relative}
+.myMenu .main ul li >span img{ width:100%; height:100%;}
+.myMenu .main ul li >label{ display:block; margin-left:72px; right:0; height:72px;padding:0 10px;}
+.myMenu .main ul li >label>span{ display:block; width:100%; line-height:18px; font-size:14px; font-weight:bold;height: 42px;display: table-cell;vertical-align: middle; }
+.myMenu .main ul li >label>label{ display:block; width:100%; height:26px; line-height:26px;  margin-top:13px; }
+.myMenu .main ul li >label>label span{ display:block; float:left; }
+.myMenu .main ul li >label>label span.collect{ width:22px; height:22px; }
+.myMenu .main ul li >label>label span.addmark{ width:57px; height:20px;text-align:center; line-height:20px;margin-left:10px; margin-top:3px;}
+.myMenu .main ul li >label>label >label{ float:right;}
+.myMenu .main ul li >label>label span.btn{ width:24px; height:24px; font-size:18px; font-weight:bold; border-radius:2px; text-align:center;}
+.myMenu .main ul li >label>label span.plus{ margin-left:3px; }
+.myMenu .main ul li >label>label span.num input{ width:34px; height:24px; text-align:center; border:1px solid ; border-radius:5px; outline:0;}
+.myMenu .main ul li >label>label span.minus{ margin-right:3px;}
+.myMenu .main .mark{ padding:13px 10px; width:100%; height: 70px; border-top:1px solid ; float:left;}
+.myMenu .main .mark textarea{padding:0;border-radius:3px;  padding-top:5px;  border:none; border-left:2px solid; width:100%;  height:100%; text-indent:5px;  outline:none}
+.myMenu .main .markinput{width: 100%;float: left;margin-top: 6px; background:#e3e2e7; border:none; border-radius:5px; height:30px; line-height:30px; outline:none; padding:0 10px; display:none; }
+/*queueInfo.html*/
+.queueInfo header{ height:44px; line-height:44px;  font-size:14px; font-weight:bold;}
+.queueInfo  section>ul{  border:1px solid ;  border-left:none;  border-right:none; float:left; width:100%;}
+.queueInfo  section>ul li{ line-height:44px; float:left; width:100%;}
+.queueInfo span{ display:block; float:left;}
+.queueInfo .col1{ width:40%; padding-left:20px;}
+.queueInfo .col2{ width:30%; text-align:center}
+.queueInfo .col3{ width:25%; text-align:center;}
+.queueInfo section>.info{ padding:0 10px;}
+.queueInfo section>.info>form>div{ border:1px solid  ; box-shadow: 1px 1px 1px ; width:100%; float:left; padding-bottom:20px; padding:15px 25px 25px;}
+.queueInfo section>.info>form>div>span{ height:50px; line-height:50px; width:100%;}
+.queueInfo section>.info>form>div> span .title{ width:20%;  }
+.queueInfo section>.info>form>div> span .content{ width:80%; padding-left:10px;}
+.queueInfo section>.info>form>div> span .content>input[type='text']{ border:none; border-bottom:1px solid ; width:100%; height:18px; outline:none}
+.queueInfo section>.info>form>div> span .content>input[type='tel']{ border:none; border-bottom:1px solid ; width:100%; height:18px; outline:none}
+.queueInfo section>.info>form>div> span .content>input[type='number']{ border:none; border-bottom:1px solid ; width:100%; height:18px; outline:none}
+.queueInfo section>.info>form>div> span .content.radio{ padding-left:25px;}
+.queueInfo section>.info>form>div> span .content.radio >span{ display:block; margin-right:35px;}
+.queueInfo section>.info>form>div> span .content span{ margin-right:15px;}
+.queueInfo section>.info>form>div> span .content span label{ display:block; margin-top:3px; float:left; margin-right:3px}
+.queueInfo section>.info>form>div> span>label{ width:100%;height:40px; line-height:40px; margin:0 auto; margin-top:10px;}
+.queueInfo #getNum{ width:100%; height:100%; background:none; border:0;}
+.queueInfo section>.info>form>div>span.tips{ line-height: 15px;height: 15px; display:none}
+/*pay.html*/
+.pay header{height:44px; padding-left:14px; line-height:42px; font-size:14px; font-weight:bold; }
+.pay  section{ padding-bottom:60px; float:left; width:100%;}
+/*orderList.html*/
+.orderList{ padding-bottom:15px;}
+.orderList section>div{ height:35px; line-height:35px; font-size:14px; font-weight:bold; padding-left:14px;}
+.orderList .right_adron{ margin-top:28px;}
+.orderList .nolist_tips{ text-align:center;height:90px;border-top: 1px solid ;border-bottom: 1px solid ;padding: 20px; display:block;}
+.orderList .nolist_tips.old{ line-height:60px;}
+.orderList .nolist_tips a{ text-align:center; width:100%; display:block; line-height:54px;}
+
+ul.orderlist{  padding-left:14px; width:100%; border-top:1px solid; border-bottom:1px solid ;}
+ ul.orderlist li{ height:80px; border-bottom:1px solid ; padding:7px 0;}
+ ul.orderlist li:last-child{ border-bottom:none;}
+ ul.orderlist li > a{ display:block;  }
+ ul.orderlist li .info{  position:absolute; left:15px; right:105px;}
+ ul.orderlist li .info > span{ display:block;width:55px; height:55px; position:absolute; }
+ ul.orderlist li .info > span  img{ width:100%; height:100%;}
+ ul.orderlist li .info > label{ display:block; margin-left:70px;}
+ ul.orderlist li .info > label .name{ display:block;font-size:14px; font-weight:bold; line-height:24px;  word-break:keep-all;    white-space:nowrap;    overflow:hidden;    text-overflow:ellipsis; padding:6px 0;}
+  ul.orderlist li .info > label .time{ margin-top:8px; display:block;}
+ ul.orderlist li .btn{ position:absolute; right:15px;  width: 65px; height:30px; line-height:30px; text-align:center; margin-top:12px; }
+ ul.orderlist li .icon_right{ line-height:55px;}
+ /*orderSuccessDetails*/
+.orderDetails ul.pay li> label{ margin-right:15px; margin-top:0px; padding-right:0; width:auto;}
+.orderDetails footer{/*padding:0 15px 20px;*/ float:left; width:100%;}
+.orderDetails footer .btn{ display:block; height:35px; line-height:35px;  width:100%; float:left;}
+.orderDetails .share{ text-align:center; line-height:35px; display:block; border-bottom:1px solid; font-size:14px;}
+.orderDetails .paybtn{ padding:15px; float:left; width:100%; border-bottom:1px solid ; }
+.orderDetails .paybtn >div{ margin-top:8px; width:100%; float:left}
+.orderDetails .paybtn .btn{ line-height:35px;}
+.orderDetails .btn.left{ width:49%; float:left; margin-right:1%;border-radius: 3px;}
+.orderDetails .btn.right{ width:49%; float:left;  margin-left:1%;border-radius: 3px;}
+.orderDetails.finished #finished{ display:block;}
+.orderDetails.finished #processing{ display:none;}
+.orderDetails.finished #success{ display:none;}
+.orderDetails.processing #finished{ display:none;}
+.orderDetails.processing #processing{ display:block;}
+.orderDetails.processing #success{ display:none;}
+.orderDetails.success #finished{ display:none;}
+.orderDetails.success #processing{ display:none;}
+.orderDetails.success #success{ display:block;}
+.orderDetails ul li .right_adron{ float:right; margin-right:15px; margin-top:28px;}
+/*myqueue*/
+.myqueue section{ float:left; width:100%; padding-bottom:68px;}
+.myqueue .other{ text-align:center; padding:15px 0;}
+.myqueue .other > span{ line-height: 38px; font-size:16px; }
+.myqueue .other >span> span.num{ font-size:40px; margin:0 10px;}
+.myqueue .other >label{ display:block; line-height: 30px;}
+.myqueue ul.orderlist li .info > span{ text-align:left;padding-left: 9px;}
+.myqueue .btn{ float:left; height:38px; width:46%; line-height:38px; margin: 20px 2% 0;}
+.myqueue .btn.order{ width:100%; margin:20px 0; float:left;}
+.myqueue .sawtooth.nobg.success.twoline{ padding-top:6px; line-height:20px;}
+.myqueue .sawtooth.nobg.success.twoline label{ font-size:16px}
+.myqueue .nolist_tips{ text-align:center; padding-top:150px; display:none;}
+.myqueue .nolist_tips a{ text-align:center; width:100%; display:block; line-height:54px;}
+.myqueue.nomenu .nolist_tips{ display:block;}
+.myqueue.nomenu header{ display:none;}
+.myqueue.nomenu .menulist{ display:none;}
+ .menulist .tips{ display:none}
+.myqueue .menulist .order{ display:none}
+
+ .menulist.on .tips{ display:block}
+.myqueue .menulist.on .order{ display:block}
+
+ .menulist.on .list{ display:none}
+.myqueue .menulist.on .edit{ display:none}
+.myqueue .menulist.on .pay{ display:none}
+
+.dish .listdiv{ padding:7px 12px; overflow:hidden}
+.dish .listdiv .title{ width:100%; float:left; padding:8px;}
+.dish .listdiv .title >div{ float:left}
+.dish .listdiv .title >div.count{ float:right;}
+.dish .listdiv .title .countinfo{ display:block; float:left; line-height:30px;}
+.dish .listdiv .title .select{ float:left; display:block; width:80px; height:30px; line-height:30px; text-align:center; border:1px solid ; border-radius:13px; margin-left:8px;}
+.dish .listdiv .title >div.count{ line-height:30px}
+.dish .listdiv .title >div.count span{  font-size:18px; font-weight:bold}
+.dish .listdiv ul{  border:1px solid; width:100%; float:left; border-radius:5px; padding:0 10px;}
+.dish .listdiv ul li{ border-bottom:1px solid ; padding:10px 7px 10px 10px;}
+.dish .listdiv ul li:last-child{ border-bottom:0;}
+.dish .listdiv ul li table{ width:100%;}
+.dish .listdiv ul li .count{ width:40px; text-align:right; vertical-align:middle}
+.dish .listdiv ul li .img{ width:56px; vertical-align:top;}
+.dish .listdiv ul li .img span{ display:block; width:100%;  height:56px; position:relative}
+.dish .listdiv ul li .img span img{ width:100%; height:100%;}
+.dish .listdiv ul li .info{ padding:3px 0 5px 13px; }
+.dish .listdiv ul li .info .name{ min-height:36px; font-size:15px; font-weight:bold; line-height:18px;}
+.dish .listdiv ul li .info .price{ height:12px; line-height:12px; }
+
+
+.dish  footer a{ width:50%; float:left; display:block;}
+.dish  footer a .btn{  height:44px; line-height:44px; }
+.dish  footer .g_nav{ height:40px;}
+.dish  footer .g_nav div{ padding:0; background:none; height:40px;}
+#menuList li >.licontent{display: table;}
+#menuList .licontent{width: 100%;}
+#menuList .licontent >.span{ height:82px; width:80px;position:relative;}
+#menuList .licontent >.price_wrap{ width:93px;padding-right: 8px;}
+.p_ts{ width:30px;height: 30px;position: absolute;line-height: 21px; top:-2px; left:5px; font-size:12px; text-align:center}
+#menuList .licontent >.span img{ width:100%; height:100%;}
+/***dialog CSS******/
+.dialog.mask { background-color: rgba(0, 0, 0, .2);}
+.dialog{ position: fixed;left: 0;top: 0;width: 100%;height: 100%;padding: 0 20px;z-index: 2000;-webkit-box-sizing: border-box;display: -webkit-box;-webkit-box-pack: center;-webkit-box-align: center;}
+.dialog_wrap {position: relative;width: 100%;max-width: 640px;border-radius: 5px;overflow: hidden;-webkit-animation: bounceIn .5s .2s ease both;}
+.dialog_tt {height: 42px;line-height: 42px;color: #fff;text-align: center;font-size: 16px;border-radius: 5px 5px 0 0;background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#ea6e4c), to(#ea381e));background-image: -webkit-linear-gradient(0, #ea6e4c, #ea381e);}
+.dialog_close {position: absolute;right: 15px;top: 9px;width: 23px;height: 23px;background-position: 0 0;display: inline-block;background: url(../image/s.png) no-repeat;background-size: 150px auto;}
+.dialog_scroller {position: relative;float: left;width: 100%;overflow: hidden;background-color: #fff;border-radius: 0 0 5px 5px;}
+#menuDetail {padding: 10px 15px;display: none;}
+#menuDetail img {display: block;margin-bottom: 5px;width: 100%;border-radius: 3px;max-height: 263px;vertical-align: middle;outline-style: none;}
+#menuDetail .nopic {background: #e4e4e4 url(../image/nopic.png) center center no-repeat;background-size: 61px auto;border-radius: 3px;height: 132px;margin-bottom: 5px;}
+#menuDetail .comm_btn {position: absolute;right: 14px;margin-top: 5px;display: inline-block;height: 31px;line-height: 31px;padding: 0 15px;font-size: 14px;color: #fff;background-color: #ff5f32;border-radius: 3px;white-space: nowrap;}
+#menuDetail p, #menuDetail dl{padding-left: 10px;line-height: 24px;}
+#menuDetail dl{color: #676666;}
+#menuDetail p{font-weight: bold;}
+#menuDetail dl dt{float: left;font-weight: bold;}
+#menuDetail dl dd {overflow: auto;}
+#menuDetail .highlight {color: #ff5f32;font-size: 16px;}
+#menuDetail .info {padding:2px 9px;}
+#menuList .mylovedish {height: 32px;padding: 7px;}
+#menuList .salenum{padding-top: 10px;}
+#menuList .ishot{font-size: 10px;display: inline-block;width: 35px;height: 30px;background: url("../image/popular.png") no-repeat center center;-webkit-background-size: 100% auto;background-size: 100% auto;position: absolute;left: 7px;top:0px;color: #fff;line-height: 22px;font-size: 12px;text-align: center;}
+#menuList  .licontent > div {display: table-cell;vertical-align: middle;}
+.price_wrap strong{display: block;font-size: 16px;color: #ff510c;margin-bottom: 6px;text-align: right;}
+#menuList .menudesc .addmark{width: 60px;height: 27px;text-align: center;line-height: 26px;background: #ef7f2c;color: #fff;}
+
+.orderDetails .title {
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.orderDetails.processing #processing {
+  display: block;
+}
+.editbtndiv {
+  float: right;
+  padding-right: 15px;
+}
+.editbtndiv .cancel {
+  margin-right: 14px;
+}
+.editbtndiv>span {
+  display: block;
+  width: 50px;
+  float: left;
+  text-align: right;
+  line-height: 44px;
+  font-size: 14px;
+}
+.orderDetails footer {
+  float: left;
+  width: 100%;
+  margin-top: 40px;
+  padding-bottom: 15px;
+}
+
+.btndiv_fixed {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+  box-shadow: -1px -2px 5px #cdd8dd;
+}
+
+.orderDetails footer .btn {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  width: 49%;
+  margin: 11px auto;
+  float: none;
+  border-radius: 5px;
+}

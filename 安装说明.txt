@@ -1,0 +1,29 @@
+weiwin020 1.3版本
+
+
+
+1.将文件解压到你的空间根目录
+
+2.打开 install/sql/data.sql文件
+
+替换
+o2o.weiwin.cc替换为你的域名
+
+3.打开 你的域名/install  按照安装步骤填写安装。进入后台
+
+
+
+
+
+微信支付配置目录
+支付授权目录： 填写为“http://您网站的域名/source/”
+共享收货地址： 默认即可[是]
+Native原生支付： 取消选中不填写值
+告警通知URL： http://您网站的域名/source/warning/index.php
+
+
+
+
+
+
+

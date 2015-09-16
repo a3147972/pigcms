@@ -1,0 +1,432 @@
+.album {
+    height: 3.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.album img {
+    width: 100%;
+    min-height: 100%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    top: 50%;
+    position: relative;
+}
+
+.album .desc {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    height: .56rem;
+    line-height: .56rem;
+    font-size: .24rem;
+    background: rgba(0, 0, 0, .5);
+}
+
+ul.ul {
+    list-style-type: initial;
+    padding-left: .4rem;
+}
+
+ul.ul li {
+    font-size: .3rem;
+    margin: .1rem 0;
+    line-height: 1.5;
+}
+
+    /*///*/
+#deal-detail .buy-price {
+    color: #999;
+    position: relative;
+}
+
+.buy-price .price {
+    vertical-align: text-top;
+}
+
+.buy-price strong {
+    font-size: .66rem;
+}
+
+.buy-price space {
+    width: .16rem;
+}
+
+.list .buy-price .buy-btn {
+    position: absolute;
+    margin: 0;
+    right: .2rem;
+    top: .21rem;
+    width: 2.6rem;
+    margin-top: 0;
+}
+
+.buy-desc h1 {
+    font-size: .36rem;
+    margin: 0;
+    margin-bottom: .22rem;
+    color: #000;
+}
+
+.buy-desc p {
+    margin: 0;
+    color: #666;
+}
+
+    /*agreement*/
+.agreement li {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: .22rem;
+    box-sizing: border-box;
+    color: #666;
+}
+
+.agreement li:nth-child(2n) {
+    padding-left: .14rem;
+}
+
+.agreement li:nth-child(1n) {
+    padding-right: .14rem;
+}
+
+.agreement ul.agree li {
+    height: .32rem;
+    line-height: .32rem;
+}
+
+.agreement ul.agree li.active {
+    color: #6bbd00;
+}
+
+.agreement ul.btn-line li {
+    vertical-align: middle;
+    margin-top: .06rem;
+    margin-bottom: 0;
+}
+
+.agreement .text-icon {
+    margin-right: .14rem;
+    vertical-align: top;
+    height: 100%;
+}
+
+.agreement .agree .text-icon {
+    font-size: .4rem;
+    margin-right: .2rem;
+}
+
+    /* 通用星星样式 */
+.stars {
+    font-style: normal;
+    font-size: .36rem;
+    line-height: .36rem;
+}
+
+.buy-comment {
+    float: right;
+}
+
+.voice-info {
+    font-size: .3rem;
+    color: #eb8706;
+}
+
+#deal-details .detail-title {
+    background-color: #F8F9FA;
+    padding: .2rem;
+    font-size: .3rem;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+}
+
+#deal-details .detail-title p {
+    text-align: center;
+}
+
+#deal-details .detail-group {
+    font-size: .3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+}
+
+.detail-group .left {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    display: block;
+    padding: .28rem 0;
+    padding-right: .2rem;
+}
+
+.detail-group .right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-box-align: center;
+    width: 1.2rem;
+    padding: .28rem .2rem;
+    border-left: 1px solid #ccc;
+}
+
+.detail-group .middle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-box-align: center;
+    width: 1.7rem;
+    padding: .28rem .2rem;
+    border-left: 1px solid #ccc;
+}
+
+#deal-terms {
+    font-size: .3rem;
+}
+
+.js-fav-btn .fav-text {
+    vertical-align: top;
+}
+
+.js-fav-btn .fav-text:after {
+    content: "收藏";
+}
+
+.js-fav-btn .icon-star {
+    display: none
+}
+
+.js-fav-btn .icon-star-empty {
+    display: inline-block
+}
+
+.js-fav-btn.faved .fav-text:after {
+    content: "取消收藏";
+}
+
+.js-fav-btn.faved .icon-star {
+    display: inline-block
+}
+
+.js-fav-btn.faved .icon-star-empty {
+    display: none
+}
+
+.comment-headline {
+    color: #999;
+    line-height: .35rem;
+}
+
+    /* 酒店和促銷工具 */
+.hotel-desc-current {
+    color: #999;
+    margin-left: .08rem;
+}
+
+dl.list .hotel-price-panel {
+    background: #f0efed;
+    border-left: none;
+    border-right: none;
+}
+
+.hotel-prices {
+    padding: .1rem 0;
+
+}
+
+.hotel-prices>li {
+    display: inline-block;
+    width: 1.88rem !important;
+    padding: .06rem .1rem .06rem .2rem;
+    text-align: left;
+    font-size: .24rem;
+    color: #666;
+}
+
+.hotel-prices>li:after {
+    content: ' ';
+    display: table;
+    margin-top: -30%;
+    border-left: 1px solid #ccc;
+    padding-top: 25%;
+    float: right;
+    clear: both;
+}
+
+.hotel-prices>li.active {
+    color: #2dbeae;
+}
+.campaign .tag,
+.campaign-item .tag {
+    position: static;
+    margin-left: .04rem;
+    background: #ff8c00;
+    color: #fff;
+    line-height: 1.5;
+    display: inline-block;
+    padding: 0 .06rem;
+    text-align: center;
+    font-size: .24rem;
+    border-radius: .06rem;
+}
+
+.hotel-price {
+    color: #ff8c00;
+    font-size: .24rem;
+    display: block;
+}
+
+.campaign {
+    height: .48rem;
+}
+
+.campaign .tag {
+    font-size: .28rem;
+}
+
+.campaign-tip {
+    padding-top: .24rem;
+    padding-bottom: .24rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd8ce;
+    color: #555;
+}
+.btn-kefu {
+    position: absolute;
+    right: .016rem;
+    top: .1rem;
+    color: #ff8c00;
+    border-color: #ff8c00;
+}
+
+.group_content{line-height:1.6em;}
+.group_content table { width:100%!important; margin-top:0px; border:none; font-size:14px; color:#222; }
+.group_content table .name { width:auto; text-align:left; border-left:none; }
+.group_content table .price { width:20%; text-align:center; }
+.group_content table .amount { width:20%; text-align:center; }
+.group_content table .subtotal { width:20%; text-align:right; border-right:none; font-family: arial, sans-serif; }
+.group_content table caption, .group_content table th, .group_content table td { padding:8px 10px; background:#FFF; border:1px solid #E8E8E8; border-top:none; word-break:break-all; word-wrap:break-word; }
+.group_content table caption { background:#F0F0F0; }
+.group_content table caption .title, .group_content table .subline .title { font-weight:bold; }
+.group_content table th { color:#333; background:#F0F0F0; font-weight:bold; border-left-style:none; border-right-style:none;}
+.group_content table td { color:#666; /*border-left-style:none; border-right-style:none;*/ border-bottom-style:dotted; }
+.group_content table .subline { background:#fff; text-align:center; border-left:none; border-right:none; }
+.group_content table .subline-left { width:22%; text-align:left;border-right: 1px #e8e8e8 dotted; }
+.group_content img{max-width:100%;margin:10px 0;}
+.group_content ul{
+list-style-type: initial;
+padding-left: .4rem;
+font-size: .3rem!important;
+}
+.group_content ul li {
+font-size: .3rem!important;
+margin: .1rem 0;
+line-height: 1.5;
+color:black!important;
+}
+.deal-menu-summary {
+padding: 0 10px 10px;
+text-align: right;
+border-bottom: 1px #e8e8e8 solid;
+}
+.group_content p {
+margin: 10px 0;
+font: 14px/24px helvetica neue,helvetica,arial,simsun,"微软雅黑",Hiragino Sans GB,sans-serif;
+color: #666;
+}
+.deal-menu-summary .worth {
+display: inline-block;
+min-width: 10px;
+_width: 10px;
+padding-right: 20px;
+text-align: left;
+word-break: normal;
+word-wrap: normal;
+font-weight: bold;
+}
+.deal-menu-summary .price {
+color: #ea4f01;
+padding-right: 0;
+}
+
+
+.albumContainer {
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+background: #000;
+z-index: 1000;
+display: none;
+overflow: hidden;
+-webkit-transform-origin:0px 0px;
+opacity:1;
+-webkit-transform:scale(1,1);
+}
+
+.msg-bg {
+background: rgba(0,0,0,.4);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 998;
+}
+.msg-doc {
+position: fixed;
+left: .16rem;
+right: .16rem;
+bottom: 15%;
+border-radius: .06rem;
+background: #fff;
+overflow: hidden;
+z-index: 999;
+}
+.msg-option {
+-webkit-animation-name: slideup;
+-webkit-animation-duration: .3s;
+}
+.msg-option {
+background: 0;
+bottom: 1.3rem;
+}
+.msg-option div:first-child, .msg-option .msg-option-btns:first-child .btn:first-child {
+border-radius: .06rem .06rem 0 0;
+border-top: 0;
+}
+.msg-btn:last-child {
+border-right: 0;
+}
+.msg-option .btn {
+width: 100%;
+background: #fff;
+border: 0;
+color: #2bb2a3;
+border-radius: 0;
+}
+.msg-option .btn {
+height: .8rem;
+line-height: .8rem;
+border-top: 1px solid #ccc;
+}
+.msg-option-btns .btn:last-child {
+border-radius: 0 0 .06rem .06rem;
+border-bottom: 1px solid #ccc;
+}
+.msg-option div:first-child, .msg-option .msg-option-btns:first-child .btn:first-child {
+border-radius: .06rem .06rem 0 0;
+border-top: 0;
+}
+.msg-option-btns{
+	margin-top: .07rem;
+}
+.msg-option-btns:first-child{
+	margin-top:0rem;
+}
+.msg-option .msg-btn-cancel {
+padding: 0;
+margin-top: .14rem;
+color: #2bb2a3;
+border-radius: .06rem;
+}

@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+.taBle{ width:100%; border-bottom:2px solid #d8d8d8;}
+.taBle li{ width:33.3%; float:left; text-align:center; height:70px; line-height:70px; font-size:22px;}
+.taBle li a{ color:#888888; display:block;}
+.taBle .specia a{ color:#32acdd; border-bottom:4px solid #32acdd;}
+.taBle li img{ padding-top:18px;}
+.content{ width:98%; margin:0 auto;}
+.content .listTable{ padding-top:15px; padding-bottom:15px;}
+.content .zuoBian{ float:left;}
+.content .zuoBian img{ border-radius:50%;}
+.content .youBian{ float:left; padding-left:20px; width:93%; border-bottom:1px solid #f2f2f2; padding-bottom:20px;}
+.content .youBian .names{ font-size:24px; color:#222; padding-top:10px;}
+.youBian .names span{ float:right; color:#888;}
+.content .youBian .shuXIng{ font-size:16px; color:#fff; padding-top:20px;}
+.youBian .shuXIng .nianLing{ background:#eab3d2; border-radius:5px; padding:2px 4px;}
+.youBian .shuXIng .danShen{ background:#f3a5a1; border-radius:5px; padding:2px 6px;}
+.youBian .shuXIng .xingZuo{ background:#c8aedb; border-radius:5px; padding:2px 6px;}
+.youBian .shuXIng .tupian{ float:right;}
+.youBian .mingYan{ font-size:22px; color:#888; padding-top:10px;}
+
+.xuanFu{ position:fixed; bottom:40px; right:40px;}

@@ -1,0 +1,13 @@
+﻿*{padding:0;margin:0;border:0;font-size:14px;font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;}
+body{background:url(img/bg.gif) #226cc5 repeat-x 50% top;margin-top:180px;}
+img{vertical-align:middle;}
+#login{margin:0px auto;width:300px;border:2px solid white;background:white;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;padding:30px;_padding-bottom:0px;}
+#login h1{text-align:center;margin-bottom:20px;}
+#login p{margin-bottom:20px;}
+#login label{float:left;width:70px;line-height:33px;}
+.text-input{width:200px;border:1px solid #ccc;color:#333;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;padding:6px;outline:0;}
+#verifyImg{cursor:pointer;margin-left:5px;}
+#fleshVerify{border-bottom:1px dashed gray;padding-bottom:1px;color:#174B73;text-decoration:none;margin-left:5px;}
+#login p.btn_p{margin-bottom:0px;text-align:right;}
+.button{width:auto;background:white;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;background:#459300 url(img/button.gif) top left repeat-x !important;border:1px solid #459300 !important;padding:4px 7px 4px 7px !important;color:white !important;font-size:12px !important;cursor:pointer;}
+.notice{position:absolute;z-index:1000;letter-spacing:2px;top:5px;left:50%;margin-left:-90px;padding:5px 20px 5px 10px;font-weight:bold;border:1px solid gray;color:blue;background:#FFF;background-position:3px 40%;font-family:微软雅黑,Tahoma,Helvetica,sans;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;}

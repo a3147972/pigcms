@@ -1,0 +1,160 @@
+.kd-regist{
+margin: 55px auto;
+}
+.kd-regist-wrapper{
+border: 1px solid #d5d5d5;
+padding: 50px 0 0 80px;
+width: 410px;
+height: 363px;
+margin: 0 auto;
+background: #fff;
+}
+.kd-regist-title {
+font-size: 20px;
+margin-bottom: 25px;
+}
+.input-code, .input-nick, .input-phone, .input-pwd {
+width: 320px;
+position: relative;
+margin-bottom: 12px;
+}
+.input-code input, .input-nick input, .input-phone input, .input-pwd input {
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+resize: none;
+outline: 0;
+position: relative;
+z-index: 3;
+display: block;
+width: 100%;
+background: transparent;
+padding-left: 55px;
+height: 36px;
+line-height: 100%;
+line-height: 36px\9;
+color: #666;
+font-size: 14px;
+font-weight: 700;
+border: 1px solid #fff;
+box-shadow: inset 0 1px 4px rgba(125,125,125,.65);
+-moz-box-shadow: inset 0 1px 4px rgba(125,125,125,.65);
+-webkit-box-shadow: inset 0 1px 4px rgba(125,125,125,.65);
+-webkit-transition: all .08s ease-in-out;
+-moz-transition: all .08s ease-in-out;
+}
+.input-code .icon, .input-nick .icon, .input-phone .icon, .input-pwd .icon {
+position: absolute;
+z-index: 1;
+top: 0;
+right: 0;
+left: 1px;
+height: 35px;
+_width: 100%;
+background: #fff url(../images/login_bg_icons.png) no-repeat;
+}
+.input-nick .icon{background-position:0 -60px;}
+.input-pwd .icon{background-position:0 -122px;}
+
+.input-code label.input-text, .input-nick label.input-text, .input-phone label.input-text, .input-pwd label.input-text, .regist-validate label.input-text {
+position: absolute;
+top: 8px;
+left: 55px;
+z-index: 2;
+display: block;
+color: #d1d0d0;
+cursor: text;
+-moz-user-select: none;
+-webkit-user-select: none;
+-moz-transition: all .16s ease-in-out;
+-webkit-transition: all .16s ease-in-out;
+font-size: 12px;
+line-height: 22px;
+}
+
+.input-code label.validator_error, .input-nick label.validator_error, .input-phone label.validator_error, .input-pwd label.validator_error, .regist-validate .v_error {
+position: absolute;
+left: 340px;
+top: -1px;
+color: #fc6000;
+font-size: 12px;
+padding-left:19px;
+height: 41px;
+width: 250px;
+background: url(../images/login_validate_bg_w20.png) no-repeat left center;
+_background-image: url(../images/login_validate_bg_w20_8.png);
+}
+.validator_error span, .regist-validate .v_error span {
+border: 1px solid #d6d6d6;
+border-left: 0px;
+border-radius: 3px;
+height: 39px;
+display: inline-block;
+background: #fffede;
+padding-right: 10px;
+line-height: 39px;
+background: #fffede;
+}
+
+.kd-form-error {
+height: 50px;
+color: #fcd500;
+font-size: 12px;
+}
+.kd-regist .kd-form-error {
+height: 30px;
+}
+
+.kd-form-btn {
+ display: inline-block;
+  background: #3FCD79;
+  background: linear-gradient( #2dcc70, #74CF92);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3);
+  text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+  color: #fff;
+  border: 1px solid #78C295;
+  font-size: 18px;
+  padding: 0;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  width: 168px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+#phoneValidatePane {
+margin: 10px 0 10px 10px;
+padding: 30px 10px 30px 30px;
+width: 431px;
+}
+#sentValidation, #changePhone {
+height: 35px;
+text-align: center;
+padding: 0 14px;
+color: #fff;
+margin-left: 10px;
+font-size: 14px;
+border-radius: 3px;
+cursor: pointer;
+}
+#sentValidation {
+border: 1px solid #47b6e0;
+background: #47b6e0;
+background: linear-gradient(#47b6e0,#37aad5);
+}
+.input-code {
+width: 200px;
+}
+.input-code .icon {
+background-position: 0 -180px;
+}
+.regist-validate {
+position: relative;
+}
+.regist-validate label.input-text {
+left:10px;
+top:5px;
+}
