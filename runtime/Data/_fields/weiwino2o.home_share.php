@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'pigcms_id', 1 => 'mer_id', 2 => 'title', 3 => 'a_name', 4 => 'a_href', '_autoinc' => true, '_pk' => 'pigcms_id', '_type' => array ( 'pigcms_id' => 'int(10) unsigned', 'mer_id' => 'int(10) unsigned', 'title' => 'varchar(100)', 'a_name' => 'varchar(20)', 'a_href' => 'varchar(200)', ), );?>

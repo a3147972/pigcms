@@ -32,8 +32,11 @@ class LoginAction extends BaseAction {
             $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : '';
             $invitecode = isset($_POST['invitcode']) ? $_POST['invitcode'] : '';
             $recomment = isset($_POST['recomment']) ? $_POST['recomment'] : '';
+            $id_number = I('post.id_number');
+            $id_number_img = I('post.id_number_img');
+            $with_id_card = I('post.with_id_card');
 
-            $result = D('User')->checkreg($phone, $pwd, $invitecode, $recomment);
+            $result = D('User')->checkreg($phone, $pwd, $invitecode, $recomment, $id_number, $id_number_img, $with_id_card);
 
             if (!empty($result['user'])) {
                 session('user', $result['user']);

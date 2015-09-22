@@ -83,7 +83,7 @@ class UserModel extends BaseModel
      * @param  string   $recomment  推荐人
      * @return bool                 是否注册成功
      */
-    public function checkreg($phone, $pwd, $invitecode, $recomment = '')
+    public function checkreg($phone, $pwd, $invitecode, $recomment = '', $id_number, $id_number_img, $with_id_card)
     {
         if (empty($phone)) {
             return array('error_code' => true, 'msg' => '手机号不能为空');
@@ -98,6 +98,16 @@ class UserModel extends BaseModel
 
         if (empty($invitecode)) {
             return array('error_code' => true, 'msg' => '请输入邀请码');
+        }
+
+        if (empty($id_number)) {
+            return array('error_code' => true, 'msg' => '请输入身份证号');
+        }
+        if (empty($id_number_img)) {
+            return array('error_code' => true, 'msg' => '请上传身份证号');
+        }
+        if (empty($with_id_card)) {
+            return array('error_code' => true, 'msg' => '请上传手持身份证');
         }
 
         //检测推荐人是否存在

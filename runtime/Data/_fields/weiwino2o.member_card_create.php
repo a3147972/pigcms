@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'id', 1 => 'cardid', 2 => 'token', 3 => 'number', 4 => 'wecha_id', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(11)', 'cardid' => 'int(10)', 'token' => 'varchar(60)', 'number' => 'varchar(20)', 'wecha_id' => 'varchar(60)', ), );?>

@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'group_id', 1 => 'store_id', 2 => 'province_id', 3 => 'city_id', 4 => 'area_id', 5 => 'circle_id', '_autoinc' => false, '_type' => array ( 'group_id' => 'int(11)', 'store_id' => 'int(11)', 'province_id' => 'int(11)', 'city_id' => 'int(11)', 'area_id' => 'int(11)', 'circle_id' => 'int(11)', ), );?>
