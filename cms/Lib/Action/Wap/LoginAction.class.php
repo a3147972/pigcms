@@ -36,6 +36,9 @@ class LoginAction extends BaseAction{
 			$pwd = I('post.password');
 			$invitcode = I('post.invitcode', '');
 			$recomment = I('post.recomment', '');
+			$id_number = I('post.id_number', '');
+			$id_number_img = I('post.id_number_img', '');
+			$with_id_card = I('post.with_id_card', '');
 
 			$database_user = D('User');
 			if($database_user->field('`uid`')->where($condition_user)->find()){
@@ -75,7 +78,7 @@ class LoginAction extends BaseAction{
 			   $data_user['importid']=$user_import['id'];
 			}
 
-			$result = D('User')->checkreg($phone, $pwd, $invitcode, $recomment);
+			$result = D('User')->checkreg($phone, $pwd, $invitcode, $recomment, $id_number, $id_number_img, $with_id_card);
 
             if ($result['error_code'] === false) {
                 session('user', $result['user']);

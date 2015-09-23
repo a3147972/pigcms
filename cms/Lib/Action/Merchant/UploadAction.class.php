@@ -4,7 +4,7 @@
  *
  */
 
-class UploadAction extends BaseAction
+class UploadAction extends CommonAction
 {
     public function editor_ajax_upload()
     {

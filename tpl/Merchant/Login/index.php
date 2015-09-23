@@ -80,6 +80,40 @@
                             <span class="check">* 必填</span>
                         </p>
                         <p>
+                            <label>身份证号：</label>
+                            <input class="text-input" type="text" name="id_number" id="reg_id_number"/>
+                            <span class="check">* 必填</span>
+                        </p>
+                        <p>
+                            <label>身份证照：</label>
+                            <input class="text-input" type="text" name="id_number_img" id="reg_id_number_img" style="display:none"/>
+                            <img src="" alt="" class="review_img" style="display:none;width:170px">
+                            <input type="file" name="upIdNumberImg" id="upIdNumberImg" style="display:none" class="file_upload">
+                            <a href="" id="AupIdNumberImg" class="reg_upload">点击上传身份证照片</a>
+                            <span class="check">* 必填</span>
+                        </p>
+                        <p>
+                            <label>手持证照：</label>
+                            <input class="text-input" type="text" name="with_id_card" id="reg_with_id_card" style="display:none"/>
+                            <img src="" alt="" class="review_img" style="display:none;width:170px">
+                            <input type="file" name="upWithIdCard" id="upWithIdCard" style="display:none" class="file_upload">
+                            <a href="" class="reg_upload">点击上传身份证照片</a>
+                            <span class="check">* 必填</span>
+                        </p>
+                        <p>
+                            <label>营业执照：</label>
+                            <input class="text-input" type="text" name="business" id="reg_business"/>
+                            <span class="check">* 必填</span>
+                        </p>
+                        <p>
+                            <label>执照照片：</label>
+                            <input class="text-input" type="text" name="business_img" id="reg_business_img" style="display:none"/>
+                            <img src="" alt="" class="review_img" style="display:none;width:170px">
+                            <input type="file" name="upbusiness_img" id="business_img" style="display:none" class="file_upload">
+                            <a href="" class="reg_upload">点击上传身份证照片</a>
+                            <span class="check">* 必填</span>
+                        </p>
+                        <p>
                             <label>验证码：</label>
                             <input class="text-input" type="text" id="reg_verify" style="width:60px;" maxlength="4" name="verify"/>&nbsp;&nbsp;
                             <span class="verify_box">
@@ -107,6 +141,39 @@
         </script>
         <script type="text/javascript" src="{pigcms{$static_path}login/login.js"></script>
         <script type="text/javascript" src="{pigcms{$static_path}js/area.js"></script>
+        <script type="text/javascript" src="{pigcms{$static_public}js/ajaxfileupload.js"></script>
+        <script>
+            $('.reg_upload').click(function(){
+                $(this).siblings('[type=file]').trigger('click');
+                return false;
+            })
+            $('.file_upload').change(function(){
+                var id = $(this).attr('id');
+                var text_element = $(this).siblings('[type=text]');
+                var review_img = $(this).siblings('img.review_img');
+
+                $.ajaxFileUpload({
+                    url:"{pigcms{:U('Upload/upload')}",
+                    secureuri:false,
+                    fileElementId: id,
+                    dataType : 'json',
+                    success : function(data) {
+                        if (data.status == 1) {
+                            text_element.val(data.info);
+                            text_element.css({'display':'none'});
+                            review_img.attr('src', data.info);
+                            review_img.css({'display' : 'block'});
+                            $('#box').css({
+                                'height' : parseInt($('#reg_form').height()) + 70 + 'px'
+                            })
+                        } else {
+                            alert(data.info);
+                        }
+                    }
+                })
+                return false;
+            })
+        </script>
         <style>
         .col-sm-1 {
           border: 1px solid #ccc;

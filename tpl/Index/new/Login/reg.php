@@ -176,7 +176,7 @@
         $('.file_upload').change(function(){
             var id = $(this).attr('id');
             var text_element = $(this).siblings('[type=text]');
-            var review_img = $(this).siblings('img.review_img')
+            var review_img = $(this).siblings('img.review_img');
             $.ajaxFileUpload({
                 url:"{pigcms{:U('Upload/upload')}",
                 secureuri:false,
