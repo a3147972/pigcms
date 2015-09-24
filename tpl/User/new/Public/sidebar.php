@@ -43,6 +43,7 @@
 					<li <if condition="in_array(MODULE_NAME,array('Credit'))">class="current"</if>><a href="{pigcms{:U('Credit/index')}">我的余额</a></li>
 					<li <if condition="in_array(MODULE_NAME,array('Level'))">class="current"</if>><a href="{pigcms{:U('Level/index')}">我的等级</a></li>
 					<li <if condition="in_array(MODULE_NAME,array('Adress'))">class="current"</if>><a href="{pigcms{:U('Adress/index')}">收货地址</a></li>
+					<li <if condition="in_array(MODULE_NAME,array('User'))">class="current"</if>><a href="{pigcms{:U('User/index')}">邀请列表</a></li>
 				</ul>
 			</dd>
 		</dl>
