@@ -30,7 +30,7 @@ class LoginAction extends BaseAction {
         if (IS_POST) {
             $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
             $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : '';
-            $invitecode = isset($_POST['invitcode']) ? $_POST['invitcode'] : '';
+            $invitecode = isset($_POST['invitecode']) ? $_POST['invitecode'] : '';
             $recomment = isset($_POST['recomment']) ? $_POST['recomment'] : '';
             $id_number = I('post.id_number');
             $id_number_img = I('post.id_number_img');

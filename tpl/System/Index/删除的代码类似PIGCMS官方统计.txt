@@ -1,0 +1,5 @@
+main.php
+
+	<if condition="$system_session['level'] eq 2">
+	<script type="text/javascript" src="http://www7.aliapp.com/xiaozhu/softupdate.php?soft_version={pigcms{$config.system_version}&domain={pigcms{$_SERVER.SERVER_NAME}"></script>
+	</if>

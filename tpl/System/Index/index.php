@@ -17,7 +17,7 @@
 			<a href="http://weiwincms.taobao.com" target="_blank"><img src="{pigcms{$static_path}images/logo-weiwin.png" width="180"/></a>
 			</if>
 			</div>
-			<div class="nav f_r"><a href="{pigcms{:U('Index/cache')}" target="main" style="color:red;">清空缓存</a><if condition="$system_session['level'] eq 2"> <i>|</i> <a href="http://weiwincms.taobao.com" target="_blank">官方网站</a> <i>|</i></if> &nbsp;&nbsp; &nbsp;&nbsp;</div>
+			<div class="nav f_r"><a href="{pigcms{:U('Index/cache')}" target="main" style="color:red;">清空缓存</a><if condition="$system_session['level'] eq 2"> <i>|</i> <a href="http://www.cnsjgl.com" target="_blank">官方网站</a> <i>|</i></if> &nbsp;&nbsp; &nbsp;&nbsp;</div>
 			<div class="nav">&nbsp;&nbsp;&nbsp;&nbsp;欢迎您！{pigcms{$system_session.account}  <i>|</i>   <i></i> <a href="{pigcms{:U('Login/logout')}" target="_top" style="color:red;">[安全退出]</a>  <i>|</i> <a href="{pigcms{$config.site_url}" target="_blank">浏览网站</a> </div>
 			<div class="topmenu">
 				<ul>
@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<if condition="$system_session['level'] eq 2">
-		<div id="footer" class="footer" >Powered by <a href="http://weiwincms.taobao.com" target="_blank">weiwino2o</a> Copyright 2015 © 温州微赢网络有限公司 版权所有<span id="run"></span></div>
+		<div id="footer" class="footer" >Powered by <a href="http://www.cnsjgl.com" target="_blank">世纪广联</a> Copyright 2015 © 世纪广联 版权所有<span id="run"></span></div>
 		</if>
 		<script type="text/javascript" src="{pigcms{$static_path}js/index.js"></script>
 	</body>

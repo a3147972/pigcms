@@ -56,7 +56,7 @@ h1{ font-size: 32px; line-height: 48px; }
 </div>
 </div>
 <div class="copyright">
-<p><a title="官方网站" href="http://weiwincms.taobao.com" target="_blank">weiwino2o</a><sup><?php echo PigCms_VERSION ?></sup></p>
+<p><a title="官方网站" href="http://www.cnsjgl.com" target="_blank">世纪广联</a><sup><?php echo PigCms_VERSION ?></sup></p>
 </div>
 </body>
 </html>

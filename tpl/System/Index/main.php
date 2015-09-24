@@ -58,10 +58,8 @@
 		<div id="system"  class="list">
 			<h1><b>官方动态</b><span>Soft &nbsp; Update </span></h1>
 			<ul>
-			<li><a target="_blank" href="http://weiwincms.taobao.com" class="STYLE1 STYLE1">微赢网络官方地址</a></li>
-				<li style=" color:#FF0000"">微赢生活通o2o正式上线  当前版本V1.3</li>
-				<li style=" color:#3A6EA5"">微赢视频教程即将上线 敬请期待</li>
-				<li style=" color:#3A6EA5"">微赢官方邮箱 76020694@qq.com(BUG提交处)</li>
+
+				<li style=" color:#3A6EA5"">17789972@qq.com(BUG提交处)</li>
 				
 			</ul>
 		</div>
@@ -94,7 +92,5 @@
 			</volist>
 		</table>
 	</div>
-	<if condition="$system_session['level'] eq 2">
-	<script type="text/javascript" src="http://www7.aliapp.com/xiaozhu/softupdate.php?soft_version={pigcms{$config.system_version}&domain={pigcms{$_SERVER.SERVER_NAME}"></script>
-	</if>
+
 <include file="Public:footer"/>
