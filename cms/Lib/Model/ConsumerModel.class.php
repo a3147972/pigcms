@@ -68,17 +68,17 @@ class ConsumerModel extends BaseModel
                 $data[0] = $d_info;
                 break;
             case 2:    //给d和c返现
-                $c_money = number_format($order_money * $a_rebate_ratio, 2);
-                $d_money = number_format($order_money * $b_rebate_ratio, 2);
+                $c_money = number_format($order_money * $b_rebate_ratio, 2);
+                $d_money = number_format($order_money * $a_rebate_ratio, 2);
                 $c_info['now_money'] = number_format($c_info['now_money'] + $c_money, 2);
                 $d_info['now_money'] = number_format($d_info['now_money'] + $d_money, 2);
                 $data[0] = $c_info;
                 $data[1] = $d_info;
                 break;
             case 3:    //给d,c,b返现
-                $b_money = number_format($order_money * $a_rebate_ratio, 2);
+                $b_money = number_format($order_money * $c_rebate_ratio, 2);
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
-                $d_money = number_format($order_money * $c_rebate_ratio, 2);
+                $d_money = number_format($order_money * $a_rebate_ratio, 2);
 
                 $b_info['now_money'] = number_format($b_info['now_money'] + $b_money, 2);
                 $c_info['now_money'] = number_format($c_info['now_money'] + $c_money, 2);
@@ -89,10 +89,10 @@ class ConsumerModel extends BaseModel
                 $data[2] = $d_info;
                 break;
             case 4:    //给d,c,b,a返现
-                $a_money = number_format($order_money * $a_rebate_ratio, 2);
-                $b_money = number_format($order_money * $b_rebate_ratio, 2);
-                $c_money = number_format($order_money * $c_rebate_ratio, 2);
-                $d_money = number_format($order_money * $d_rebate_ratio, 2);
+                $a_money = number_format($order_money * $d_rebate_ratio, 2);
+                $b_money = number_format($order_money * $c_rebate_ratio, 2);
+                $c_money = number_format($order_money * $b_rebate_ratio, 2);
+                $d_money = number_format($order_money * $a_rebate_ratio, 2);
 
                 $a_info['now_money'] = number_format($a_info['now_money'] + $a_money, 2);
                 $b_info['now_money'] = number_format($a_info['now_money'] + $b_money, 2);
