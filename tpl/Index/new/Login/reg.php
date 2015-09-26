@@ -123,10 +123,6 @@
                     return false;
                 }
 
-                if(recomment != '' && !/^[0-9]{11}$/.test(recomment)){
-                    error_tips('请输入11位数字的手机号码','login-recomment');
-                    return false;
-                }
                 if(pwd == '' || pwd == null){
                     error_tips('密码不能为空','login-password');
                     return false;
