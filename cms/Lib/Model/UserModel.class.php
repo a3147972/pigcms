@@ -146,7 +146,7 @@ class UserModel extends BaseModel
         if ($uid) {
             //注册成功开始返现
             if (!empty($recomment)) {
-                $this->member_reg_rebate($recomment['uid']);
+                $this->member_reg_rebate($recomment);
             }
             //更改验证码状态
             D('InviteCode')->usedCode($invitecode);
