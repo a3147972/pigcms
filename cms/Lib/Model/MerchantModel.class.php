@@ -95,6 +95,24 @@ class MerchantModel extends Model
             return false;
         }
     }
+
+    /**
+     * 根据id返回商户信息
+     * @method getInfoById
+     * @param  int      $mer_id 商户id
+     * @return bool|array       成功返回商户信息，失败返回false
+     */
+    public function getInfoById ($mer_id)
+    {
+        $map['mer_id'] = $mer_id;
+        $info = $this->where($map)->find();
+
+        if ($info) {
+            return $info;
+        } else {
+            return false;
+        }
+    }
     /**
      * 增加商户金额
      * @method addBalance

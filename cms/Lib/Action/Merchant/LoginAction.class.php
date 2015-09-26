@@ -106,6 +106,32 @@ class LoginAction extends Action
             if (!empty($now_merchant)) {
                 exit(json_encode(array('error' => '5', 'msg' => '手机号已经存在！', 'dom_id' => 'phone')));
             }
+            //检测邀请码
+            $invitcode = I('post.invitcode');
+            if (empty($invitcode)) {
+                die(json_encode(array('error' => 6, 'msg' => '请输入邀请码！', 'dom_id' => 'invitcode')));
+            }
+            $checkInvitCode = D('InviteCode')->checkCode($invitcode, 2);
+
+            if (!$checkInvitCode) {
+                die(json_encode(array('error' => 7, 'msg' => '邀请码不存在！', 'dom_id' => 'invitcode')));
+            }
+            //检测推荐人
+            $recomment = I('post.recomment', '');
+            if (!empty($recomment)) {
+                $checkUser = D('User')->get_user($recomment);
+                if ($checkUser) {
+                    $recomment_type = 1;
+                } else {
+                    $recomment = D('Merchant')->getInfoById($recomment);
+                    if ($recomment) {
+                        $recomment_type = 2;
+                    } else {
+                        die(json_encode(array('error' => 8, 'msg' => '推荐人不存在', 'dom_id' => 'recomment')));
+                    }
+                }
+            }
+
 
             $config = D('Config')->get_config();
             $this->assign('config', $config);

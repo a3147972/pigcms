@@ -60,6 +60,7 @@
                         <p>
                             <label>推荐人：</label>
                             <input class="text-input" type="test" name="recomment" id="reg_recomment"/>
+                            <span class="check">* 请输入推荐人ID</span>
                         </p>
                         <p>
                             <label>商家名称：</label>
