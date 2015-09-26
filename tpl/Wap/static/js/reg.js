@@ -6,7 +6,6 @@ $(function(){
 		var id_number = $.trim($('#id_number').val());
 		var id_number_img = $.trim($('#id_number_img').val());
 		var with_id_card = $.trim($('#with_id_card').val());
-		alert(id_number_img);
 		$('#phone').val(phone);
 		if(phone.length == 0){
 			$('#tips').html('请输入手机号码。').show();
