@@ -112,10 +112,8 @@ class UserModel extends BaseModel
 
         //检测推荐人是否存在
         if (!empty($recomment)) {
-            $check_recomment = $this->checkUser($recomment);
-            if ($check_recomment) {
-                $recomment = $check_recomment;
-            } else {
+            $check_recomment = $this->get_user($recomment);
+            if (!$check_recomment) {
                 return array('error_code' => true, 'msg' => '推荐人不存在');
             }
         }

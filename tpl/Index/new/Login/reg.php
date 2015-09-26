@@ -67,7 +67,7 @@
                     </div>
                     <div class="form-field form-field--icon" >
                         <i class="icon icon-password"></i>
-                        <input type="text" id="login-recomment" class="f-text" name="recomment" placeholder="请输入推荐人手机号"/>
+                        <input type="text" id="login-recomment" class="f-text" name="recomment" placeholder="请输入推荐人ID"/>
                     </div>
                     <div class="form-field form-field--ops">
                         <input type="hidden" name="fingerprint" class="J-fingerprint"/>

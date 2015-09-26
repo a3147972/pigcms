@@ -59,7 +59,7 @@
                                     <input id="invitcode" class="input-weak" type="text" placeholder="请输入邀请码" name="invitcode" value="" required="">
                                 </dd>
                                 <dd class="dd-padding">
-                                    <input id="recomment" class="input-weak" type="text" placeholder="请输入推荐人手机号" name="recomment" value="">
+                                    <input id="recomment" class="input-weak" type="text" placeholder="请输入推荐人ID" name="recomment" value="">
                                 </dd>
                                 <dd class="dd-padding">
                                     <input id="id_number" class="input-weak" type="text" placeholder="请输入身份证号" name="id_number" value="">
