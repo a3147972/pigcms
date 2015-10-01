@@ -500,7 +500,7 @@ class Group_orderModel extends Model
             //赚取金额写入商户金额
             $now_order_money = $balance_pay - $rebate_balance - $sale_rebate;
             $now_order_money = $now_order_money < 0 ? 0 : $now_order_money;
-            D('Merchant')->addBalance($now_order['mer_id'], $now_order_money);
+            D('Merchant')->addBalance($now_order['mer_id'], $now_order_money, $order_param['order_id'], $order_param['order_type']);
 
             $condition_group_order['order_id'] = $order_param['order_id'];
             if ($now_order['tuan_type'] < 2) {

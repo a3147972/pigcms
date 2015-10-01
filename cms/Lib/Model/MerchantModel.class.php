@@ -120,7 +120,7 @@ class MerchantModel extends Model
      * @param  integer    $balance 要增加的金额
      * @return  bool 是否加成功
      */
-    public function addBalance($mer_id, $balance = 0)
+    public function addBalance($mer_id, $balance = 0, $order_id, $order_type)
     {
         if (empty($balance)) {
             return true;
@@ -129,11 +129,15 @@ class MerchantModel extends Model
 
         $data['balance'] = array('exp', 'balance+' . $balance);
 
+        $this->startTrans();
         $result = $this->where($map)->save($data);
+        $insert_log = D('MerchantValanceLog')->insert($mer_id, 1, $order_id, $balance, $order_type);
 
-        if ($result) {
+        if ($result !== false && $insert_log !== false) {
+            $this->commit();
             return true;
         } else {
+            $this->rollback();
             return false;
         }
     }

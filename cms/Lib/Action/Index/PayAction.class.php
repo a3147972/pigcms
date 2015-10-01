@@ -61,11 +61,13 @@ class PayAction extends BaseAction
 
         $this->display();
     }
+
     public function go_pay()
     {
         if (empty($this->user_session)) {
             $this->error_tips('请先进行登录！', U('Login/index'));
         }
+
         if (!in_array($_POST['order_type'], array('group', 'meal', 'recharge'))) {
             $this->error_tips('订单来源无法识别，请重试。');
         }

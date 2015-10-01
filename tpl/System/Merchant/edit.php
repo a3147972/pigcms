@@ -39,7 +39,7 @@
 			<tr>
 				<th width="80">手持身份证照</th>
 				<td>
-				<img src="{pigcms{$merchant.with_id_card}" alt="">
+				<img src="{pigcms{$merchant.with_id_card}" alt="" width="100%">
 				<input type="hidden" class="input fl" name="with_id_card" value="{pigcms{$merchant.with_id_card}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
 			</tr>
 			<tr>
@@ -49,7 +49,7 @@
 			<tr>
 				<th width="80">营业执照照片</th>
 				<td>
-				<img src="{pigcms{$merchant.business_img}" alt="">
+				<img src="{pigcms{$merchant.business_img}" alt="" width="100%">
 				<input type="hidden" class="input fl" name="business_img" value="{pigcms{$merchant.business_img}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
 			</tr>
 			<tr>

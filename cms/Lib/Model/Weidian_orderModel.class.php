@@ -26,7 +26,7 @@ class Weidian_orderModel extends Model{
 				$data_weidian_order['order_id'] = $order_id;
 				$this->data($data_weidian_order)->save();
 			}
-			
+
 			$order_info = array(
 				'order_id'			=>	$order_id,
 				'mer_id'			=>	$data_weidian_order['mer_id'],
@@ -35,7 +35,7 @@ class Weidian_orderModel extends Model{
 				'order_num'			=>	$data_weidian_order['order_num'],
 				'order_total_money'	=>	floatval($data_weidian_order['money']),
 				'coupon_url_param'  =>   array('type'=>'weidian','order_id'=>$order_id),
-			);		
+			);
 		}else{
 			$now_order = $this->get_order_by_id($uid,$order_id);
 			if(empty($now_order)){
@@ -50,7 +50,7 @@ class Weidian_orderModel extends Model{
 				'order_name'		=>	$now_order['order_name'],
 				'order_num'			=>	$now_order['order_num'],
 				'order_total_money'	=>	floatval($now_order['money']),
-			);	
+			);
 		}
 		return array('error'=>0,'order_info'=>$order_info);
 	}
@@ -64,7 +64,7 @@ class Weidian_orderModel extends Model{
 
 		//去除微信优惠的金额
 		$pay_money = $order_info['order_total_money'];
-		
+
 		//判断优惠券
 		if(!empty($now_coupon['price'])){
 			$data_weidian_order['card_id'] = $now_coupon['record_id'];
@@ -77,7 +77,7 @@ class Weidian_orderModel extends Model{
 			}
 			$pay_money -= $now_coupon['price'];
 		}
-		
+
 		//判断商家余额
 		if(!empty($merchant_balance)){
 			if($merchant_balance >= $pay_money){
@@ -92,7 +92,7 @@ class Weidian_orderModel extends Model{
 			}
 			$pay_money -= $merchant_balance;
 		}
-		
+
 		//判断帐户余额
 		if(!empty($now_user['now_money'])){
 			if($now_user['now_money'] >= $pay_money){
@@ -154,7 +154,7 @@ class Weidian_orderModel extends Model{
 			if(empty($now_user)){
 				return array('error'=>1,'msg'=>'没有查找到此订单归属的用户，请联系管理员！');
 			}
-				
+
 			//判断优惠券是否正确
 			if($now_order['card_id']){
 				$now_coupon = D('Member_card_coupon')->get_coupon_by_recordid($now_order['card_id'],$now_order['uid']);
@@ -162,7 +162,7 @@ class Weidian_orderModel extends Model{
 					return $this->wap_after_pay_error($now_order,$order_param,'您选择的优惠券不存在！');
 				}
 			}
-				
+
 			//判断会员卡余额
 			$merchant_balance = floatval($now_order['merchant_balance']);
 			if($merchant_balance){
@@ -178,7 +178,7 @@ class Weidian_orderModel extends Model{
 					return $this->wap_after_pay_error($now_order,$order_param,'您的帐户余额不够此次支付！');
 				}
 			}
-				
+
 			//如果使用了优惠券
 			if($now_order['card_id']){
 				$use_result = D('Member_card_coupon')->user_card($now_order['card_id'],$now_order['mer_id'],$now_order['uid']);
@@ -186,7 +186,7 @@ class Weidian_orderModel extends Model{
 					return array('error'=>1,'msg'=>$use_result['msg']);
 				}
 			}
-				
+
 			//如果使用会员卡余额
 			if($merchant_balance){
 				$use_result = D('Member_card')->use_card($now_order['uid'],$now_order['mer_id'],$merchant_balance,'购买 '.$now_order['order_id'].' 扣除会员卡余额');
@@ -201,7 +201,18 @@ class Weidian_orderModel extends Model{
 					return array('error'=>1,'msg'=>$use_result['msg']);
 				}
 			}
-				
+
+			//执行推荐返利
+            $rebate_balance = D('Consumer')->rebate($now_order['uid'], $balance_pay);
+            $rebate_balance = empty($rebate_balance) ? 0 : $rebate_balance;
+
+            //营业额返利
+            $sale_rebate = D('Consumer')->saleRebate($now_order['mer_id'], $balance_pay);
+            //赚取金额写入商户金额
+            $now_order_money = $balance_pay - $rebate_balance - $sale_rebate;
+            $now_order_money = $now_order_money < 0 ? 0 : $now_order_money;
+            D('Merchant')->addBalance($now_order['mer_id'], $now_order_money, $order_param['order_id'], $order_param['order_type']);
+
 			$data_weidian_order = array();
 			$data_weidian_order['pay_time'] = $_SERVER['REQUEST_TIME'];
 			$data_weidian_order['payment_money'] = floatval($order_param['pay_money']);
@@ -216,7 +227,7 @@ class Weidian_orderModel extends Model{
 			}
 		}
 	}
-	
+
 	//支付完成，跳回到微店系统
 	public function get_weidian_url($data){
 		if($data['msg']) $data['msg'] = urlencode($data['msg']);
@@ -225,10 +236,10 @@ class Weidian_orderModel extends Model{
 		ksort($sort_data);
 		$data['sign_key'] = sha1(http_build_query($sort_data));
 		$data['request_time'] = $_SERVER['REQUEST_TIME'];
-		
+
 		return 'http://v.meihua.com/api/pay_callback.php?'.http_build_query($data);
 	}
-	
+
 	//支付时，金额不够，记录到帐号
 	public function wap_after_pay_error($now_order,$order_param,$error_tips){
 		//记录充值的金额，因为 Pay/return_url 处没有返回order的具体信息，故在此调用。
@@ -239,7 +250,7 @@ class Weidian_orderModel extends Model{
 			return array('error'=>1,'msg'=>$error_tips.'已将您充值的金额添加到您的余额内。');
 		}
 	}
-	
+
 	public function get_order_by_mer_id($mer_id, $is_system = false)
 	{
 		if ($is_system) {
@@ -247,9 +258,9 @@ class Weidian_orderModel extends Model{
 		} else {
 			import('@.ORG.merchant_page');
 		}
-		
+
 		$time = time() - 10 * 86400;
-		
+
 		$count = $this->where("mer_id={$mer_id} AND paid=1 AND pay_type<>'offline' AND pay_time<'{$time}'")->count();
 		$p = new Page($count, 20);
 		$mode = new Model();
@@ -260,11 +271,11 @@ class Weidian_orderModel extends Model{
 			$r['is_pay_bill'] && $alltotalfinsh += $r['price'];
 			$r['is_pay_bill'] || $alltotal += $r['price'];
 		}
-		
+
 		$sql = "SELECT order_id, order_name, uid, mer_id, store_id, order_num as total, (payment_money+balance_pay) as price, money as order_price, add_time, paid, pay_type, pay_time, third_id, balance_pay, payment_money, merchant_balance, is_pay_bill FROM ". C('DB_PREFIX') . "weidian_order WHERE mer_id={$mer_id} AND paid=1 AND pay_time<'{$time}' AND pay_type<>'offline'";
-		
+
 		$sql .= " ORDER BY order_id DESC LIMIT {$p->firstRow}, {$p->listRows}";
-		
+
 		$res = $mode->query($sql);
 
 		$total = $finshtotal = 0;
