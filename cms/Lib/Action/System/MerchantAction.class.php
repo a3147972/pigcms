@@ -4,7 +4,7 @@
  *
  * @  Writers    Jaty
  * @  BuildTime  2014/11/07 14:45
- * 
+ *
  */
 
 class MerchantAction extends BaseAction{
@@ -25,15 +25,16 @@ class MerchantAction extends BaseAction{
 			$condition_merchant['area_id'] = $this->system_session['area_id'];
 		}
 		$database_merchant = D('Merchant');
-		
+
 		$count_merchant = $database_merchant->where($condition_merchant)->count();
 		import('@.ORG.system_page');
 		$p = new Page($count_merchant,15);
 		$merchant_list = $database_merchant->field(true)->where($condition_merchant)->order('`mer_id` DESC')->limit($p->firstRow.','.$p->listRows)->select();
+
 		$this->assign('merchant_list',$merchant_list);
 		$pagebar = $p->show();
 		$this->assign('pagebar',$pagebar);
-		
+
 		$this->display();
     }
 	public function wait_merchant(){
@@ -54,7 +55,7 @@ class MerchantAction extends BaseAction{
 			$condition_merchant['area_id'] = $this->system_session['area_id'];
 		}
 		$database_merchant = D('Merchant');
-		
+
 		$count_merchant = $database_merchant->where($condition_merchant)->count();
 		import('@.ORG.system_page');
 		$p = new Page($count_merchant,15);
@@ -62,7 +63,7 @@ class MerchantAction extends BaseAction{
 		$this->assign('merchant_list',$merchant_list);
 		$pagebar = $p->show();
 		$this->assign('pagebar',$pagebar);
-		
+
 		$this->display();
     }
 	public function add(){
@@ -92,7 +93,7 @@ class MerchantAction extends BaseAction{
 	}
 	public function edit(){
 		$this->assign('bg_color','#F3F3F3');
-		
+
 		$database_merchant = D('Merchant');
 		$condition_merchant['mer_id'] = intval($_GET['mer_id']);
 		$merchant = $database_merchant->field(true)->where($condition_merchant)->find();
@@ -100,13 +101,13 @@ class MerchantAction extends BaseAction{
 			$this->frame_error_tips('数据库中没有查询到该商户的信息！');
 		}
 		$this->assign('merchant',$merchant);
-		
+
 		$home_share = D('Home_share')->where(array('mer_id' => $condition_merchant['mer_id']))->find();
 		$this->assign('home_share', $home_share);
-		
+
 		$this->display();
 	}
-	
+
 	public function amend(){
 		if(IS_POST){
 			if($_POST['pwd']){
@@ -114,12 +115,12 @@ class MerchantAction extends BaseAction{
 			}else{
 				unset($_POST['pwd']);
 			}
-			
+
     		$data['a_href'] = isset($_POST['a_href']) && $_POST['a_href'] ? htmlspecialchars_decode($_POST['a_href']) : $this->config['site_url'] . '/wap.php?c=Index&a=index&token=' . $_POST['mer_id'];
     		$data['a_name'] = isset($_POST['a_name']) && $_POST['a_name'] ? htmlspecialchars($_POST['a_name']) : '进入';
     		$data['title'] = isset($_POST['a_title']) && $_POST['a_title'] ? htmlspecialchars($_POST['a_title']) : '您是' . $_POST['name'] . '的粉丝';
     		unset($_POST['a_name'], $_POST['a_title'], $_POST['a_href']);
-    		
+
 			$database_merchant = D('Merchant');
 			$database_merchant->data($_POST)->save();
 // 			if(){
@@ -189,7 +190,7 @@ class MerchantAction extends BaseAction{
 			$this->error_tips('数据库中没有查询到该商户的信息！',5,U('Merchant/index'));
 		}
 		$this->assign('merchant',$merchant);
-		
+
 		$database_merchant_store = D('Merchant_store');
 		$condition_merchant_store['mer_id'] = $merchant['mer_id'];
 		$count_store = $database_merchant_store->where($condition_merchant_store)->count();
@@ -199,10 +200,10 @@ class MerchantAction extends BaseAction{
 		$this->assign('store_list',$store_list);
 		$pagebar = $p->show();
 		$this->assign('pagebar',$pagebar);
-		
+
 		$this->display();
 	}
-	
+
 	public function wait_store(){
 		$where = array('status' => 2);
 		//搜索
@@ -226,7 +227,7 @@ class MerchantAction extends BaseAction{
 		$this->assign('store_list', $list);
 		$pagebar = $p->show();
 		$this->assign('pagebar', $pagebar);
-		
+
 		$this->display();
     }
 	public function store_add(){
@@ -237,9 +238,9 @@ class MerchantAction extends BaseAction{
 			$this->frame_error_tips('数据库中没有查询到该商户的信息！无法添加店铺。',5);
 		}
 		$this->assign('merchant',$merchant);
-		
+
 		$this->assign('bg_color','#F3F3F3');
-		
+
 		$this->display();
 	}
 	public function store_modify(){
@@ -260,7 +261,7 @@ class MerchantAction extends BaseAction{
 			$this->error('非法提交,请重新提交~');
 		}
 	}
-	
+
 	public function store_edit(){
 		$database_merchant_store = D('Merchant_store');
 		$condition_merchant_store['store_id'] = intval($_GET['store_id']);
@@ -269,12 +270,12 @@ class MerchantAction extends BaseAction{
 			$this->frame_error_tips('数据库中没有查询到该店铺的信息！',5);
 		}
 		$this->assign('store',$store);
-		
+
 		$this->assign('bg_color','#F3F3F3');
-		
+
 		$this->display();
 	}
-	
+
 	public function store_amend(){
 		if(IS_POST){
 			$long_lat = explode(',',$_POST['long_lat']);
@@ -298,7 +299,7 @@ class MerchantAction extends BaseAction{
 			if($database_group_store->where($condition_group_store)->find()){
 				$this->error('该店铺下有'.$this->config['group_alias_name'].'，请先解除店铺与对应'.$this->config['group_alias_name'].'的关系才能删除！');
 			}
-			
+
 			$database_merchant_store = D('Merchant_store');
 			$condition_merchant_store['store_id'] = intval($_POST['store_id']);
 			if($database_merchant_store->where($condition_merchant_store)->delete()){
@@ -310,18 +311,18 @@ class MerchantAction extends BaseAction{
 			$this->error('非法提交,请重新提交~');
 		}
 	}
-	
+
 	/*商户公告*/
 	public function news(){
 		$database_merchant_news = D('Merchant_news');
 		$news_list = $database_merchant_news->order('`is_top` DESC,`add_time` DESC')->select();
 		$this->assign('news_list',$news_list);
-		
+
 		$this->display();
 	}
 	public function news_add(){
 		$this->assign('bg_color','#F3F3F3');
-		
+
 		$this->display();
 	}
 	public function news_modify(){
@@ -342,9 +343,9 @@ class MerchantAction extends BaseAction{
 			$this->frame_error_tips('数据库中没有查询到该条公告！',5);
 		}
 		$this->assign('now_news',$now_news);
-		
+
 		$this->assign('bg_color','#F3F3F3');
-		
+
 		$this->display();
 	}
 	public function news_amend(){
@@ -370,9 +371,9 @@ class MerchantAction extends BaseAction{
 			$this->error('非法提交,请重新提交~');
 		}
 	}
-	
+
 	public function order(){
-		
+
 		$percent = 0;
 		$mer_id = isset($_GET['mer_id']) ? intval($_GET['mer_id']) : 0;
 		$merchant = D('Merchant')->field(true)->where('mer_id=' . $mer_id)->find();
@@ -387,15 +388,15 @@ class MerchantAction extends BaseAction{
 		$this->assign($result);
 		$this->assign('total_percent', $result['total'] * $percent * 0.01);
 		$this->assign('all_total_percent', ($result['alltotal']+$result['alltotalfinsh']) * $percent * 0.01);
-		
+
 // 		$this->assign(D("Meal_order")->get_order_by_mer_id($mer_id, 1));
 		$this->assign('now_merchant', $merchant);
 		$this->assign('mer_id', $mer_id);
 		$this->display();
 	}
-	
+
 	public function weidian_order(){
-		
+
 		$percent = 0;
 		$mer_id = isset($_GET['mer_id']) ? intval($_GET['mer_id']) : 0;
 		$merchant = D('Merchant')->field(true)->where('mer_id=' . $mer_id)->find();
@@ -410,13 +411,13 @@ class MerchantAction extends BaseAction{
 		$this->assign($result);
 		$this->assign('total_percent', $result['total'] * $percent * 0.01);
 		$this->assign('all_total_percent', ($result['alltotal']+$result['alltotalfinsh']) * $percent * 0.01);
-		
+
 // 		$this->assign(D("Meal_order")->get_order_by_mer_id($mer_id, 1));
 		$this->assign('now_merchant', $merchant);
 		$this->assign('mer_id', $mer_id);
 		$this->display();
 	}
-	
+
 	public function change(){
 		$mer_id = isset($_GET['mer_id']) ? intval($_GET['mer_id']) : 0;
 		$strids = isset($_GET['strids']) ? htmlspecialchars($_GET['strids']) : '';
@@ -436,11 +437,11 @@ class MerchantAction extends BaseAction{
 		}
 		exit(json_encode(array('error_code' => 0)));
 	}
-	
+
 	public function menu()
 	{
 		$this->assign('bg_color','#F3F3F3');
-		
+
 		$database_merchant = D('Merchant');
 		$condition_merchant['mer_id'] = intval($_GET['mer_id']);
 		$merchant = $database_merchant->field(true)->where($condition_merchant)->find();
@@ -449,11 +450,11 @@ class MerchantAction extends BaseAction{
 		}
 		$merchant['menus'] = explode(',', $merchant['menus']);
 		$this->assign('merchant',$merchant);
-		
+
 		$menus = D('Merchant_menu')->where(array('status' => 1, 'show' => 1))->select();
-		
+
 		$list = array();
-		
+
 		foreach ($menus as $menu) {
 			if (empty($menu['fid'])) {
 				if (isset($list[$menu['id']])) {
@@ -472,7 +473,7 @@ class MerchantAction extends BaseAction{
 		$this->assign('menus', $list);
 		$this->display();
 	}
-	
+
 	public function savemenu()
 	{
 		if (IS_POST) {
@@ -486,5 +487,5 @@ class MerchantAction extends BaseAction{
 			$this->error('非法提交,请重新提交~');
 		}
 	}
-	
+
 }

@@ -132,7 +132,6 @@ class LoginAction extends Action
                 }
             }
 
-
             $config = D('Config')->get_config();
             $this->assign('config', $config);
 
@@ -148,6 +147,8 @@ class LoginAction extends Action
             $_POST['reg_time'] = $_SERVER['REQUEST_TIME'];
             $_POST['login_count'] = 0;
             $_POST['reg_from'] = 0;
+            $_POST['invit_type'] = $recomment_type; //邀请类型
+
             if ($database_merchant->data($_POST)->add()) {
                 if ($config['merchant_verify']) {
                     exit(json_encode(array('error' => '0', 'msg' => '注册成功,请耐心等待审核或联系工作人员审核。~', 'dom_id' => 'account')));

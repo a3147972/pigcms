@@ -23,6 +23,36 @@
 				<td><input type="text" class="input fl" name="email" value="{pigcms{$merchant.email}" size="25" placeholder="可不填写" validate="email:true" tips="只供管理员后台记录，前台不显示"/></td>
 			</tr>
 			<tr>
+				<th width="80">商户余额</th>
+				<td><input type="text" class="input fl" name="balance" value="{pigcms{$merchant.balance}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
+			</tr>
+			<tr>
+				<th width="80">身份证号</th>
+				<td><input type="text" class="input fl" name="id_number" value="{pigcms{$merchant.id_number}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
+			</tr>
+			<tr>
+				<th width="80">身份证照片</th>
+				<td>
+				<img src="{pigcms{$merchant.id_number_img}" alt="">
+				<input type="hidden" class="input fl" name="id_number_img" value="{pigcms{$merchant.id_number_img}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
+			</tr>
+			<tr>
+				<th width="80">手持身份证照</th>
+				<td>
+				<img src="{pigcms{$merchant.with_id_card}" alt="">
+				<input type="hidden" class="input fl" name="with_id_card" value="{pigcms{$merchant.with_id_card}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
+			</tr>
+			<tr>
+				<th width="80">营业执照</th>
+				<td><input type="text" class="input fl" name="business" value="{pigcms{$merchant.business}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
+			</tr>
+			<tr>
+				<th width="80">营业执照照片</th>
+				<td>
+				<img src="{pigcms{$merchant.business_img}" alt="">
+				<input type="hidden" class="input fl" name="business_img" value="{pigcms{$merchant.business_img}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
+			</tr>
+			<tr>
 				<th width="80">商户状态</th>
 				<td>
 					<span class="cb-enable"><label class="cb-enable <if condition="$merchant['status'] eq 1">selected</if>"><span>启用</span><input type="radio" name="status" value="1" <if condition="$merchant['status'] eq 1">checked="checked"</if> /></label></span>
