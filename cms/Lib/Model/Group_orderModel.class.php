@@ -484,15 +484,16 @@ class Group_orderModel extends Model
                 }
             }
             //如果用户使用了余额支付，则扣除相应的金额。
-
             if (!empty($balance_pay)) {
                 $use_result = D('User')->user_money($now_order['uid'], $balance_pay, '购买 ' . $now_order['order_name'] . ' 扣除余额');
                 if ($use_result['error_code']) {
                     return array('error' => 1, 'msg' => $use_result['msg']);
                 }
             }
+
             //执行推荐返利
             $rebate_balance = D('Consumer')->rebate($now_order['uid'], $balance_pay);
+
             $rebate_balance = empty($rebate_balance) ? 0 : $rebate_balance;
 
             //营业额返利

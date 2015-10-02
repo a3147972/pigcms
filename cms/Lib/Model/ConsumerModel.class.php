@@ -57,36 +57,26 @@ class ConsumerModel extends BaseModel
         $c_rebate_ratio = (float) $this->config['c_consumer_rebate'] / 100;
         $d_rebate_ratio = (float) $this->config['d_consumer_rebate'] / 100;
 
-        $a_rebate_ratio = (float) $this->config['reg_a_rebate'] / 100;
-        $b_rebate_ratio = (float) $this->config['reg_b_rebate'] / 100;
-        $c_rebate_ratio = (float) $this->config['reg_c_rebate'] / 100;
-        $d_rebate_ratio = (float) $this->config['reg_d_rebate'] / 100;
         switch ($level) {
             case 1:    //只有一层,则只给d返
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
-                $d_info['now_money'] = number_format($d_info['now_money'] + $d_money, 2);
-                $data[0] = $d_info;
+
+                $add_d_money = number_format($d_info['now_money'] + $d_money, 2);
                 break;
             case 2:    //给d和c返现
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
-                $c_info['now_money'] = number_format($c_info['now_money'] + $c_money, 2);
-                $d_info['now_money'] = number_format($d_info['now_money'] + $d_money, 2);
-                $data[0] = $c_info;
-                $data[1] = $d_info;
+                $add_c_money = number_format($c_info['now_money'] + $c_money, 2);
+                $add_d_money = number_format($d_info['now_money'] + $d_money, 2);
                 break;
             case 3:    //给d,c,b返现
                 $b_money = number_format($order_money * $c_rebate_ratio, 2);
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
 
-                $b_info['now_money'] = number_format($b_info['now_money'] + $b_money, 2);
-                $c_info['now_money'] = number_format($c_info['now_money'] + $c_money, 2);
-                $d_info['now_money'] = number_format($d_info['now_money'] + $d_money, 2);
-
-                $data[0] = $b_info;
-                $data[1] = $c_info;
-                $data[2] = $d_info;
+                $add_b_money = number_format($b_info['now_money'] + $b_money, 2);
+                $add_c_money = number_format($c_info['now_money'] + $c_money, 2);
+                $add_d_money = number_format($d_info['now_money'] + $d_money, 2);
                 break;
             case 4:    //给d,c,b,a返现
                 $a_money = number_format($order_money * $d_rebate_ratio, 2);
@@ -94,21 +84,36 @@ class ConsumerModel extends BaseModel
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
 
-                $a_info['now_money'] = number_format($a_info['now_money'] + $a_money, 2);
-                $b_info['now_money'] = number_format($a_info['now_money'] + $b_money, 2);
-                $c_info['now_money'] = number_format($a_info['now_money'] + $c_money, 2);
-                $d_info['now_money'] = number_format($a_info['now_money'] + $d_money, 2);
-
-                $data[0] = $a_info;
-                $data[1] = $b_info;
-                $data[2] = $c_info;
-                $data[3] = $d_info;
+                $add_a_money = number_format($a_info['now_money'] + $a_money, 2);
+                $add_b_money = number_format($a_info['now_money'] + $b_money, 2);
+                $add_c_money = number_format($a_info['now_money'] + $c_money, 2);
+                $add_d_money = number_format($a_info['now_money'] + $d_money, 2);
                 break;
         }
+        $this->startTrans();
 
-        $result = $this->addAll($data, array(), true);
+        if (isset($d_money) && !empty($d_money)) {
+            $d_result = D('User')->add_money($d_info['uid'], $add_d_money, '注册推荐返利');
+        } else {
+            $d_result = true;
+        }
+        if (isset($c_money) && !empty($c_money)) {
+            $c_result = D('User')->add_money($c_info['uid'], $add_c_money, '注册推荐返利');
+        } else {
+            $c_result = true;
+        }
+        if (isset($b_money) && !empty($b_money)) {
+            $b_result = D('User')->add_money($b_info['uid'], $add_b_money, '注册推荐返利');
+        } else {
+            $b_result = true;
+        }
+        if (isset($a_money) && !empty($a_money)) {
+            $a_result = D('User')->add_money($a_info['uid'], $add_a_money, '注册推荐返利');
+        } else {
+            $a_result = true;
+        }
 
-        if ($result) {
+        if ($a_result !== false && $b_result !== false && $c_result !== false && $d_result !== false) {
             return $a_money + $b_money + $c_money + $d_money;
         } else {
             return false;
@@ -144,7 +149,7 @@ class ConsumerModel extends BaseModel
             case 1:     //用户推荐
                 $map['uid'] = $recomment;
                 $data['now_money'] = array('exp', 'now_money+' . $rebate_balance);
-                $result = D('User')->where($map)->save($data);
+                $result = D('User')->add_money($recomment, $rebate_balance, '商家订单返利');
                 break;
             case 2:     //商户推荐
                 $map['mer_id'] = $recomment;

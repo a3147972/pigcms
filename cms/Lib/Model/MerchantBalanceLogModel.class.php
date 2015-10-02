@@ -1,5 +1,5 @@
 <?php
-class MerchantBalanceLog extends Model
+class MerchantBalanceLogModel extends Model
 {
     protected $tableName = 'merchant_balance_log';
 

@@ -131,7 +131,7 @@ class MerchantModel extends Model
 
         $this->startTrans();
         $result = $this->where($map)->save($data);
-        $insert_log = D('MerchantValanceLog')->insert($mer_id, 1, $order_id, $balance, $order_type);
+        $insert_log = D('MerchantBalanceLog')->insert($mer_id, 1, $order_id, $balance, $order_type);
 
         if ($result !== false && $insert_log !== false) {
             $this->commit();
