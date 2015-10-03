@@ -81,12 +81,10 @@ class LoginAction extends BaseAction{
 			$result = D('User')->checkreg($phone, $pwd, $invitcode, $recomment, $id_number, $id_number_img, $with_id_card);
 
             if ($result['error_code'] === false) {
-                session('user', $result['user']);
-                setcookie('login_name',session('user.phone'),$_SERVER['REQUEST_TIME']+1000000,'/');
                 if(!empty($user_import)){
 				   $user_importDb->where(array('id'=>$user_import['id']))->save(array('isuse'=>2));
 				}
-				$this->success('注册成功');
+				$this->success('注册成功,请等待管理员审核账号');
             } else {
             	$this->error($result['msg']);
             }
