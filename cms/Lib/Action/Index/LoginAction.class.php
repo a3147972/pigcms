@@ -38,9 +38,6 @@ class LoginAction extends BaseAction {
 
             $result = D('User')->checkreg($phone, $pwd, $invitecode, $recomment, $id_number, $id_number_img, $with_id_card);
 
-            if (!empty($result['user'])) {
-                session('user', $result['user']);
-            }
             exit(json_encode($result));
         } else {
             $pigcms_assign['referer'] = !empty($_GET['referer']) ? strip_tags(htmlspecialchars_decode($_GET['referer'])) : (!empty($_SERVER['HTTP_REFERER']) ? strip_tags($_SERVER['HTTP_REFERER']) : U('Index/Index/index'));

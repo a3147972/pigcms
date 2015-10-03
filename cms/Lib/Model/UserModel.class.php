@@ -141,7 +141,7 @@ class UserModel extends BaseModel
         $data_user['id_number'] = $id_number;
         $data_user['id_number_img'] = $id_number_img;
         $data_user['with_id_card'] = $with_id_card;
-
+        $data_user['status'] = 0;
         $uid = $this->data($data_user)->add();
         if ($uid) {
             //注册成功开始返现
@@ -155,7 +155,7 @@ class UserModel extends BaseModel
             if (empty($return['error_code'])) {
                 return $return;
             } else {
-                return array('error_code' => false, 'msg' => 'OK');
+                return array('error_code' => false, 'msg' => '注册成功,请等待后台审核');
             }
         } else {
             return array('error_code' => true, 'msg' => '注册失败！请重试。');
