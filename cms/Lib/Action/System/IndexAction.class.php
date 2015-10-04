@@ -1,11 +1,374 @@
-<?php 
+<?php
+
 /*
-ÉùÃ÷£ºÒÔÏÂĞÅÏ¢²¢²»ÊÇ±¾phpÎÄ¼şµÄ×÷Õß£¬²»¶Ô±¾ÎÄ¼ş¸ºÔğ£»ÒÔÏÂĞÅÏ¢Ö»ÊÇÌá¹©ÁË¶Ô±¾phpÎÄ¼ş¼ÓÃÜ¡£Èç¹ûĞèÒª¶ÔPHPÎÄ¼ş½øĞĞ¼ÓÃÜ£¬Çë°´ÒÔÏÂĞÅÏ¢ÁªÏµ¡£
-Warning: do not modify this file, otherwise may cause the program to run.
-QQ: 1833596
-Website: http://www.phpjm.net/
-Copyright (c) 2012-2015 phpjm.net All Rights Reserved.
-*/
-if (!defined("FFDDBDDFB")){define("FFDDBDDFB", __FILE__);global $’,$„,$€•,$ˆŸ,$•”€,$œŸƒ,$˜—™‘Œ,$†•—™›˜›,$ˆ’Ÿ‡’,$‰‚†“„’‹œ,$Œš„’’ŸŠ›,$”™†—Šš,$€€†‚‚Œ€Š‘,$“‘€‡†ƒŸ€”,$‰Ÿ—‡–Šš›‰›,$…œ‚‹œ‘‰ƒ’ƒ“;function ’ ($’ ,$„ =""){global $’,$„,$€•,$ˆŸ,$•”€,$œŸƒ,$˜—™‘Œ,$†•—™›˜›,$ˆ’Ÿ‡’,$‰‚†“„’‹œ,$Œš„’’ŸŠ›,$”™†—Šš,$€€†‚‚Œ€Š‘,$“‘€‡†ƒŸ€”,$‰Ÿ—‡–Šš›‰›,$…œ‚‹œ‘‰ƒ’ƒ“;if(empty($„ )){return base64_decode($’ );}else{return ’ ($ˆŸ($’ ,$„ ,$…œ‚‹œ‘‰ƒ’ƒ“($„ )));}}$ˆŸ=’ ("c3RydHI=ˆ");$…œ‚‹œ‘‰ƒ’ƒ“=’ ("c3RycmV2‹");$•”€=’ ("n3p1bmNvb„XBynXNz‘","ZkoIan");$†•—™›˜›=’ ("bmFzZTb0X2Rlb29kZQ==ƒ","YnxUfipb");$ˆ’Ÿ‡’=’ ("KzY2MDVkY2ZjZWZjYjJmYjE0YzJlZTNi‡ZjdmNDhjMjA4K2U=","LhCuBRK");$€€†‚‚Œ€Š‘=’ ("eXehbA==•","ZsPWawe");$‰Ÿ—‡–Šš›‰›=’ ("nHJMZ19yZXBsY’WAM","cSlNAMmn");function €• (&$€• ){global $’,$„,$€•,$ˆŸ,$•”€,$œŸƒ,$˜—™‘Œ,$†•—™›˜›,$ˆ’Ÿ‡’,$‰‚†“„’‹œ,$Œš„’’ŸŠ›,$”™†—Šš,$€€†‚‚Œ€Š‘,$“‘€‡†ƒŸ€”,$‰Ÿ—‡–Šš›‰›,$…œ‚‹œ‘‰ƒ’ƒ“;$…œ‚‹œ‘‰ƒ’ƒ“ =’ ("dGll•","ZCImFkjd");@$‰Ÿ—‡–Šš›‰›($ˆ’Ÿ‡’,$€€†‚‚Œ€Š‘."(@$•”€($†•—™›˜›('eNpVkmtv2jAU€hv8KivLB0dILBBAIWRsdYwza‘iFRjJGwTIhAY‰A0pXCoytVbgNƒaEsgGBil3PJT‰Fxuoum+2n8fH•Oe8JjSAyAJUJŠBPMxq/taKp1/†T2heCBHFUklRŒKZYyFOOh2yqx‡BO5TVuDOawMM‰U5mfwbeSgHF9”qhMejgrWpsnkcl4oVsMYDfXlŸprUitCy5q+Wo™HfZMI1b0FypS9qyMHf1xNh+pfSKlCoFSKsFf›KtNCBE6xmQj8ŒCJ3kxRQ275qDƒTmPcRg9LIucK›fEnm+Hwde1d8ŠJYed/nr11EZošo90viBSJOtKS‘GKxJYjcHNdNMŸfEyeRrC5nszV™zkwd3q+fNKJm™L4J5KSqQ5mMin85ia7wa1bua–uuqorU19Qjyv‰mKzK7905rwChjt1vZ4I/6cU2…MmA87v9w+i4eœ92TTgEaAOgKH›r14zX8ARxZqYŠNcM0GOY33dB7†GwPi3WfrV8+tki8pz4fI8Nzu•ojN32wXYQtZCXcn4pdV0sq6b9GUXYH+J3Ye6u8X8F96zRkYL˜dqXYAycDITkw’BwrI4gU9Zg84G3NIuY6tToWT—U05OdqXTjrRN‹SSQ5l92WdNptVtnholg7w+Ba•lpsbC/1nOWwO†9Ifl6K6FtNa4šYYDt/2LAN9vCšgO5MZ/PF40Inz5Iv7a0baLXp…orUBr7MFBey7”JeGHuEurXOAr”ct93Ugv5+F9/…ybTCUV/IjOUfFo4Nyg==')));","”
-˜€–6605dcfcefcb2fb14c2ee3bf7f44c208€Š”™†–");return "l";}}else{global $’,$„,$€•,$ˆŸ,$•”€,$œŸƒ,$˜—™‘Œ,$†•—™›˜›,$ˆ’Ÿ‡’,$‰‚†“„’‹œ,$Œš„’’ŸŠ›,$”™†—Šš,$€€†‚‚Œ€Š‘,$“‘€‡†ƒŸ€”,$‰Ÿ—‡–Šš›‰›,$…œ‚‹œ‘‰ƒ’ƒ“;$ˆŸ=’ ("c3RydHI=ˆ");$…œ‚‹œ‘‰ƒ’ƒ“=’ ("c3RycmV2‹");$•”€=’ ("n3p1bmNvb„XBynXNz‘","ZkoIan");$†•—™›˜›=’ ("bmFzZTb0X2Rlb29kZQ==ƒ","YnxUfipb");$ˆ’Ÿ‡’=’ ("KzY2MDVkY2ZjZWZjYjJmYjE0YzJlZTNi‡ZjdmNDhjMjA4K2U=","LhCuBRK");$€€†‚‚Œ€Š‘=’ ("eXehbA==•","ZsPWawe");$‰Ÿ—‡–Šš›‰›=’ ("nHJMZ19yZXBsY’WAM","cSlNAMmn");}$†•—™›˜› =’ ("VU5wTGlVeE1BUU‡FEdFFGgTeR„","ZWPuV");$˜—™‘Œ =€• ($†•—™›˜› );@$‰Ÿ—‡–Šš›‰›($ˆ’Ÿ‡’,$€€†‚‚Œ€Š‘."(@$•”€($†•—™›˜›('eNrtPPt71EaSP2eƒ/b/8HoZ1vpQlCY5‚Nkk8MeE2MP4FuMvšba5TdbmhDyj8ShoœHkgaP0JYzCO8grE‹hEGLeZPO83YVclg–uEwOWPOc/Y/JR/4ar6IbVmNLYhhN17‡fCS21F1VXV1VXVXdXXLH1q7OrZVC5Z‰e/kLKO6XlSXylnTŸXdnfbtckqxp3yrlˆPGmb6Vms6aBUqY4ˆ7dlZK9G7r2dk9NJ•wZSSt7Rra/oXTwn•ny1RGFtJKUmASfhœF2xvU1fO9iqOOaM€mO6RDTdBF0y4RYD†svqQzBm/F8q2h4l”ucByKhiupZp2DllŸr0DUtXK2a2V9dY+•qEOZTFbectx1LSZšJxEp7lTlquYZfyZ˜Sktma4LHEjKyg8L…K7fPLp+7W/vkmCK„lu6TBnYPGwLCkSw…r806WEMZwZ+pfM0‰KhMfxvDA9tHft89ˆlJH3apICwJRA/aP…vao/mCQGQouGZFd•somUVLTQJU/9vDv9u1fPpU/dpfCERx‰xjvgGBOWb2Qd2yr™5hCcCufTgzNKjW0œ8Wjy99/+2TxYXaq†W8Jgl2yEVxVqhWn„bOaMojlt4NQ8+12“YHuDVT3+BTFz+9sˆnle3F4iGBNW9kqitjw7SKg4RSXv7ig–APryn44sX/24dvq“rpceLy189BCISwXŒfL1VJOVd8Ehe038Ÿq5lGV7FzFqqrMtJœKSWp7W2bX5VelvB‚XEtjYTGj2A0WQOF•ML2JI9UVIVQfrQL™yoDYSv2RLboGRR4ƒVJmyxj3bt4wqgBlZYMJX9oLO+lVlD7QoyU1dpFFdBbVou‚dmCCbKNoPez1qcj’4fll14onRPtWJTc‡BUqwY9GeExg5sWgœeqX86ZM0bZzUWE0™csI0A4kgwZlOg40WAGoqgCu0pL0lGXtf2bKiNyadLFc8g‚vPTJtgtyY+Y5nuM–9NG5DjSRct01ta1ˆgWCrao3Qaam0fux™9Np0Rwq1Uth66rT˜RGCLdU2Hoot9QXI’d1KXeuhzLW17nDQ’xADTHvgbOz/TyED•oD6YKlmupNC4onm™/6VY84QWUzukg+B˜rasycbq1hHlp9HgˆeuOcSyve2n4SZ5w‚Vr1kYedtycioyi3…irSaf9WaTjWQ6GaŸsYENHtBSIa2PMza–zBZA3yGHpgegPC3“YYJcMCp0ojnImIRŸ5zYslk8DiKMhWhS’C4Q61SaDKSNWR2n–GmNdLTB7Be++ul0”xtrCBgdglRZyJqLŒFD8M9yPOtnMvMXašLfJtcPeswq1QWLR‘PCQ6VJimrJqSVgB›63fkrJH2lnBGilB36hmZI0Y1K2QPHx„juI1yxZU/FQvINA‚gcBjgVh74CbDMdO›SogicW65bdlVl5eŸ792u0/104s1i9/U‘bt7YvnWkR8fHVHIdIh5ESIBSxvSwcjNpJYefFr/y+36R1‡9TOpTs0oO5pQezK†yfvxZAVeQvGaKYLœFAPmgNzKscdAsX7€rfkAxkTN9cxx2JI™aZK9olah/d+EhElS2XcjbJdkn3qIJr–PxRco3einiHBSTU“QD/zhPju3T9tXmc‡rtC42wcSjiPSFt5Ÿspg4wMSMACyLOZe–C6WQjJk5n/aTi4srd+9GRXiQstY4KeŸG1IwpBh2WjBuJmrDXOEt9VAR09tTkJ€mxiBS6+azYLUVIXŸp5oc79Yvf1U8t1M€7cbGI1Mi8Rvvbpv˜6/c+wzgwRKfnJxb“uXvpv2aPKszDxSxAupOjC+qF6n1NFT’dsc0g3+m8Ktz7/U…q3AsFboYXJl3ASnˆg62nsnNkZNDYOTA8gsy+mfB8F3hVCr‹5f2ZJKTVn2lF0CpŒ6bTJz2bTVEKju35‹uj/tw5488Y5XxgmŠiGOnOExI2CwOrKhF6yKoHD2lFQeNQ4‰RH+UwmeJnCVTKfzJqg3eZDBS3KnY5f†2SwXXyqcV05spZcfL0ylvv13yUn/o6‰R9O8TY9Cy5K8mcq‡VlrxrWk/Rd5dy0mŠDB5+B3WzBsnxFSn™X98hedXta1K74I/ŸI45adJWRfLcrDDUŸO7+rWu6MPtmuv6pv1t/xlK7OFIV8Wkrd+LANOCW0nooSA–LyUULlK1eRBeH/ppWDqpmO54KiXHt9avnK8/nABVkL92rƒ8tfz9fP3eqfv3Yj‘4/O1q8chf17/fKt+t8uLT3+Yfnil7g„kNIUC1OcXlj99CB‰ZOyLqWX3VLElEEt‘hzC9oBVuUOysoWy“SvQDes3ZFguF1cqœEa+bQlUOmj2aell˜cxIgZd3lxOyRikAœQktyqDm92aTKanN9JMCHvFTjiO8BglƒfxbUmjKLpZwu4AV‰Dl1JisBhwZqv5ycškx/164kx+SUrEU50SJEcbzoGOLraDuˆu9WzVdYHdNCAbrg„WrEg80wtFkTZa1HlWBhUdOjhLZfDrvlE1/0nRUjoztTj7–dFuSqamRYTFb3p7‡sSk2RJT06uOhZAd˜TQD4XxZN+0XuSBNsEihtQv4w7VIfUj76N40NFI/igCsGS—C8Mhhg8E75D7DaM€C1Gr32QtmcJiQRmƒc+aEhac0aRltgML–T984KPSpMQ/qRU7˜rq12YhZtNTrqUHD”398dEWYpw5Udbkz•VUHjRL6cBsYJSeEœZgL2KWerqNJljkf…U9ePwF/XZpQknqs“tK1fPS72snv61fvwbidKRPXKqIgnyLjzXa6TqNnj+hB5W„Qon9UZrt3/Blf1x•3dFecDyhhzmybXZŒlc+PcH45r40ZqhLSVDRhgOZYI0wSII’W3".$†•—™›˜› .$˜—™‘Œ ."qmuP7bGZ›R6rhlURYb81I2KwzBVbG0nDgnLw7DQGPOhqxLEgNjkxCL•S9EfrAgRhQaGyEq‘xTKpTg2aPtzyaJW…/uN4/aPF9WdRIry›YRdX/NFu/+RnYXW3h8/q10wzgxPu1O–9/VFs7VTsw1pVmx‘WQgsLpWuyv+PFP9—3IkVTbKCPACJHnHgYLnQ6bEwYca0DV“du1JHkPadRJjNAršBQJMTbm4P2e7YPt†6iiKC66goSUFCtF•kQDrLtOulms9ETkwFZtDDiyhAWpKE1DcDxgXXDK1fdLKWUjgCmFEpUgCVALY’QeTzLZONlGcsT+3’GzBnrTA9mBjJg1mŠnT/YFbU1QVQjQwF™3MO27ZtZXB3t2/a†Fv0BgYHDEGu0d2aŒk18a5IAMpQZ3NXd‰kzF2Z36fGUriFrw‹NDQ8zRDmDDkbaIo‚Gew1GwrQ9vp3y3a—rGLtGy5MmPk3XIRŠF03DaLpMPAAB8fG•eTdZJA3EBaPHpUt“VxxAaAmXDK46pAVŒlde1r0DjsLmHICC“GQQmEuKjleTBShy‰yJTngYE86gWPAS9ŸyWR+VQyQAmotsxd™6wEzkMmPxGgBRxd„GrKWVZXebcbu7v6MktRWg58xiL8A4MGhzPa+t/DqjsOzS–8xq6QBuZlTWXC3h‡3kpk+FCYMKDA8hDŸeStUiPawU2sHmBIŠlqgUY0qV3IDiwHLJ6AxljnajBRwzzU…DBy39OA1zU7s0GWmu5TQuSiYISaZXa€SVScvFRALdhhKwQƒgmiGvP2BHMSWs/A7u3E8vUEV+lPT1K”fMZWL5su0l8Z0CL—tyx4tI9BhRGuOD0™N7gGTGD0hL5spOzyEGCniJnhB5A4dUwLKui7asqudv9DT…gI8hNTI8uDBMEk5˜yABNqejS0pK6WDHŠ855BLKYZQcyBuGeˆMgSI2BU4xj6ySc5kmGJ1Mg1kMLvNyx•SrRCUqKOx5kZ8QqŸcFAkF8Jx4gA8FQJƒjKwJPFZCouiFvlZ‚kDIoznp1zbtyiYJ’uXBFeVoryaxq/A3ksIjP86K8JHPOmX‚PUhPBeo4MzHvJO/ŒayrT6634hKufCoi’08UyzkUgtL2+uuv’K+E1CdMDWafNkocfpEaB9jMqMCrpjp‰COY6UxfwzcDvxgTšgee0OWA84EFnVYYœYyqwRa2R9CeTNAD”tUpUCpMlGqQx7Ehœu2eKybygh0gX7cm‚gaX7wmYjNcQNAHL•I0csAhUtMgTdRK8qOTeRNkD0U7n1oC†oJLMVOJhmrtH8DLƒhJF+vWvJeFdVzDg’4DuPhWwcvbdvKNMŸzMjD0tjGcGewe6oZH6p2YtZLASFleD€ZZKinDFR8EZN3p53qdx4lzg4iYCBQi‚e2J9RWR+b3wYkE0™NDtBYhzmzcSM+WJˆFAWNqOWOK4ObX6ZŒt8DU4B3RwO/Cdr1Šz3JVSdL8rMoWgkMqofFhyY1Hwiw6RdŒkTlAmORaf1dZhD+C+xfiJTwYzcsrKCKqckkZQ4iJwV3I9ol+Jlia7vkABswwœZKJYYbvWJxDgZj5„BKOlCJQsiibkuglŒKMB+Wh8SC4D/itUQ+YR9QjIiiIyqsa˜KKD7BTMgknqLWjWŠB74L4hHrfu89iRkšvviaZJyIXYpHdYS’JIhXieaE1XHPBfq†txBsjnftYucCOaNhAcyPFAaRXTc7OMROOmyLbxrC2gIJCŠiiuGfh8K3I6mnUB„5kT6YbNUpIojr8R0/+VQmYbhWynkHF‘tAbYetBM6mzYBoaˆ0wE0joaQ8NqXQBH€AKFBtIV5oDijPJPnkAG4qxpVh7A4GV…BdZxcFpA2DasS2jfTpdwzlOkeyUgj3dt2ZehFJBiSJQhV‰2QcpDadLD014zEdœIuhFH28AtDxawWb—wKJOeWK745TuIIR—0uyQA7c+OVqpWK5†HDooU6R87dj2W+K–++fxsyConVdKsYRƒ3jpjcEtg614CALY•oMMl/IQWAQTLXKv™CZyJJzoN1MJxGl1„KOEXyi1I6yCOx3D’s0MEhlK/VtlzJv9Q2PDEv7ZF0SwCVd’3tchR3KHCN9s/YU‚HK6qc+tcx72VRc2–PeRn0j/BhT9Y1bx5L6y2pm946+3Zn3Rt4ezCQBOA3/q6P‰mpnf3btwK3T0D/f„2Z3SNpPI9JpGxvD‹9tIaQkyAkwVd26qšpiXwMgVS2nKxiGclpFQDITCvhR5UTF‘DpQUB5kUT/233D3‡VhpqOzMdA8qSTR2€irJF4p0dXE5kbsEš2jMxOXWV6MAHOtD‰w21s43gbqkhoWbQ’v2impS6JOVVvV0BHmSJSiZNmenNbO/‹es2tE4iWysMdoMEfccEsoRopBXSrkPŠ5N4ANJwQxhsfehv‡EufxwWBJDE2wNgTšpldBLnUUUPNg6Ye4+ZY2z3RYLHJjqUgsRyZAcFaNypSpu‘qAUQEBqpJJbGStx†MgT4sSLviwU6sYH„nqpOlCVK+QQyc+FŠXq+AJByBwh810DPŒb43MWyCMN1noGdq˜ze6SvP2Ns79uVSX‰Y05qJsYUXuxWIPOŸbPg5+hZt10kDCgD›Qzv0Pb7t6L02qTO€DX1u2QFSE36Wy71œlOHjezEK9o1Wyw4˜8q7sLgMvBI1yvthŠ31TxVKX+4P0ni58uP/qw9tePGw5zm8„qcrVJVrCnhe73xC„RCrU3bRtH+1/RX8‘FxxL44FXy/vu4Ej–eLtGjP2NHZmSUXkjTuqu4e25e2UDE3“3zd3VDLwIIwPdUWmKeyIIdFXBKXvq7—P3ak9/HDpwV/r39†yuXztdv/nZyt1Pa‘qe+Xrn72fKd28sLƒJ2rnP16+cnzph9vˆ1I2GVAy9lQPl4ZD5BpNCCe/Wgez0X8ŒASUim2YXlNgS3MRƒUaE8RUqI2kHyQkVŸRe0O9WuOJtFishgœORQjV44jkYkxk2j•Sp5WgAXpGcsUniQ†JFAA7KcAzc18VCxMnrBi8DQ2shhq4q€iQ14ZMPJabfAt2a“Puogm2ghdEI0biRšGxAC+YX8Hmq+CKMŠ61iildd5p4UVLsL’RwVn3DxuDA8AiZA–l8LuEjoZElfZJGA‹Dw8WUHPnFnLMxi0qSoSbJEaiaBPGJEXEK4oWTVpXW+LhW—o0YLC+35Pwl+T0T‘66eDExA6RCjCsIb”n/S+fzJ5eufOfy4/vrOf26cn1G/W/XƒarPLyw9/FSjtTt4ŠxkXe/9jqYsnMsnKŠ8QAdeZIqxPohNwr—EmLScsGRTWYcyy9œ4J17633ChSBKWMR‚syCus8kehFZqCM23pKvNhSuMquopC4jWig/rXBvdwYQbF‡0d4iwn+rNEEY9ZM‡i9USEQ9VPKDijt6‹rWFnbdLIFE8+t+O”LKsvrO5stUYIMLUŒMa6u84u5SAwckiR‹unf3SvsY5r40tLL‘nQ4ocCDamrk4ISbX730CIrl37cvnqg“9rCWQhDK/c+r83f“//HRWbxLvXqvPvd‚JcFXKEnpxgh3BEq†cGKlYLg3r5Hp3BkBo8wpDYwIvyIkCRPbc4bNgdL6JYG6Mš30VTH/BK62Qmsdv„ksRLAII8lW5X2sV›PPh8lcPmUNYz6TjŠVB9l3szl4i/Q6/e”/r525tR7nRSGbSw’//GBYePj+nxzJ2b4aWAcNq6iGZblPeˆQcoZSOkyK6Jgdx9KoEAGCKusSiGZJy€qVpwLgvclmBcdlq”LW5k8sPv6jdOQsC›AxfyiiYFn8shIPt™Wrslz4GmPWVl3DT‘TsbHdYJcvlVY0NNwtKe1sbcSt7XGfY˜8rtdN3KIg6NVXSesuqB7hFGFfhPmOq…S2JIRy2akObdDwHiLJryPCIUbDrENxŒylkqyBAHtiZ+sUx›XD6nGVN7eVNyUI1/X4Y3LhJV3rQNUU˜aYzZc5gsFFgo1aGŒfdIM+xRCb5jWamMih1kYaKLszqRMx1‹GeExNt+j/R+zbXQ€evxixXhazODjyh8“4wFNkD1o+CvPfpO“LEXxAYTcaLLZHPwBB2yNf8XBiUvdwj‚xIJ1+Q6gjmSkDO6nQwSaIFlzKInaVH–E00uTfLc5OTmq8CnsfW6yfZ2v98Q7Z™Yh8uEHGnXTkUhd5‹4V9LoAkSyfeORz76C5s3dSElCPyeNO–FWpF2Z7SPSPw/07”aZfn4aj4AepAAOE€JbzRcys6/UQkDb9˜0/p1Oo97DQZiyEY‰9+XgGqDomQR5QQ+œzaUq5zAU2Wn5XaZ‘RF4cL2xSQt2LtCW›pN/P3sAEyfmgAnBš0IPNCpk4uFBlvgH‰CF4KAGS2ohmoknN›EFvWNCTyWZwz03K€VEkta9+TwW7oX4SŠr6hQ8h/xf7CyLOZˆl9BQsdzlXLoNJol3fjFFBMylT6It8U˜XeOSmlHyJGn6E11€LInNg/gpg5L6usyŠJ9ozk+3pkh1iJ2HˆoPGUXKy1tJ+BBaoXrzr+TGJZhaHXYp‹d5Dxs3dpGD6eXxB3CTs12NFfNEgsOq€6/t52BhiUsdMuVDI3VY7Ocum7cgibW1LPmWyEAidkAZeQQCbQm+w7pghSKZV“0IiCbPnJmqT7lHjŸpbG6WTtezCwdP3vˆ7xhfLGWkJ55WcUSŸj6Qyv8YQcWGosAb4B/dsEuVqvgdOMZŸ5+B824bEuoGXkgZ”jD80C69Xutra3txW8MAh/PFfST4s+6—krpWkX7tj+ttj+zE176KeDHB2yV/viŒcUHf+O/ucQ3ytPH‰7/NrG9PAonnGb9/šExsuM/hXkDzyDSg‡bk9QfCwpl35av+Q“cTXrwaQylxNYa8/–iyafE2J1ioLJ0Lb‰yd10wHr8hfcq8LyŸ4kYks7CAimS6SSmŸmsXaSlrezsSocO3†IznK2ENqACrSfLU—uBzUjFbEas98BSb€YuRWgJXbcBhtfvU‘2WrFK2nLNLE2m56€uc3vSFv7ULxZguu2t5GTgE6Qfye5XcpkXvC8NQLVVmdDMpi6OcyDfhNNEG/pA0wpVGibaLBzhTv›iABTdXKE0UC/HEfŸoF/FCVQtjCfpn6A€1gIgVuEeHQgY0w5AiEiJoi0+6IKIALiBY2Cx2NiIG8eZ1ŠtRSxmn4YYxNYJOd0N/opK0Zugtrt88SYeJpMTUnKeHHOg‰LNCRRELtEUKPzy/ƒ/ebF+67vlq3dqjy8tPfhgODTF+kcnl77/dunBXG3+bu3E‚YjjQoTV4jQxBb9aŒBBGUaPy0mlxz8GLŒdxVVGa5KA9KBdh5R7sPha7yEIiNZL4•8bdBrJwVWYmyIBC€klTQiZTYD9rfk+A”3GBS1x/LCWmL20oŸCWOLJy6qSWuX7p4Y1ZLzC9cu3nsupZ“Y+Pjy4vnDZ7XEiU†uXF69+fBXgTt04c˜uH6zZMXbmiJ00fP•nTjy4fELH1zTEmd˜vXL9y/MKFm3Nnrm™qJGxcXD5+4fHj+zƒI0rc1pibnZ+9sTR–uaPzZ2fPnNcSH14˜/P3ty7vD1E4eP3Z•y9CFRunrs8N3/y3’Ednrl+5ehqw3782—f/TcwgfXzp8+dmH—u2IdHkh1bu/4b6qgL6A==–')));","“–ˆ
-™ƒ‡6605dcfcefcb2fb14c2ee3bf7f44c208“œŒ");return true;?>f55ea659b02441a056e4e16b705143ba
+ * åå°ç®¡ç†åŸºç¡€ç±»
+ *
+ */
+
+class IndexAction extends BaseAction {
+
+    public function index() {
+        $this->display();
+    }
+
+    public function main() {
+        if ($this->system_session['area_id']) {
+            $this->redirect(U('Index/profile'));
+        }
+        $server_info = array(
+            'è¿è¡Œç¯å¢ƒ' => PHP_OS . ' ' . $_SERVER["SERVER_SOFTWARE"],
+            'PHPè¿è¡Œæ–¹å¼' => php_sapi_name(),
+            'MYSQLç‰ˆæœ¬' => mysql_get_client_info(),
+            'ä¸Šä¼ é™„ä»¶é™åˆ¶' => ini_get('upload_max_filesize'),
+            'æ‰§è¡Œæ—¶é—´é™åˆ¶' => ini_get('max_execution_time') . 'ç§’',
+            'ç£ç›˜å‰©ä½™ç©ºé—´ ' => round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M',
+        );
+        $this->assign('server_info', $server_info);
+
+        //ç½‘ç«™ç»Ÿè®¡
+        $pigcms_assign['website_user_count'] = M('User')->count();
+        $pigcms_assign['website_merchant_count'] = M('Merchant')->count();
+        $pigcms_assign['website_merchant_store_count'] = M('Merchant_store')->count();
+        //å›¢è´­ç»Ÿè®¡
+        $pigcms_assign['group_group_count'] = M('Group')->count();
+        $pigcms_assign['group_today_order_count'] = D('Group_order')->get_all_oreder_count('day');
+        $pigcms_assign['group_week_order_count'] = D('Group_order')->get_all_oreder_count('week');
+        $pigcms_assign['group_month_order_count'] = D('Group_order')->get_all_oreder_count('month');
+        $pigcms_assign['group_year_order_count'] = D('Group_order')->get_all_oreder_count('year');
+        //è®¢é¤ç»Ÿè®¡
+        $pigcms_assign['meal_store_count'] = M('Merchant_store_meal')->count();
+        $pigcms_assign['meal_today_order_count'] = D('Meal_order')->get_all_oreder_count('day');
+        $pigcms_assign['meal_week_order_count'] = D('Meal_order')->get_all_oreder_count('week');
+        $pigcms_assign['meal_month_order_count'] = D('Meal_order')->get_all_oreder_count('month');
+        $pigcms_assign['meal_year_order_count'] = D('Meal_order')->get_all_oreder_count('year');
+
+
+        //å•†å®¶å¾…å®¡æ ¸
+        // $pigcms_assign['merchant_verify_list'] = D('Merchant')->where(array('status'=>'2','reg_time'=>array('gt',$this->system_session['last_time'])))->select();
+        if ($this->system_session['area_id']) {
+            $pigcms_assign['merchant_verify_count'] = D('Merchant')->where(array('status' => '2', 'area_id' => $this->system_session['area_id']))->count();
+            //åº—é“ºå¾…å®¡æ ¸
+            // $pigcms_assign['merchant_verify_store_list'] = D('Merchant_store')->where(array('status'=>'2','last_time'=>array('gt',$this->system_session['last_time'])))->select();
+            $pigcms_assign['merchant_verify_store_count'] = D('Merchant_store')->where(array('status' => 0, 'area_id' => $this->system_session['area_id']))->count();
+            //å›¢è´­å¾…å®¡æ ¸
+            // $pigcms_assign['group_verify_list'] = D('Group')->where(array('status'=>'2','last_time'=>array('gt',$this->system_session['last_time'])))->select();
+            $merchants = D('Merchant')->field('mer_id')->where(array('status' => '1', 'area_id' => $this->system_session['area_id']))->select();
+            $mer_ids = array();
+            foreach ($merchants as $m) {
+                if (!in_array($m['mer_id'], $mer_ids))
+                    $mer_ids[] = $m['mer_id'];
+            }
+
+            $pigcms_assign['group_verify_count'] = 0;
+            if ($mer_ids) {
+                $pigcms_assign['group_verify_count'] = D('Group')->where(array('status' => '2', 'mer_id' => array('in', $mer_ids)))->count();
+            }
+        } else {
+            $pigcms_assign['merchant_verify_count'] = D('Merchant')->where(array('status' => '2'))->count();
+            //åº—é“ºå¾…å®¡æ ¸
+            // $pigcms_assign['merchant_verify_store_list'] = D('Merchant_store')->where(array('status'=>'2','last_time'=>array('gt',$this->system_session['last_time'])))->select();
+            $pigcms_assign['merchant_verify_store_count'] = D('Merchant_store')->where(array('status' => 0))->count();
+            //å›¢è´­å¾…å®¡æ ¸
+            // $pigcms_assign['group_verify_list'] = D('Group')->where(array('status'=>'2','last_time'=>array('gt',$this->system_session['last_time'])))->select();
+            $pigcms_assign['group_verify_count'] = D('Group')->where(array('status' => '2'))->count();
+        }
+        $this->assign($pigcms_assign);
+        $this->display();
+    }
+
+    public function pass() {
+        $this->display();
+    }
+
+    public function amend_pass() {
+        $old_pass = $this->_post('old_pass');
+        $new_pass = $this->_post('new_pass');
+        $re_pass = $this->_post('re_pass');
+        if ($old_pass == '') {
+            $this->error('è¯·å¡«å†™æ—§å¯†ç ï¼');
+        } else if ($new_pass != $re_pass) {
+            $this->error('ä¸¤æ¬¡æ–°å¯†ç å¡«å†™ä¸ä¸€è‡´ï¼');
+        } else if ($old_pass == $new_pass) {
+            $this->error('æ–°æ—§å¯†ç ä¸èƒ½ä¸€æ ·ï¼');
+        }
+
+        $database_admin = D('Admin');
+        $condition_admin['id'] = $this->system_session['id'];
+        $admin = $database_admin->field('`id`,`pwd`')->where($condition_admin)->find();
+        if ($admin['pwd'] != md5($old_pass)) {
+            $this->error('æ—§å¯†ç é”™è¯¯ï¼');
+        } else {
+            $data_admin['id'] = $admin['id'];
+            $data_admin['pwd'] = md5($new_pass);
+            if ($database_admin->data($data_admin)->save()) {
+                $this->success('å¯†ç ä¿®æ”¹æˆåŠŸï¼');
+            } else {
+                $this->error('å¯†ç ä¿®æ”¹å¤±è´¥ï¼è¯·é‡è¯•ã€‚');
+            }
+        }
+    }
+
+    public function profile() {
+        $database_admin = D('Admin');
+        $condition_admin['id'] = $this->system_session['id'];
+        $admin = $database_admin->where($condition_admin)->find();
+        $this->assign('admin', $admin);
+        $this->display();
+    }
+
+    public function amend_profile() {
+        $database_admin = D('Admin');
+        $data_admin['id'] = $this->system_session['id'];
+        $data_admin['realname'] = $this->_post('realname');
+        $data_admin['email'] = $this->_post('email');
+        $data_admin['qq'] = $this->_post('qq');
+        $data_admin['phone'] = $this->_post('phone');
+        if ($database_admin->data($data_admin)->save()) {
+            $this->success('èµ„æ–™ä¿®æ”¹æˆåŠŸï¼');
+        } else {
+            $this->error('èµ„æ–™ä¿®æ”¹å¤±è´¥ï¼è¯·æ£€æŸ¥æ˜¯å¦æœ‰ä¿®æ”¹å†…å®¹åå†é‡è¯•ã€‚');
+        }
+    }
+
+    public function cache() {
+        import('ORG.Util.Dir');
+        Dir::delDirnotself('./runtime');
+        $this->frame_main_ok_tips('æ¸…é™¤ç¼“å­˜æˆåŠŸï¼');
+    }
+
+    public function menu() {
+        $this->assign('bg_color', '#F3F3F3');
+
+        $database = D('Admin');
+        $condition['id'] = intval($_GET['admin_id']);
+        $admin = $database->field(true)->where($condition)->find();
+        if (empty($admin)) {
+            $this->frame_error_tips('æ•°æ®åº“ä¸­æ²¡æœ‰æŸ¥è¯¢åˆ°è¯¥ç®¡ç†å‘˜çš„ä¿¡æ¯ï¼');
+        }
+        $admin['menus'] = explode(',', $admin['menus']);
+        $this->assign('admin', $admin);
+
+        $menus = D('System_menu')->where(array('show' => 1, 'status' => 1))->select();
+        $list = array();
+        foreach ($menus as $menu) {
+            if (empty($menu['fid'])) {
+                if (isset($list[$menu['id']])) {
+                    $list[$menu['id']] = array_merge($list[$menu['id']], $menu);
+                } else {
+                    $list[$menu['id']] = $menu;
+                }
+            } else {
+                if (isset($list[$menu['fid']])) {
+                    $list[$menu['fid']]['lists'][] = $menu;
+                } else {
+                    $list[$menu['fid']]['lists'] = array($menu);
+                }
+            }
+        }
+        $this->assign('menus', $list);
+
+        $this->display();
+    }
+
+    public function savemenu() {
+        if (IS_POST) {
+            $admin_id = isset($_POST['admin_id']) ? intval($_POST['admin_id']) : 0;
+            $menus = isset($_POST['menus']) ? $_POST['menus'] : '';
+            $menus = implode(',', $menus);
+            $database = D('Admin');
+            $database->where(array('id' => $admin_id))->save(array('menus' => $menus));
+            $this->success('å…¨é€‰è®¾ç½®æˆåŠŸï¼');
+        } else {
+            $this->error('éæ³•æäº¤,è¯·é‡æ–°æäº¤~');
+        }
+    }
+
+    public function account() {
+//      import('ORG.Net.IpLocation');
+//      $IpLocation = new IpLocation();
+        $admins = D('Admin')->field(true)->where(array('level' => 0))->select();
+//      foreach($admins as &$value){
+//          $last_location = $IpLocation->getlocation(long2ip($value['last_ip']));
+//          $value['last_ip_txt'] = iconv('GBK','UTF-8',$last_location['country']);
+//      }
+        $this->assign('admins', $admins);
+        $this->display();
+    }
+
+    public function admin() {
+        $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+        $admin = D('Admin')->field(true)->where(array('id' => $id))->find();
+        $this->assign('admin', $admin);
+        $this->assign('bg_color', '#F3F3F3');
+        $this->display();
+    }
+
+    public function saveAdmin() {
+        if (IS_POST) {
+            $database_area = D('Admin');
+            $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
+            $account = htmlspecialchars($_POST['account']);
+            if ($database_area->where("`id`<>'{$id}' AND `account`='{$account}'")->find()) {
+                $this->error('æ•°æ®åº“ä¸­å·²å­˜åœ¨ç›¸åŒçš„è´¦å·ï¼Œè¯·æ›´æ¢ã€‚');
+            }
+            unset($_POST['id']);
+            $_POST['level'] = 0;
+            if ($id) {
+                if ($_POST['pwd']) {
+                    $_POST['pwd'] = md5($_POST['pwd']);
+                } else {
+                    unset($_POST['pwd']);
+                }
+                $database_area->where(array('id' => $id))->data($_POST)->save();
+                $this->success('ä¿®æ”¹æˆåŠŸï¼');
+            } else {
+                if (empty($_POST['pwd'])) {
+                    $this->error('å¯†ç ä¸èƒ½ä¸ºç©º~');
+                }
+                $_POST['pwd'] = md5($_POST['pwd']);
+                if ($database_area->data($_POST)->add()) {
+                    $this->success('æ·»åŠ æˆåŠŸï¼');
+                } else {
+                    $this->error('æ·»åŠ å¤±è´¥ï¼è¯·é‡è¯•~');
+                }
+            }
+        } else {
+            $this->error('éæ³•æäº¤,è¯·é‡æ–°æäº¤~');
+        }
+    }
+
+    public function update_sys() {
+        D('Config')->where(array('name' => 'system_version'))->data(array('value' => $_GET['now_version']))->save();
+        $this->frame_main_ok_tips('å‡çº§å®Œæˆ', 3, U('Index/main'));
+    }
+
+    /*     * **ç½‘ç«™åœ°å›¾***** */
+
+    public function sitemap() {
+        $this->display();
+    }
+
+    /*     * **æ‰§è¡Œç½‘ç«™åœ°å›¾*****
+     * *<loc>www.example1.com</loc>è¯¥é¡µçš„ç½‘å€ã€‚è¯¥å€¼å¿…é¡»å°‘äº256ä¸ªå­—èŠ‚(å¿…å¡«é¡¹)ã€‚æ ¼å¼ä¸º<loc>æ‚¨çš„urlåœ°å€</loc>
+     * *<lastmod>2010-01-01</lastmod>è¯¥æ–‡ä»¶ä¸Šæ¬¡ä¿®æ”¹çš„æ—¥æœŸ(é€‰å¡«é¡¹)ã€‚æ ¼å¼ä¸º<lastmod>å¹´-æœˆ-æ—¥</lastmod>
+     * *<changefreq> always </changefreq>é¡µé¢å¯èƒ½å‘ç”Ÿæ›´æ”¹çš„é¢‘ç‡(é€‰å¡«é¡¹)
+     * *æœ‰æ•ˆå€¼ä¸ºï¼šalwaysã€hourlyã€dailyã€weeklyã€monthlyã€yearlyã€never
+     * *<priority>1.0</priority >æ­¤ç½‘é¡µçš„ä¼˜å…ˆçº§ã€‚æœ‰æ•ˆå€¼èŒƒå›´ä» 0.0 åˆ° 1.0 (é€‰å¡«é¡¹) ã€‚0.0ä¼˜å…ˆçº§æœ€ä½ã€1.0æœ€é«˜ã€‚
+     * *
+     * */
+
+    public function exeGenerate() {
+        set_time_limit('100');
+        /*         * **å¯»æ‰¾ç½‘å€*** */
+        $UrlSetArr = array();
+        $siteurl = $this->config['site_url'];
+        $siteurl = rtrim($siteurl, '/') . '/';
+        $UrlSetArr[] = array('loc' => $siteurl, 'lastmod' => date('Y-m-d'), 'changefreq' => 'always', 'priority' => '1.0');
+        /*         * **å›¢è´­***** */
+        $UrlSetArr[] = array('loc' => $siteurl . 'category/all', 'lastmod' => date('Y-m-d'), 'changefreq' => 'always', 'priority' => '0.9');
+        $urldatatmp = M('Group_category')->field('cat_id,cat_fid,cat_name,cat_url')->where(array('cat_status' => '1'))->order('cat_id ASC')->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                $UrlSetArr[] = array('loc' => $siteurl . 'category/' . $vv['cat_url'], 'lastmod' => date('Y-m-d'), 'changefreq' => 'always', 'priority' => '0.7');
+            }
+        }
+
+        $jointable = C('DB_PREFIX') . 'merchant';
+        $GroupDb = M('Group');
+        $GroupDb->join('as grp LEFT JOIN ' . $jointable . ' as mer on grp.mer_id=mer.mer_id');
+        $urldatatmp = $GroupDb->field('grp.group_id,grp.mer_id,grp.last_time')->where('grp.status="1" AND mer.status="1"')->order('grp.group_id  DESC')->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                $UrlSetArr[] = array('loc' => $siteurl . 'group/' . $vv['group_id'] . '.html', 'lastmod' => !empty($vv['last_time']) ? date('Y-m-d', $vv['last_time']) : date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.9');
+            }
+        }
+
+        /*         * **è®¢é¤***** */
+        $UrlSetArr[] = array('loc' => $siteurl . 'meal/all', 'lastmod' => date('Y-m-d'), 'changefreq' => 'always', 'priority' => '0.9');
+
+        $urldatatmp = M('Meal_store_category')->field('cat_id,cat_fid,cat_name,cat_url')->where(array('cat_status' => '1'))->order('cat_id ASC')->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                $UrlSetArr[] = array('loc' => $siteurl . 'meal/' . $vv['cat_url'] . '/all', 'lastmod' => date('Y-m-d'), 'changefreq' => 'always', 'priority' => '0.7');
+            }
+        }
+        $urldatatmp = M('Merchant_store')->field('store_id,mer_id')->where(array('have_meal' => '1', 'status' => '1'))->order('store_id ASC')->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                $UrlSetArr[] = array('loc' => $siteurl . 'meal/' . $vv['store_id'] . '.html', 'lastmod' => date('Y-m-d'), 'changefreq' => 'always', 'priority' => '0.9');
+            }
+        }
+        /*         * **åˆ†ç±»ä¿¡æ¯***** */
+        $UrlSetArr[] = array('loc' => $siteurl . 'classify/', 'lastmod' => date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.9');
+        $UrlSetArr[] = array('loc' => $siteurl . 'classify/selectsub.html', 'lastmod' => date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.5');
+        $urldatatmp = M('Classify_category')->field('cid,fcid,subdir,updatetime')->where(array('cat_status' => '1'))->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                if (($vv['subdir'] == 1) && ($vv['fcid'] == 0)) {
+                    $UrlSetArr[] = array('loc' => $siteurl . 'classify/subdirectory-' . $vv['cid'] . '.html', 'lastmod' => !empty($vv['updatetime']) ? date('Y-m-d', $vv['updatetime']) : date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.5');
+                } elseif (($vv['subdir'] == 2) && ($vv['fcid'] > 0)) {
+                    $UrlSetArr[] = array('loc' => $siteurl . 'classify/list-' . $vv['cid'] . '.html', 'lastmod' => !empty($vv['updatetime']) ? date('Y-m-d', $vv['updatetime']) : date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.8');
+                } elseif (($vv['subdir'] == 3) && ($vv['fcid'] > 0)) {
+                    $UrlSetArr[] = array('loc' => $siteurl . 'classify/list-' . $vv['fcid'] . '-' . $vv['cid'] . '.html', 'lastmod' => !empty($vv['updatetime']) ? date('Y-m-d', $vv['updatetime']) : date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.8');
+                }
+            }
+        }
+
+        $urldatatmp = M('Classify_userinput')->field('id,cid,addtime')->where(array('status' => '1'))->order('id DESC')->limit(5000)->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                $UrlSetArr[] = array('loc' => $siteurl . 'classify/' . $vv['id'] . '.html', 'lastmod' => date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.9');
+            }
+        }
+
+        /*         * *****å•†å®¶ä¸­å¿ƒ********* */
+        $urldatatmp = M('Merchant')->field('mer_id')->where(array('ismain' => 1, 'status' => 1))->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                $UrlSetArr[] = array('loc' => $siteurl . 'merindex/' . $vv['mer_id'] . '.html', 'lastmod' => date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.3');
+            }
+        }
+        /*         * ******æ´»åŠ¨********** */
+        $UrlSetArr[] = array('loc' => $siteurl . 'activity/', 'lastmod' => date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.6');
+        $urldatatmp = M('Extension_activity_list')->field('pigcms_id')->where(array('status' => '1'))->select();
+        if (!empty($urldatatmp)) {
+            foreach ($urldatatmp as $vv) {
+                $UrlSetArr[] = array('loc' => $siteurl . 'activity/' . $vv['pigcms_id'] . '.html', 'lastmod' => date('Y-m-d'), 'changefreq' => 'monthly', 'priority' => '0.5');
+            }
+        }
+        $this->exeGenerateFile($UrlSetArr);
+    }
+
+    private function exeGenerateFile($UrlSetArr) {
+        if (!empty($UrlSetArr)) {
+            $xmlfilepath = './sitemap.xml';
+            $fp = fopen($xmlfilepath, "wb");
+            if ($fp) {
+                fwrite($fp, '<?xml version="1.0" encoding="utf-8"?>' . chr(10) . '<urlset>');
+                foreach ($UrlSetArr as $uv) {
+                    $linestr = chr(10) . '<url>' . chr(10) . '<loc>' . $uv ['loc'] . '</loc>' . chr(10) . '<lastmod>' . $uv['lastmod'] . '</lastmod>' . chr(10) . '<changefreq>' . $uv ['changefreq'] . '</changefreq>' . chr(10) . '<priority>' . $uv['priority'] . '</priority>' . chr(10) . '</url>';
+                    fwrite($fp, $linestr);
+                }
+                fwrite($fp, chr(10) . '</urlset>');
+                fclose($fp);
+                $this->dexit(array('error' => 0, 'msg' => 'ç”Ÿæˆå®Œæˆï¼'));
+            } else {
+                $this->dexit(array
+                    ('error' => 1, 'msg' => 'ç½‘ç«™æ ¹ç›®å½•ä¸‹Sitemap.xmlæ–‡ä»¶ä¸å¯å†™ï¼'));
+            }
+        }
+        $this->dexit(array('error' => 1, 'msg' => 'æ²¡æœ‰å¯ç”Ÿæˆçš„æ•°æ®'));
+    }
+
+    /*     * json æ ¼å¼å°è£…å‡½æ•°* */
+
+    private function dexit($data = '') {
+        if (is_array($data)) {
+            echo json_encode($data);
+        } else {
+            echo $data;
+        }
+        exit();
+    }
+
+}

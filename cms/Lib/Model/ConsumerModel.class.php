@@ -16,12 +16,9 @@ class ConsumerModel extends BaseModel
         }
         $info = D('User')->where(array('uid' => $uid))->find();
 
-        if (empty($info['recomment'])) {
-            return;
-        }
 
-        $d_info = D('User')->where(array('uid' => $info['recomment']))->find();
-        $d = $d_info['uid'];
+        $d_info = $info;
+        $d = $uid;
 
         if (!empty($d_info['recomment'])) {
             $c_info = D('User')->where(array('uid' => $d_info['recomment']))->find();
@@ -61,22 +58,16 @@ class ConsumerModel extends BaseModel
             case 1:    //只有一层,则只给d返
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
 
-                $add_d_money = number_format($d_info['now_money'] + $d_money, 2);
                 break;
             case 2:    //给d和c返现
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
-                $add_c_money = number_format($c_info['now_money'] + $c_money, 2);
-                $add_d_money = number_format($d_info['now_money'] + $d_money, 2);
                 break;
             case 3:    //给d,c,b返现
                 $b_money = number_format($order_money * $c_rebate_ratio, 2);
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
 
-                $add_b_money = number_format($b_info['now_money'] + $b_money, 2);
-                $add_c_money = number_format($c_info['now_money'] + $c_money, 2);
-                $add_d_money = number_format($d_info['now_money'] + $d_money, 2);
                 break;
             case 4:    //给d,c,b,a返现
                 $a_money = number_format($order_money * $d_rebate_ratio, 2);
@@ -84,31 +75,28 @@ class ConsumerModel extends BaseModel
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
 
-                $add_a_money = number_format($a_info['now_money'] + $a_money, 2);
-                $add_b_money = number_format($a_info['now_money'] + $b_money, 2);
-                $add_c_money = number_format($a_info['now_money'] + $c_money, 2);
-                $add_d_money = number_format($a_info['now_money'] + $d_money, 2);
                 break;
         }
+
         $this->startTrans();
 
         if (isset($d_money) && !empty($d_money)) {
-            $d_result = D('User')->add_money($d_info['uid'], $add_d_money, '注册推荐返利');
+            $d_result = D('User')->add_money($d_info['uid'], $d_money, '注册推荐返利');
         } else {
             $d_result = true;
         }
         if (isset($c_money) && !empty($c_money)) {
-            $c_result = D('User')->add_money($c_info['uid'], $add_c_money, '注册推荐返利');
+            $c_result = D('User')->add_money($c_info['uid'], $c_money, '注册推荐返利');
         } else {
             $c_result = true;
         }
         if (isset($b_money) && !empty($b_money)) {
-            $b_result = D('User')->add_money($b_info['uid'], $add_b_money, '注册推荐返利');
+            $b_result = D('User')->add_money($b_info['uid'], $b_money, '注册推荐返利');
         } else {
             $b_result = true;
         }
         if (isset($a_money) && !empty($a_money)) {
-            $a_result = D('User')->add_money($a_info['uid'], $add_a_money, '注册推荐返利');
+            $a_result = D('User')->add_money($a_info['uid'], $a_money, '注册推荐返利');
         } else {
             $a_result = true;
         }
