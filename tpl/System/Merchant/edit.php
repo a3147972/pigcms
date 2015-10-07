@@ -33,7 +33,7 @@
 			<tr>
 				<th width="80">身份证照片</th>
 				<td>
-				<img src="{pigcms{$merchant.id_number_img}" alt="">
+				<img src="{pigcms{$merchant.id_number_img}" alt="" width="100%">
 				<input type="hidden" class="input fl" name="id_number_img" value="{pigcms{$merchant.id_number_img}" size="25" placeholder="可不填写" tips="只供管理员后台记录，前台不显示"/></td>
 			</tr>
 			<tr>

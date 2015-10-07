@@ -102,7 +102,7 @@ class MerchantModel extends Model
      * @param  int      $mer_id 商户id
      * @return bool|array       成功返回商户信息，失败返回false
      */
-    public function getInfoById ($mer_id)
+    public function getInfoById($mer_id)
     {
         $map['mer_id'] = $mer_id;
         $info = $this->where($map)->find();
@@ -156,7 +156,7 @@ class MerchantModel extends Model
         }
         $map['mer_id'] = $mer_id;
 
-        $data['balance'] = array('exp', 'balance-'. $balance);
+        $data['balance'] = array('exp', 'balance-' . $balance);
 
         $result = $this->where($map)->save($data);
 

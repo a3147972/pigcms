@@ -17,7 +17,7 @@ class ConsumerModel extends BaseModel
         $info = D('User')->where(array('uid' => $uid))->find();
 
         $d_info = D('User')->where(array('uid' => $info['recomment']))->find();;
-        $d = $info['recomment']
+        $d = $info['recomment'];
 
         if (!empty($d_info['recomment'])) {
             $c_info = D('User')->where(array('uid' => $d_info['recomment']))->find();
@@ -47,13 +47,13 @@ class ConsumerModel extends BaseModel
         if (isset($d)) {
             $level = $level + 1;
         }
-        $self_consumer_rebate = (float) $this->config('self_consumer_rebate') / 100;
+        $self_consumer_rebate = (float) $this->config['self_consumer_rebate'] / 100;
         $a_rebate_ratio = (float) $this->config['a_consumer_rebate'] / 100;
         $b_rebate_ratio = (float) $this->config['b_consumer_rebate'] / 100;
         $c_rebate_ratio = (float) $this->config['c_consumer_rebate'] / 100;
         $d_rebate_ratio = (float) $this->config['d_consumer_rebate'] / 100;
 
-        $self_result = number_format($order_money * $self_consumer_rebate, 2);
+        $self_amount = number_format($order_money * $self_consumer_rebate, 2);
         switch ($level) {
             case 1:    //只有一层,则只给d返
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
@@ -98,7 +98,7 @@ class ConsumerModel extends BaseModel
         } else {
             $a_result = true;
         }
-        $self_result = D('User')->add_money($uid, $self_amount, '执行消费返利')
+        $self_result = D('User')->add_money($uid, $self_amount, '执行消费返利');
         if ($a_result !== false && $b_result !== false && $c_result !== false && $d_result !== false && $self_result !== false) {
             return $a_money + $b_money + $c_money + $d_money + $self_amount;
         } else {
