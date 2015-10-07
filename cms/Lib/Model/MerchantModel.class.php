@@ -166,4 +166,29 @@ class MerchantModel extends Model
             return false;
         }
     }
+    /**
+     * 平台抽成金额计算
+     * @method platform_get_percent
+     * @param  int               $mer_id        商户id
+     * @param  int               $order_balance 订单金额
+     * @return int                              要扣减的金额
+     */
+    public function platform_get_percent($mer_id, $order_balance)
+    {
+        $mer_info = $this->getInfoById($mer_id);
+        $percent = $mer_info['percent'];
+
+        if (empty($percent)) {
+
+            $percent = C('config.platform_get_merchant_percent');
+
+        }
+
+        if (empty($percent)) {      //平台不抽成则直接返回
+            return true;
+        }
+        $percent_balance = number_format($order_balance*($percent/100), 2);
+
+        return $percent_balance ;
+    }
 }

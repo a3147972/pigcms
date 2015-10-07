@@ -498,8 +498,9 @@ class Group_orderModel extends Model
 
             //营业额返利
             $sale_rebate = D('Consumer')->saleRebate($now_order['mer_id'], $balance_pay);
+            $percent_balance = D('Merchant')->platform_get_percent($now_order['mer_id'], $balance_pay);
             //赚取金额写入商户金额
-            $now_order_money = $balance_pay - $rebate_balance - $sale_rebate;
+            $now_order_money = $balance_pay - $rebate_balance - $sale_rebate - $percent_balance;
             $now_order_money = $now_order_money < 0 ? 0 : $now_order_money;
             D('Merchant')->addBalance($now_order['mer_id'], $now_order_money, $order_param['order_id'], $order_param['order_type']);
 
