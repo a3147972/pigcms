@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'store_id', 1 => 'cat_fid', 2 => 'cat_id', '_autoinc' => false, '_type' => array ( 'store_id' => 'int(11)', 'cat_fid' => 'int(10) unsigned', 'cat_id' => 'int(11)', ), );?>

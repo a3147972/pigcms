@@ -67,7 +67,7 @@
                     </div>
                     <div class="form-field form-field--icon" >
                         <i class="icon icon-password"></i>
-                        <input type="text" id="login-recomment" class="f-text" name="recomment" placeholder="请输入推荐人手机号"/>
+                        <input type="text" id="login-recomment" class="f-text" name="recomment" placeholder="请输入推荐人ID"/>
                     </div>
                     <div class="form-field form-field--ops">
                         <input type="hidden" name="fingerprint" class="J-fingerprint"/>
@@ -123,10 +123,6 @@
                     return false;
                 }
 
-                if(recomment != '' && !/^[0-9]{11}$/.test(recomment)){
-                    error_tips('请输入11位数字的手机号码','login-recomment');
-                    return false;
-                }
                 if(pwd == '' || pwd == null){
                     error_tips('密码不能为空','login-password');
                     return false;

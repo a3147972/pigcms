@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'navid', 1 => 'zhname', 2 => 'url', 3 => 'isshow', 4 => 'iscontent', '_autoinc' => true, '_pk' => 'navid', '_type' => array ( 'navid' => 'int(10) unsigned', 'zhname' => 'varchar(250)', 'url' => 'varchar(255)', 'isshow' => 'tinyint(1) unsigned', 'iscontent' => 'tinyint(1) unsigned', ), );?>

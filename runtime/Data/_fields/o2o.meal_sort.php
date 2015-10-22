@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'sort_id', 1 => 'store_id', 2 => 'sort_name', 3 => 'sort', 4 => 'is_weekshow', 5 => 'week', 6 => 'status', '_autoinc' => true, '_pk' => 'sort_id', '_type' => array ( 'sort_id' => 'int(11)', 'store_id' => 'int(11)', 'sort_name' => 'varchar(50)', 'sort' => 'int(11)', 'is_weekshow' => 'tinyint(1)', 'week' => 'varchar(50)', 'status' => 'tinyint(1)', ), );?>

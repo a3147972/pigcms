@@ -81,7 +81,7 @@
 															</tr>
 														</volist>
 														<input type="hidden" id="percent" value="{pigcms{$percent}" />
-														<tr class="even">
+														<tr class="even" style="display:none;">
 															<td colspan="16">
 															<if condition="$percent">
 															平台的抽成比例：<strong style="color: green">{pigcms{$percent}%</strong> <br/>
@@ -95,7 +95,7 @@
 															</if>
 															</td>
 														</tr>
-														<tr class="odd">
+														<tr class="odd" style="display:none;">
 															<td colspan="16" id="show_count"></td>
 														</tr>
 														<tr><td class="textcenter pagebar" colspan="16">{pigcms{$pagebar}</td></tr>	

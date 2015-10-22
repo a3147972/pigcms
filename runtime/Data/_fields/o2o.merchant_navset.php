@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'mer_id', 1 => 'navid', 2 => 'isshow', 3 => 'intrid', 4 => 'zhname', '_autoinc' => false, '_type' => array ( 'mer_id' => 'int(10) unsigned', 'navid' => 'int(10) unsigned', 'isshow' => 'tinyint(1) unsigned', 'intrid' => 'int(10) unsigned', 'zhname' => 'varchar(250)', ), );?>
