@@ -68,7 +68,6 @@
                         <p>
                             <label>邮 箱：</label>
                             <input class="text-input" type="text" name="email" id="reg_email"/>
-                            <span class="check">* 必填</span>
                         </p>
                         <p>
                             <label>手机号：</label>
