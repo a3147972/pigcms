@@ -83,7 +83,7 @@ class UserModel extends BaseModel
      * @param  string   $recomment  推荐人
      * @return bool                 是否注册成功
      */
-    public function checkreg($phone, $pwd, $recomment = '', $id_number, $id_number_img, $with_id_card)
+    public function checkreg($phone, $pwd, $recomment = '', $id_number, $id_number_img, $with_id_card, $bank_name, $bank_address, $bank_code, $bank_account, $alipay_account, $alipay_name)
     {
         if (empty($phone)) {
             return array('error_code' => true, 'msg' => '手机号不能为空');
@@ -104,6 +104,24 @@ class UserModel extends BaseModel
         }
         if (empty($with_id_card)) {
             return array('error_code' => true, 'msg' => '请上传手持身份证');
+        }
+        if (empty($bank_name)) {
+            return array('error_code' => true, 'msg' => '请输入银行名称');
+        }
+        if (empty($bank_address)) {
+            return array('error_code' => true, 'msg' => '请输入开户行');
+        }
+        if (empty($bank_code)) {
+            return array('error_code' => true, 'msg' => '请输入银行卡卡号');
+        }
+        if (empty($alipay_account)) {
+            return array('error_code' => true, 'msg' => '请输入银行户主');
+        }
+        if (empty($alipay_account)) {
+            return array('error_code' => true, 'msg' => '请输入支付宝账号');
+        }
+        if (empty($alipay_name)) {
+            return array('error_code' => true, 'msg' => '请输入支付宝名称');
         }
 
         //检测推荐人是否存在
@@ -131,6 +149,13 @@ class UserModel extends BaseModel
         $data_user['id_number_img'] = $id_number_img;
         $data_user['with_id_card'] = $with_id_card;
         $data_user['status'] = 0;
+        $data_user['bank_name'] = $bank_name;
+        $data_user['bank_address'] = $bank_address;
+        $data_user['bank_code'] = $bank_code;
+        $data_user['bank_account'] = $bank_account;
+        $data_user['alipay_account'] = $alipay_account;
+        $data_user['alipay_name'] = $alipay_name;
+
         $uid = $this->data($data_user)->add();
         if ($uid) {
             //注册成功开始返现

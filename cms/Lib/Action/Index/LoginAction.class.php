@@ -34,8 +34,12 @@ class LoginAction extends BaseAction {
             $id_number = I('post.id_number');
             $id_number_img = I('post.id_number_img');
             $with_id_card = I('post.with_id_card');
+            $bank_name = I('post.bank_name');
+            $bank_code = I('post.bank_code');
+            $bank_address = I('post.bank_address');
+            $bank_account = I('post.bank_account');
 
-            $result = D('User')->checkreg($phone, $pwd, $recomment, $id_number, $id_number_img, $with_id_card);
+            $result = D('User')->checkreg($phone, $pwd, $recomment, $id_number, $id_number_img, $with_id_card, $bank_name, $bank_address, $bank_code, $bank_account, $alipay_account, $alipay_name);
 
             exit(json_encode($result));
         } else {
