@@ -95,7 +95,6 @@
                 var phone = $("#login-phone").val();
                 var pwd = $("#login-password").val();
                 var repwd = $("#login-repassword").val();
-                var invitcode = $('#login-invitcode').val();
                 var recomment = $('#login-recomment').val();
                 var id_number = $('#login-id_number').val();
                 var id_number_img = $('#login-id_number_img').val();
@@ -127,14 +126,10 @@
                     error_tips('两次密码输入不一致','login-repassword');
                     return false;
                 }
-                if(invitcode == '' || invitcode == null){
-                    error_tips('请输入邀请码','login-invitcode');
-                    return false;
-                }
+
                 $.post("{pigcms{:U('Index/Login/reg')}",
                     {'phone':phone,
                     'pwd':pwd,
-                    'invitecode':invitcode,
                     'recomment':recomment,
                     id_number : id_number,
                     id_number_img : id_number_img,
