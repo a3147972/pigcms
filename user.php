@@ -16,7 +16,7 @@ define('APP_PATH','./cms/');	//项目目录
 define('CONF_PATH','./conf/');	//配置文件地址
 define('RUNTIME_PATH','./runtime/');	//缓存文件地址
 define('TMPL_PATH','./tpl/');	//模板目录
-define('APP_DEBUG',false);	//开启DEBUG
+define('APP_DEBUG',true);	//开启DEBUG
 define('MEMORY_LIMIT_ON',function_exists('memory_get_usage'));
 
 $_GET['g'] = 'User';

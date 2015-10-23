@@ -53,11 +53,6 @@
                             <span class="check">* 长度为大于6位字符</span>
                         </p>
                         <p>
-                            <label>邀请码：</label>
-                            <input class="text-input" type="test" name="invitcode" id="reg_invitcode"/>
-                            <span class="check">* 请输入邀请码</span>
-                        </p>
-                        <p>
                             <label>推荐人：</label>
                             <input class="text-input" type="test" name="recomment" id="reg_recomment"/>
                             <span class="check">* 请输入推荐人ID</span>

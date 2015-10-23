@@ -47,10 +47,6 @@
                     </div>
                     <div class="form-field form-field--icon" >
                         <i class="icon icon-password"></i>
-                        <input type="text" id="login-invitcode" class="f-text" name="invitcode" placeholder="请输入邀请码"/>
-                    </div>
-                    <div class="form-field form-field--icon" >
-                        <i class="icon icon-password"></i>
                         <input type="text" id="login-id_number" class="f-text" name="id_number" placeholder="请输入身份证号"/>
                     </div>
                     <div class="form-field form-field--icon" >

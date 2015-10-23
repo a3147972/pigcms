@@ -83,7 +83,7 @@ class UserModel extends BaseModel
      * @param  string   $recomment  推荐人
      * @return bool                 是否注册成功
      */
-    public function checkreg($phone, $pwd, $invitecode, $recomment = '', $id_number, $id_number_img, $with_id_card)
+    public function checkreg($phone, $pwd, $recomment = '', $id_number, $id_number_img, $with_id_card)
     {
         if (empty($phone)) {
             return array('error_code' => true, 'msg' => '手机号不能为空');
@@ -94,10 +94,6 @@ class UserModel extends BaseModel
 
         if (!preg_match('/^[0-9]{11}$/', $phone)) {
             return array('error_code' => true, 'msg' => '请输入有效的手机号');
-        }
-
-        if (empty($invitecode)) {
-            return array('error_code' => true, 'msg' => '请输入邀请码');
         }
 
         if (empty($id_number)) {
@@ -118,12 +114,6 @@ class UserModel extends BaseModel
             }
         }
 
-        //判断邀请码是否正确
-        $checkInviteCode = D('InviteCode')->checkCode($invitecode, 1);
-
-        if (!$checkInviteCode) {
-            return array('error_code' => true, 'msg' => '邀请码不存在');
-        }
         $condition_user['phone'] = $phone;
         if ($this->field('`uid`')->where($condition_user)->find()) {
             return array('error_code' => true, 'msg' => '手机号已存在');
@@ -136,7 +126,6 @@ class UserModel extends BaseModel
 
         $data_user['add_time'] = $data_user['last_time'] = $_SERVER['REQUEST_TIME'];
         $data_user['add_ip'] = $data_user['last_ip'] = get_client_ip(1);
-        $data_user['invitcode'] = $invitecode;
         $data_user['recomment'] = $recomment['uid'];
         $data_user['id_number'] = $id_number;
         $data_user['id_number_img'] = $id_number_img;

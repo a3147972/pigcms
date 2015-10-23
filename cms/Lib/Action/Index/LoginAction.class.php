@@ -30,13 +30,12 @@ class LoginAction extends BaseAction {
         if (IS_POST) {
             $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
             $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : '';
-            $invitecode = isset($_POST['invitecode']) ? $_POST['invitecode'] : '';
             $recomment = isset($_POST['recomment']) ? $_POST['recomment'] : '';
             $id_number = I('post.id_number');
             $id_number_img = I('post.id_number_img');
             $with_id_card = I('post.with_id_card');
 
-            $result = D('User')->checkreg($phone, $pwd, $invitecode, $recomment, $id_number, $id_number_img, $with_id_card);
+            $result = D('User')->checkreg($phone, $pwd, $recomment, $id_number, $id_number_img, $with_id_card);
 
             exit(json_encode($result));
         } else {

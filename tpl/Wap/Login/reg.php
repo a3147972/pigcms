@@ -56,9 +56,6 @@
 			            			<button id="changeWord" type="button" class="btn btn-weak kv-v">显示明文</button>
 			            		</dd>
                                 <dd class="dd-padding">
-                                    <input id="invitcode" class="input-weak" type="text" placeholder="请输入邀请码" name="invitcode" value="" required="">
-                                </dd>
-                                <dd class="dd-padding">
                                     <input id="recomment" class="input-weak" type="text" placeholder="请输入推荐人ID" name="recomment" value="">
                                 </dd>
                                 <dd class="dd-padding">
