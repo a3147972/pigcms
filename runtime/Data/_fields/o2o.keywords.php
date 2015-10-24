@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'id', 1 => 'keyword', 2 => 'third_id', 3 => 'third_type', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(11)', 'keyword' => 'varchar(50)', 'third_id' => 'int(11)', 'third_type' => 'varchar(30)', ), );?>

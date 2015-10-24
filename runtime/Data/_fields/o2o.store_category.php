@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'pigcms_id', 1 => 'cat_id', 2 => 'store_id', '_autoinc' => true, '_pk' => 'pigcms_id', '_type' => array ( 'pigcms_id' => 'int(10) unsigned', 'cat_id' => 'int(10) unsigned', 'store_id' => 'int(10) unsigned', ), );?>

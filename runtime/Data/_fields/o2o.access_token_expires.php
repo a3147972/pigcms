@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'id', 1 => 'access_token', 2 => 'expires_in', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(10) unsigned', 'access_token' => 'varchar(700)', 'expires_in' => 'int(10) unsigned', ), );?>
