@@ -1,11 +1,17 @@
 $(function(){
 	$('#reg-form').submit(function(){
 		var phone = $.trim($('#phone').val());
-		var invitcode = $.trim($('#invitcode').val());
 		var recomment = $.trim($('#recomment').val());
 		var id_number = $.trim($('#id_number').val());
 		var id_number_img = $.trim($('#id_number_img').val());
 		var with_id_card = $.trim($('#with_id_card').val());
+		var bank_name = $('#bank_name').val();
+        var bank_code = $('#bank_code').val();
+        var bank_address = $('#bank_address').val();
+        var bank_account = $('#bank_account').val();
+        var alipay_account = $('#alipay_account').val();
+        var alipay_name = $('#alipay_name').val();
+
 		$('#phone').val(phone);
 		if(phone.length == 0){
 			$('#tips').html('请输入手机号码。').show();
@@ -26,18 +32,20 @@ $(function(){
 			$('#tips').html('请输入6位以上的密码。').show();
 			return false;
 		}
-		if (invitcode == '') {
-			$('#tips').html('请输入邀请码').show();
-		}
 
 		$.post($('#reg-form').attr('action'),{
 			phone:phone,
 			password:password,
-			invitcode:invitcode,
 			recomment:recomment,
 			id_number : id_number,
 			id_number_img : id_number_img,
-			with_id_card : with_id_card
+			with_id_card : with_id_card,
+			bank_name : bank_name,
+            bank_code : bank_code,
+            bank_address : bank_address,
+            bank_account : bank_account,
+            alipay_account : alipay_account,
+            alipay_name : alipay_name
 		},function(result){
 			if(result.status == '1'){
 				window.location.href = $('#reg-form').attr('location_url');
