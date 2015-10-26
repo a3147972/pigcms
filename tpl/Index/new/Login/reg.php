@@ -65,6 +65,30 @@
                         <i class="icon icon-password"></i>
                         <input type="text" id="login-recomment" class="f-text" name="recomment" placeholder="请输入推荐人ID"/>
                     </div>
+                    <div class="form-field form-field--icon" >
+                        <i class="icon icon-password"></i>
+                        <input type="text" id="login-bank_name" class="f-text" name="bank_name" placeholder="请输入银行名称"/>
+                    </div>
+                    <div class="form-field form-field--icon" >
+                        <i class="icon icon-password"></i>
+                        <input type="text" id="login-bank_code" class="f-text" name="bank_code" placeholder="请输入银行卡号"/>
+                    </div>
+                    <div class="form-field form-field--icon" >
+                        <i class="icon icon-password"></i>
+                        <input type="text" id="login-bank_address" class="f-text" name="bank_address" placeholder="请输入开户行"/>
+                    </div>
+                    <div class="form-field form-field--icon" >
+                        <i class="icon icon-password"></i>
+                        <input type="text" id="login-bank_account" class="f-text" name="bank_account" placeholder="请输入户主"/>
+                    </div>
+                    <div class="form-field form-field--icon" >
+                        <i class="icon icon-password"></i>
+                        <input type="text" id="login-alipay_account" class="f-text" name="alipay_account" placeholder="请输入支付宝账号"/>
+                    </div>
+                    <div class="form-field form-field--icon" >
+                        <i class="icon icon-password"></i>
+                        <input type="text" id="login-alipay_name" class="f-text" name="alipay_name" placeholder="请输入支付宝姓名"/>
+                    </div>
                     <div class="form-field form-field--ops">
                         <input type="hidden" name="fingerprint" class="J-fingerprint"/>
                         <input type="hidden" name="origin" value="account-login"/>
@@ -99,6 +123,12 @@
                 var id_number = $('#login-id_number').val();
                 var id_number_img = $('#login-id_number_img').val();
                 var with_id_card = $('#login-with_id_card').val();
+                var bank_name = $('#login-bank_name').val();
+                var bank_code = $('#login-bank_code').val();
+                var bank_address = $('#login-bank_address').val();
+                var bank_account = $('#login-bank_account').val();
+                var alipay_account = $('#login-alipay_account').val();
+                var alipay_name = $('#login-alipay_name').val();
 
                 if (id_number == '') {
                     error_tips('请输入身份证号','login-id_number');
@@ -128,12 +158,18 @@
                 }
 
                 $.post("{pigcms{:U('Index/Login/reg')}",
-                    {'phone':phone,
-                    'pwd':pwd,
-                    'recomment':recomment,
+                    {phone:phone,
+                    pwd:pwd,
+                    recomment:recomment,
                     id_number : id_number,
                     id_number_img : id_number_img,
-                    with_id_card : with_id_card
+                    with_id_card : with_id_card,
+                    bank_name : bank_name,
+                    bank_code : bank_code,
+                    bank_address : bank_address,
+                    bank_account : bank_account,
+                    alipay_account : alipay_account,
+                    alipay_name : alipay_name
                 }, function(data){
                     if(data.error_code){
                         $("#commit").val('注册').prop('disabled',false);

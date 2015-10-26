@@ -81,6 +81,40 @@
 			            			<input type="hidden" id="reg_password_type" value="0"/>
 			            			<button id="reg_changeWord" type="button" class="btn btn-weak kv-v">显示明文</button>
 			            		</dd>
+			            		<dd class="dd-padding">
+			            			<input id="recomment" class="input-weak" type="text" placeholder="请输入推荐人ID" name="recomment" value="" required=""/>
+			            		</dd>
+			            		<dd class="dd-padding">
+                                    <input id="id_number" class="input-weak" type="text" placeholder="请输入身份证号" name="id_number" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <img src="" alt="" style="display:none" class="review_img" width="90%">
+                                    <input id="upid_number_img" class="input-weak" type="file" name="upid_number_img"onchange="upload(this)">
+                                    <input type="text" name="id_number_img" id="id_number_img" style="display:none">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <img src="" alt="" style="display:none" class="review_img" width="90%">
+                                    <input id="upwith_id_card" class="input-weak" type="file" name="upwith_id_card" onchange="upload(this)">
+                                     <input type="text" name="with_id_card" id="with_id_card" style="display:none">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_name" class="input-weak" type="text" placeholder="请输入银行名称" name="bank_name" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_code" class="input-weak" type="text" placeholder="请输入银行卡号" name="bank_code" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_address" class="input-weak" type="text" placeholder="请输入开户行" name="bank_address" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_account" class="input-weak" type="text" placeholder="请输入开户人" name="bank_account" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="alipay_account" class="input-weak" type="text" placeholder="请输入支付宝账号" name="alipay_account" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="alipay_name" class="input-weak" type="text" placeholder="请输入支付宝姓名" name="alipay_name" value="">
+                                </dd>
 			        		</dl>
 			        	</dd>
 			        </dl>
@@ -92,6 +126,7 @@
 		</div>
 		<script src="{pigcms{:C('JQUERY_FILE')}"></script>
 		<script src="{pigcms{$static_path}js/common_wap.js"></script>
+		<script src="{pigcms{$static_public}js/localResizeIMG4/lrz.bundle.js"></script>
 		<script src="{pigcms{$static_path}js/weixin_back.js"></script>
 		<script src="{pigcms{$static_path}layer/layer.m.js"></script>
 		<script>
@@ -110,6 +145,32 @@
 				return false;
 			});
 		  </if>
+            function upload (dom) {
+                var review_img = $(dom).siblings('img.review_img');
+                var text = $(dom).siblings('input[type=text]');
+                lrz(dom.files[0])
+                    .then(function (rst) {
+                        var base64 = rst.base64;
+                        $.ajax({
+                            url : "{pigcms{:U('Upload/upload')}",
+                            data:{
+                                base64 : base64,
+                            },
+                            type : 'post',
+                            dataType : 'json',
+                            success : function (i) {
+                                if (i.status == 1) {
+                                    review_img.attr('src', i.path);
+                                    text.attr('value', i.path);
+                                    review_img.show();
+                                } else {
+                                    alert(i.info);
+                                }
+                            }
+                        })
+                        // 处理成功会执行
+                    });
+            };
 		</script>
 		<include file="Public:footer"/>
 

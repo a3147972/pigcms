@@ -71,6 +71,24 @@
                                     <input id="upwith_id_card" class="input-weak" type="file" name="upwith_id_card" onchange="upload(this)">
                                      <input type="text" name="with_id_card" id="with_id_card" style="display:none">
                                 </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_name" class="input-weak" type="text" placeholder="请输入银行名称" name="bank_name" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_code" class="input-weak" type="text" placeholder="请输入银行卡号" name="bank_code" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_address" class="input-weak" type="text" placeholder="请输入开户行" name="bank_address" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="bank_account" class="input-weak" type="text" placeholder="请输入开户人" name="bank_account" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="alipay_account" class="input-weak" type="text" placeholder="请输入支付宝账号" name="alipay_account" value="">
+                                </dd>
+                                <dd class="dd-padding">
+                                    <input id="alipay_name" class="input-weak" type="text" placeholder="请输入支付宝姓名" name="alipay_name" value="">
+                                </dd>
 			        		</dl>
 			        	</dd>
 			        </dl>
