@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'pigcms_id', 1 => 'parent_id', 2 => 'type', 3 => 'score_all', 4 => 'reply_count', '_autoinc' => true, '_pk' => 'pigcms_id', '_type' => array ( 'pigcms_id' => 'int(10) unsigned', 'parent_id' => 'int(10) unsigned', 'type' => 'int(10) unsigned', 'score_all' => 'int(10) unsigned', 'reply_count' => 'int(10) unsigned', ), );?>
