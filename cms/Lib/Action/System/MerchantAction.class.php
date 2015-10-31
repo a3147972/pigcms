@@ -97,6 +97,7 @@ class MerchantAction extends BaseAction{
 		$database_merchant = D('Merchant');
 		$condition_merchant['mer_id'] = intval($_GET['mer_id']);
 		$merchant = $database_merchant->field(true)->where($condition_merchant)->find();
+
 		if(empty($merchant)){
 			$this->frame_error_tips('数据库中没有查询到该商户的信息！');
 		}

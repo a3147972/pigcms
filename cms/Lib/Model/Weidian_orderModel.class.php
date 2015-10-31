@@ -203,7 +203,7 @@ class Weidian_orderModel extends Model{
 			}
 
 			//执行推荐返利
-            $rebate_balance = D('Consumer')->rebate($now_order['uid'], $balance_pay);
+            $rebate_balance = D('Consumer')->rebate($now_order['mer_id'], $now_order['uid'], $balance_pay);
             $rebate_balance = empty($rebate_balance) ? 0 : $rebate_balance;
 
             //营业额返利

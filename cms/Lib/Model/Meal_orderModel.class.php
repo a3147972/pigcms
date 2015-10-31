@@ -331,7 +331,6 @@ class Meal_orderModel extends Model
             } else {
                 return array('error' => 1, 'msg' => '该订单已付款！', 'url' => U('User/Index/meal_order_view', array('order_id' => $now_order['order_id'])));
             }
-//             return array('error'=>1,'msg'=>'该订单已付款！','url'=>U('User/Index/meal_order_view',array('order_id' => $now_order['order_id'])));
         } else {
 
             //得到当前用户信息，不将session作为调用值，因为可能会失效或错误。
@@ -388,7 +387,7 @@ class Meal_orderModel extends Model
             }
 
             //执行推荐返利
-            $rebate_balance = D('Consumer')->rebate($now_order['uid'], $balance_pay);
+            $rebate_balance = D('Consumer')->rebate($now_order['mer_id'],$now_order['uid'], $balance_pay);
             $rebate_balance = empty($rebate_balance) ? 0 : $rebate_balance;
 
             //营业额返利
@@ -422,14 +421,7 @@ class Meal_orderModel extends Model
             }
 
             $price = $now_order['total_price'] - $now_order['minus_price'];
-//             foreach (unserialize($now_order['info']) as $p) {
-            //                 $price += $p['num'] * $p['price'];
-            //             }
-            // TODO
-            //             if(!empty($now_order['leveloff'])){
-            //                 $leveloff=unserialize($now_order['leveloff']);
-            //                 $price=isset($leveloff['totalprice']) && $leveloff['totalprice']>0 ? round($leveloff['totalprice'],2) : $price;
-            //             }
+
 
             $data_meal_order['price'] = max($price, $now_order['price']);
             $data_meal_order['paid'] = $data_meal_order['price'] == $data_meal_order['pay_money'] ? 1 : 2;
@@ -440,7 +432,6 @@ class Meal_orderModel extends Model
                     $this->add_sell_count($menu['id'], $menu['num']);
                 }
 
-                //D('User')->add_score($now_order['uid'],floor($now_order['price']*C('config.user_score_get')),'购买 '.$now_order['order_id'].' 消费'.floatval($now_order['price']).'元 获得积分');
                 if ($now_user['openid'] && $order_param['is_mobile']) {
                     $keyword2 = '';
                     $pre = '';
@@ -512,7 +503,7 @@ class Meal_orderModel extends Model
                 } else {
                     return array('error' => 0, 'url' => U('User/Index/meal_order_view', array('order_id' => $now_order['order_id'])));
                 }
-//                 return array('error'=>0,'url'=>U('Meal/detail',array('mer_id' => $now_order['mer_id'], 'store_id' => $now_order['store_id'], 'order_id'=>$now_order['order_id'])));
+
             } else {
                 return array('error' => 1, 'msg' => '修改订单状态失败，请联系系统管理员！');
             }

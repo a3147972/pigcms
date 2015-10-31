@@ -93,6 +93,26 @@
 				<th width="80">平台抽成比例</th>
 				<td><input type="text" class="input fl" name="percent" value="{pigcms{$merchant.percent}" size="5" placeholder="0" tips="平台根据商家的总销售额获取的一定比例的抽成"/></td>
 			</tr>
+			<tr>
+				<th width="80">A消费返利</th>
+				<td><input type="text" class="input fl" name="a_consumer_rebate" value="{pigcms{$merchant.a_consumer_rebate}" size="5" placeholder="{pigcms{$merchant.a_consumer_rebate}" tips=""/></td>
+			</tr>
+			<tr>
+				<th width="80">B消费返利</th>
+				<td><input type="text" class="input fl" name="b_consumer_rebate" value="{pigcms{$merchant.b_consumer_rebate}" size="5" placeholder="{pigcms{$merchant.b_consumer_rebate}" tips=""/></td>
+			</tr>
+			<tr>
+				<th width="80">C消费返利</th>
+				<td><input type="text" class="input fl" name="c_consumer_rebate" value="{pigcms{$merchant.c_consumer_rebate}" size="5" placeholder="{pigcms{$merchant.c_consumer_rebate}" tips=""/></td>
+			</tr>
+			<tr>
+				<th width="80">D消费返利</th>
+				<td><input type="text" class="input fl" name="d_consumer_rebate" value="{pigcms{$merchant.d_consumer_rebate}" size="5" placeholder="{pigcms{$merchant.d_consumer_rebate}" tips=""/></td>
+			</tr>
+			<tr>
+				<th width="80">自身消费返利</th>
+				<td><input type="text" class="input fl" name="self_consumer_rebate" value="{pigcms{$merchant.self_consumer_rebate}" size="5" placeholder="{pigcms{$merchant.self_consumer_rebate}" tips=""/></td>
+			</tr>
 			<tr><th colspan="2" style="color: red;text-align:center"> 超级广告设置 </th></tr>
 			<tr>
 				<th width="80">首页宣传状态</th>

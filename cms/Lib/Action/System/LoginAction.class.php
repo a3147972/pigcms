@@ -8,13 +8,13 @@ class LoginAction extends Action{
 	}
     public function index(){
 		$this->check_admin_file();
-		
+
 		$config = D('Config')->get_config();
 		$this->assign('config',$config);
-		
+
 		$this->assign('static_path','./tpl/System/Static/');
 		$this->assign('static_public','./static/');
-		
+
 		$this->display();
     }
 	public function check(){
@@ -22,11 +22,12 @@ class LoginAction extends Action{
 		if(md5($verify) != $_SESSION['admin_verify']){
 			exit('-1');
 		}
-		
+
 		$database_admin = D('Admin');
 		$condition_admin['account'] = $this->_post('account');
 		$condition_admin['status'] = 1;
 		$now_admin = $database_admin->field(true)->where($condition_admin)->find();
+
 		if(empty($now_admin)){
 			exit('-2');
 		}
@@ -46,7 +47,7 @@ class LoginAction extends Action{
 		} else {
 			$now_admin['show_account'] = '普通管理员';
 		}
-		
+
 		$data_admin['id'] = $now_admin['id'];
 		$data_admin['last_ip'] = get_client_ip(1);
 		$data_admin['last_time'] = $_SERVER['REQUEST_TIME'];

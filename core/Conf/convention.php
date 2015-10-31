@@ -65,7 +65,7 @@ return  array(
     'DB_PORT'               => '',        // 端口
     'DB_PREFIX'             => 'think_',    // 数据库表前缀
     'DB_FIELDTYPE_CHECK'    => false,       // 是否进行字段类型检查
-    'DB_FIELDS_CACHE'       => true,        // 启用字段缓存
+    'DB_FIELDS_CACHE'       => false,        // 启用字段缓存
     'DB_CHARSET'            => 'utf8',      // 数据库编码默认采用utf8
     'DB_DEPLOY_TYPE'        => 0, // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
     'DB_RW_SEPARATE'        => false,       // 数据库读写是否分离 主从式有效
@@ -90,7 +90,7 @@ return  array(
     'ERROR_MESSAGE'         => '页面错误！请稍后再试～',//错误显示信息,非调试模式有效
     'ERROR_PAGE'            => '',	// 错误定向页面
     'SHOW_ERROR_MSG'        => false,    // 显示错误信息
-    'TRACE_EXCEPTION'       => false,   // TRACE错误信息是否抛异常 针对trace方法 
+    'TRACE_EXCEPTION'       => false,   // TRACE错误信息是否抛异常 针对trace方法
 
     /* 日志设置 */
     'LOG_RECORD'            => false,   // 默认不记录日志
