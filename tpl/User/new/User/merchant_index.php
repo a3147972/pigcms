@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>会员邀请列表 | {pigcms{$config.site_name}</title>
+<title>邀请列表 | {pigcms{$config.site_name}</title>
 <meta name="keywords" content="{pigcms{$config.seo_keywords}" />
 <meta name="description" content="{pigcms{$config.seo_description}" />
 <link href="{pigcms{$static_path}css/css.css" type="text/css"  rel="stylesheet" />
@@ -141,24 +141,22 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
                     <div class="mainbox mine">
 
                         <ul class="filter cf">
-                            <li class="current"><a href="{pigcms{:U('User/index')}">会员邀请记录</a>
-                            <a href="{pigcms{:U('User/merchant_index')}">商户邀请记录</a></li>
+                            <li class="current"><a href="{pigcms{:U('User/index')}">邀请记录</a></li>
                         </ul>
                         <div class="table-section">
                             <table cellspacing="0" cellpadding="0" border="0">
                                 <tr>
-                                    <th width="130">商户用户名</th>
-                                    <th width="auto">商户名称</th>
-                                    <th width="auto">商户手机号</th>
+                                    <th width="130">用户手机号</th>
+                                    <th width="auto">用户昵称</th>
                                     <th width="auto">注册时间</th>
                                     <th width="110">操作</th>
                                 </tr>
                                 <volist name="list" id="vo">
                                     <tr>
-                                        <td>{pigcms{$vo.account}</td>
-                                        <td>{pigcms{$vo.name}</td>
                                         <td>{pigcms{$vo.phone}</td>
-                                        <td>{pigcms{$vo.reg_time|date='Y-m-d H:i:s',###}</td>
+                                        <td>{pigcms{$vo.nickname}</td>
+                                        <td>{pigcms{$vo.add_time|date='Y-m-d H:i:s',###}</td>
+                                        <td><a href="{pigcms{:U('User/index', array('uid' => $vo['uid']))}">查看下级</a></td>
                                     </tr>
                                 </volist>
                             </table>
