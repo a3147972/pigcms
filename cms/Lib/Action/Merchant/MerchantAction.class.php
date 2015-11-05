@@ -27,7 +27,12 @@ class MerchantAction extends BaseAction
             $sale_rebate = D('Consumer')->saleRebate($mer_id, $money);
             $percent_balance = D('Merchant')->platform_get_percent($now_order['mer_id'], $money);
             if ($rebate_balance !== false && $sale_rebate !== false && $percent_balance !== false) {
-                $this->success('成功进行返利');
+                $rebate_money = $rebate_balance + $sale_rebate + $percent_balance;
+                if (D('Merchant')->useBalance($mer_id, $rebate_money)) {
+                    $this->success('成功进行返利');
+                } else {
+                    $this->error('余额不足');
+                }
             }
         } else {
             $this->display();
