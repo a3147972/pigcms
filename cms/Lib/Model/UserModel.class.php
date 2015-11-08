@@ -144,7 +144,7 @@ class UserModel extends BaseModel
 
         $data_user['add_time'] = $data_user['last_time'] = $_SERVER['REQUEST_TIME'];
         $data_user['add_ip'] = $data_user['last_ip'] = get_client_ip(1);
-        $data_user['recomment'] = $recomment['uid'];
+        $data_user['recomment'] = $check_recomment['uid'];
         $data_user['id_number'] = $id_number;
         $data_user['id_number_img'] = $id_number_img;
         $data_user['with_id_card'] = $with_id_card;
