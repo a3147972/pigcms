@@ -77,37 +77,37 @@
 			<tr>
 				<th width="15%">银行名称</th>
 				<td width="85%" colspan="3"><div style="height:30px;line-height:24px;">
-					{pigcms{$now_user.bank_name}
+					<input type="text" class="input fl" name="bank_name" size="20" value="{pigcms{$now_user.bank_name}"/>
 				</div></td>
 			</tr>
 			<tr>
 				<th width="15%">银行卡号</th>
 				<td width="85%" colspan="3"><div style="height:30px;line-height:24px;">
-					{pigcms{$now_user.bank_code}
+					<input type="text" class="input fl" name="bank_code" size="20" value="{pigcms{$now_user.bank_code}"/>
 				</div></td>
 			</tr>
 			<tr>
 				<th width="15%">开户行</th>
 				<td width="85%" colspan="3"><div style="height:30px;line-height:24px;">
-					{pigcms{$now_user.bank_address}
+					<input type="text" class="input fl" name="bank_address" size="20" value="{pigcms{$now_user.bank_address}"/>
 				</div></td>
 			</tr>
 			<tr>
 				<th width="15%">户主</th>
 				<td width="85%" colspan="3"><div style="height:30px;line-height:24px;">
-					{pigcms{$now_user.bank_account}
+					<input type="text" class="input fl" name="bank_account" size="20" value="{pigcms{$now_user.bank_account}"/>
 				</div></td>
 			</tr>
 			<tr>
 				<th width="15%">支付宝账号</th>
 				<td width="85%" colspan="3"><div style="height:30px;line-height:24px;">
-					{pigcms{$now_user.alipay_account}
+					<input type="text" class="input fl" name="alipay_account" size="20" value="{pigcms{$now_user.alipay_account}"/>
 				</div></td>
 			</tr>
 			<tr>
 				<th width="15%">支付宝名称</th>
 				<td width="85%" colspan="3"><div style="height:30px;line-height:24px;">
-					{pigcms{$now_user.alipay_name}
+					<input type="text" class="input fl" name="alipay_name" size="20" value="{pigcms{$now_user.alipay_name}"/>
 				</div></td>
 			</tr>
 			<tr>
