@@ -101,8 +101,10 @@ class ConsumerModel extends BaseModel
         }
         $self_result = D('User')->add_money($uid, $self_amount, '执行消费返利');
         if ($a_result !== false && $b_result !== false && $c_result !== false && $d_result !== false && $self_result !== false) {
+            $this->commit();
             return $a_money + $b_money + $c_money + $d_money + $self_amount;
         } else {
+            $this->rollback();
             return false;
         }
     }
