@@ -147,18 +147,17 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
                         <div class="table-section">
                             <table cellspacing="0" cellpadding="0" border="0">
                                 <tr>
-                                    <th width="130">商户用户名</th>
-                                    <th width="auto">商户名称</th>
-                                    <th width="auto">商户手机号</th>
+                                    <th width="auto">昵称</th>
+                                    <th width="auto">手机号</th>
                                     <th width="auto">注册时间</th>
                                     <th width="110">操作</th>
                                 </tr>
                                 <volist name="list" id="vo">
                                     <tr>
-                                        <td>{pigcms{$vo.account}</td>
-                                        <td>{pigcms{$vo.name}</td>
+                                        <td>{pigcms{$vo.nickname}</td>
                                         <td>{pigcms{$vo.phone}</td>
-                                        <td>{pigcms{$vo.reg_time|date='Y-m-d H:i:s',###}</td>
+                                        <td>{pigcms{$vo.add_time|date='Y-m-d H:i:s',###}</td>
+                                        <td><neq name="last" value="1"><a href="{pigcms{:U('User/index', array('uid'=>$vo['uid']))}">查看下级</a></neq></td>
                                     </tr>
                                 </volist>
                             </table>
