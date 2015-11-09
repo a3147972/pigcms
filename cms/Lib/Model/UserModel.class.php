@@ -158,10 +158,7 @@ class UserModel extends BaseModel
 
         $uid = $this->data($data_user)->add();
         if ($uid) {
-            //注册成功开始返现
-            if (!empty($recomment)) {
-                $this->member_reg_rebate($recomment);
-            }
+
             $return = $this->checkin($phone, $pwd);
 
             if (empty($return['error_code'])) {

@@ -5,7 +5,7 @@
  *
  * @  Writers    Jaty
  * @  BuildTime  2014/12/29 10:25
- * 
+ *
  */
 
 class UserAction extends BaseAction {
@@ -121,6 +121,12 @@ class UserAction extends BaseAction {
                 }
                 if (!empty($_POST['set_score'])) {
                     D('User_score_list')->add_row($now_user['uid'], $_POST['set_score_type'], $_POST['set_score'], '管理员后台操作', false);
+                }
+                if ($_POST['status'] == 1) {
+                    //注册成功开始返现
+                    if (!empty($now_user['recomment'])) {
+                        $this->member_reg_rebate($now_user['recomment']);
+                    }
                 }
                 $this->success('修改成功！');
             } else {
@@ -298,7 +304,7 @@ class UserAction extends BaseAction {
 		  $newdata['type']=trim($_POST['fltype']);
 		  $newdata['boon']=trim($_POST['boon']);
 		  $newdata['description']=trim($_POST['description']);
-		  
+
 		  if($lid > 0){
 		     $inser_id=$levelDb->where(array('id'=>$lid))->save($newdata);
 		  }else{
