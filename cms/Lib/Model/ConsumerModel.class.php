@@ -109,6 +109,78 @@ class ConsumerModel extends BaseModel
         }
     }
 
+    public function getRebateMoney($mer_id, $uid, $order_money = 0)
+    {
+        //金额小于1则不执行返现
+        if ($order_money < 1) {
+            return;
+        }
+        $info = D('User')->where(array('uid' => $uid))->find();
+
+        $d_info = D('User')->where(array('uid' => $info['recomment']))->find();;
+        $d = $info['recomment'];
+
+        if (!empty($d_info['recomment'])) {
+            $c_info = D('User')->where(array('uid' => $d_info['recomment']))->find();
+            $c = $d_info['uid'];
+        }
+
+        if (!empty($c_info['recomment'])) {
+            $b_info = D('User')->where(array('uid' => $c_info['recomment']))->find();
+            $b = $b_info['uid'];
+        }
+
+        if (!empty($b_info['recomment'])) {
+            $a_info = D('User')->where(array('uid' => $b_info['recomment']))->find();
+            $a = $a_info['uid'];
+        }
+
+        $level = 0;
+        if (isset($a)) {
+            $level = $level + 1;
+        }
+        if (isset($b)) {
+            $level = $level + 1;
+        }
+        if (isset($c)) {
+            $level = $level + 1;
+        }
+        if (isset($d)) {
+            $level = $level + 1;
+        }
+        $merchant_info = D('Merchant')->getInfoById($mer_id);
+        $self_consumer_rebate = empty($merchant_info['self_consumer_rebate']) ? (float) $this->config['self_consumer_rebate'] / 100 : $merchant_info['self_consumer_rebate'] / 100;
+        $a_rebate_ratio = empty($merchant_info['a_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['a_consumer_rebate'] / 100;
+        $b_rebate_ratio = empty($merchant_info['b_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['b_consumer_rebate'] / 100;
+        $c_rebate_ratio = empty($merchant_info['c_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['c_consumer_rebate'] / 100;
+        $d_rebate_ratio = empty($merchant_info['d_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['d_consumer_rebate'] / 100;
+
+        $self_amount = number_format($order_money * $self_consumer_rebate, 2);
+        switch ($level) {
+            case 1:    //只有一层,则只给d返
+                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                break;
+            case 2:    //给d和c返现
+                $c_money = number_format($order_money * $b_rebate_ratio, 2);
+                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                break;
+            case 3:    //给d,c,b返现
+                $b_money = number_format($order_money * $c_rebate_ratio, 2);
+                $c_money = number_format($order_money * $b_rebate_ratio, 2);
+                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+
+                break;
+            case 4:    //给d,c,b,a返现
+                $a_money = number_format($order_money * $d_rebate_ratio, 2);
+                $b_money = number_format($order_money * $c_rebate_ratio, 2);
+                $c_money = number_format($order_money * $b_rebate_ratio, 2);
+                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                break;
+        }
+
+        return $a_money + $b_money + $c_money + $d_money + $self_amount;
+    }
+
     /**
      * 营业额返利
      * @method saleRebate
@@ -152,5 +224,27 @@ class ConsumerModel extends BaseModel
         } else {
             return false;
         }
+    }
+
+    public function getSaleRebate($mer_id, $order_money = 0)
+    {
+        if ($order_money < 1) {
+            return true;
+        }
+
+        //获取商家的推荐人
+        $mer_info = D('Merchant')->where(array('mer_id'=> $mer_id))->find();
+
+        if (empty($mer_info)) {
+            return true;
+        }
+
+        $invite_type = $mer_info['invit_type'];
+        $recomment = $mer_info['recomment'];
+
+        $invite_rebate = (float) $this->config['invite_rebate'] / 100;
+        $rebate_balance = number_format($order_money * $invite_rebate, 2);
+
+        return $rebate_balance;
     }
 }
