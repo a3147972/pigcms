@@ -50,9 +50,9 @@ class ConsumerModel extends BaseModel
         $merchant_info = D('Merchant')->getInfoById($mer_id);
         $self_consumer_rebate = empty($merchant_info['self_consumer_rebate']) ? (float) $this->config['self_consumer_rebate'] / 100 : $merchant_info['self_consumer_rebate'] / 100;
         $a_rebate_ratio = empty($merchant_info['a_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['a_consumer_rebate'] / 100;
-        $b_rebate_ratio = empty($merchant_info['b_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['b_consumer_rebate'] / 100;
-        $c_rebate_ratio = empty($merchant_info['c_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['c_consumer_rebate'] / 100;
-        $d_rebate_ratio = empty($merchant_info['d_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['d_consumer_rebate'] / 100;
+        $b_rebate_ratio = empty($merchant_info['b_rebate_ratio']) ? (float) $this->config['b_consumer_rebate'] / 100 : $merchant_info['b_consumer_rebate'] / 100;
+        $c_rebate_ratio = empty($merchant_info['c_rebate_ratio']) ? (float) $this->config['c_consumer_rebate'] / 100 : $merchant_info['c_consumer_rebate'] / 100;
+        $d_rebate_ratio = empty($merchant_info['d_rebate_ratio']) ? (float) $this->config['d_consumer_rebate'] / 100 : $merchant_info['d_consumer_rebate'] / 100;
 
         $self_amount = number_format($order_money * $self_consumer_rebate, 2);
         switch ($level) {
@@ -162,20 +162,20 @@ class ConsumerModel extends BaseModel
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
                 break;
             case 2:    //给d和c返现
-                $c_money = number_format($order_money * $b_rebate_ratio, 2);
-                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                $c_money = number_format($order_money * $a_rebate_ratio, 2);
+                $d_money = number_format($order_money * $b_rebate_ratio, 2);
                 break;
             case 3:    //给d,c,b返现
-                $b_money = number_format($order_money * $c_rebate_ratio, 2);
+                $b_money = number_format($order_money * $a_rebate_ratio, 2);
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
-                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                $d_money = number_format($order_money * $c_rebate_ratio, 2);
 
                 break;
             case 4:    //给d,c,b,a返现
-                $a_money = number_format($order_money * $d_rebate_ratio, 2);
-                $b_money = number_format($order_money * $c_rebate_ratio, 2);
-                $c_money = number_format($order_money * $b_rebate_ratio, 2);
-                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                $a_money = number_format($order_money * $a_rebate_ratio, 2);
+                $b_money = number_format($order_money * $b_rebate_ratio, 2);
+                $c_money = number_format($order_money * $c_rebate_ratio, 2);
+                $d_money = number_format($order_money * $d_rebate_ratio, 2);
                 break;
         }
 
