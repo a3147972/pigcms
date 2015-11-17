@@ -150,10 +150,11 @@ class ConsumerModel extends BaseModel
         }
         $merchant_info = D('Merchant')->getInfoById($mer_id);
         $self_consumer_rebate = empty($merchant_info['self_consumer_rebate']) ? (float) $this->config['self_consumer_rebate'] / 100 : $merchant_info['self_consumer_rebate'] / 100;
+
         $a_rebate_ratio = empty($merchant_info['a_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['a_consumer_rebate'] / 100;
-        $b_rebate_ratio = empty($merchant_info['b_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['b_consumer_rebate'] / 100;
-        $c_rebate_ratio = empty($merchant_info['c_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['c_consumer_rebate'] / 100;
-        $d_rebate_ratio = empty($merchant_info['d_rebate_ratio']) ? (float) $this->config['a_consumer_rebate'] / 100 : $merchant_info['d_consumer_rebate'] / 100;
+        $b_rebate_ratio = empty($merchant_info['b_rebate_ratio']) ? (float) $this->config['b_consumer_rebate'] / 100 : $merchant_info['b_consumer_rebate'] / 100;
+        $c_rebate_ratio = empty($merchant_info['c_rebate_ratio']) ? (float) $this->config['c_consumer_rebate'] / 100 : $merchant_info['c_consumer_rebate'] / 100;
+        $d_rebate_ratio = empty($merchant_info['d_rebate_ratio']) ? (float) $this->config['d_consumer_rebate'] / 100 : $merchant_info['d_consumer_rebate'] / 100;
 
         $self_amount = number_format($order_money * $self_consumer_rebate, 2);
         switch ($level) {
