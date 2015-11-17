@@ -60,20 +60,20 @@ class ConsumerModel extends BaseModel
                 $d_money = number_format($order_money * $a_rebate_ratio, 2);
                 break;
             case 2:    //给d和c返现
-                $c_money = number_format($order_money * $b_rebate_ratio, 2);
-                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                $c_money = number_format($order_money * $a_rebate_ratio, 2);
+                $d_money = number_format($order_money * $b_rebate_ratio, 2);
                 break;
             case 3:    //给d,c,b返现
-                $b_money = number_format($order_money * $c_rebate_ratio, 2);
+                $b_money = number_format($order_money * $a_rebate_ratio, 2);
                 $c_money = number_format($order_money * $b_rebate_ratio, 2);
-                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                $d_money = number_format($order_money * $c_rebate_ratio, 2);
 
                 break;
             case 4:    //给d,c,b,a返现
-                $a_money = number_format($order_money * $d_rebate_ratio, 2);
-                $b_money = number_format($order_money * $c_rebate_ratio, 2);
-                $c_money = number_format($order_money * $b_rebate_ratio, 2);
-                $d_money = number_format($order_money * $a_rebate_ratio, 2);
+                $a_money = number_format($order_money * $a_rebate_ratio, 2);
+                $b_money = number_format($order_money * $b_rebate_ratio, 2);
+                $c_money = number_format($order_money * $c_rebate_ratio, 2);
+                $d_money = number_format($order_money * $d_rebate_ratio, 2);
                 break;
         }
 
