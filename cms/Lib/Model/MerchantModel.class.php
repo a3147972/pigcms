@@ -191,4 +191,5 @@ class MerchantModel extends Model
 
         return $percent_balance ;
     }
+
 }

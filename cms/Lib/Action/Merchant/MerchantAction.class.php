@@ -14,9 +14,11 @@ class MerchantAction extends BaseAction
                 $this->error('请输入消费金额');
             }
 
-            $percent_balance = D('Merchant')->platform_get_percent($now_order['mer_id'], $money);
-            $rebate_balance = D('Consumer')->getRebateMoney($mer_id, $user_id, $money);
-            $sale_rebate = D('Consumer')->getSaleRebate($mer_id, $money);
+            $percent_balance = D('Merchant')->platform_get_percent(session('merchant.mer_id'), $money);
+
+            $rebate_balance = D('Consumer')->getRebateMoney(session('merchant.mer_id'), $user_id, $money);
+
+            $sale_rebate = D('Consumer')->getSaleRebate(session('merchant.mer_id'), $money);
 
             if (session('merchant.balance') < $percent_balance + $rebate_balance + $sale_rebate) {
                 $this->error('您账户余额大于'.$percent_balance + $rebate_balance + $sale_rebate.'才可以进行此操作');

@@ -228,8 +228,9 @@ class ConsumerModel extends BaseModel
 
     public function getSaleRebate($mer_id, $order_money = 0)
     {
+
         if ($order_money < 1) {
-            return true;
+            return 0;
         }
 
         //获取商家的推荐人
