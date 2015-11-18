@@ -21,7 +21,7 @@ class MerchantAction extends BaseAction
             $sale_rebate = D('Consumer')->getSaleRebate(session('merchant.mer_id'), $money);
 
             if (session('merchant.balance') < ($percent_balance + $rebate_balance + $sale_rebate)) {
-                $this->error('您账户余额大于'.$percent_balance + $rebate_balance + $sale_rebate.'才可以进行此操作');
+                $this->error('余额不足以支持本次消费');
             }
             $mer_id = session('merchant.mer_id');
             //执行推荐返利
@@ -41,6 +41,8 @@ class MerchantAction extends BaseAction
                 }
             }
         } else {
+            $merchant = D('Merchant')->getInfoById(session('merchant.mer_id'));
+            session('merchant', $merchant);
             $this->assign('balance', session('merchant.balance'));
             $this->display();
         }
