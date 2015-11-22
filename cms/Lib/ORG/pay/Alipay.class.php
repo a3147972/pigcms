@@ -21,14 +21,13 @@ class Alipay
 
     public function pay()
     {
-        if ($this->pay_config["pay_alipay_name"] || $this->pay_config["pay_alipay_pid"] || $this->pay_config["pay_alipay_key"]) {
+        if (empty($this->pay_config["pay_alipay_name"]) || empty($this->pay_config["pay_alipay_pid"]) || empty($this->pay_config["pay_alipay_key"])) {
             return array("error" => 1, "msg" => "支付宝支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
         if ($this->is_mobile) {
             return $this->mobile_pay();
-        }
-        else {
+        } else {
             return $this->web_pay();
         }
     }
@@ -61,8 +60,7 @@ class Alipay
 
         if ($this->is_mobile) {
             return $this->mobile_notice();
-        }
-        else {
+        } else {
             return $this->web_notice();
         }
     }
@@ -85,8 +83,7 @@ class Alipay
 
         if ($this->is_mobile) {
             return $this->mobile_return();
-        }
-        else {
+        } else {
             return $this->web_return();
         }
     }
@@ -123,12 +120,10 @@ class Alipay
                 $order_param["third_id"] = $trade_no;
                 $order_param["pay_money"] = $total_fee;
                 return array("error" => 0, "order_param" => $order_param);
-            }
-            else {
+            } else {
                 return array("error" => 1, "msg" => "支付错误：付款失败！请联系管理员。");
             }
-        }
-        else {
+        } else {
             return array("error" => 1, "msg" => "支付错误：认证签名失败！请联系管理员。");
         }
     }
@@ -141,8 +136,7 @@ class Alipay
 
         if ($this->is_mobile) {
             return $this->mobile_query_order();
-        }
-        else {
+        } else {
             return $this->web_query_order();
         }
     }
@@ -179,12 +173,10 @@ class Alipay
                 $order_param["third_id"] = $trade_no;
                 $order_param["pay_money"] = $total_fee;
                 return array("error" => 0, "order_param" => $order_param);
-            }
-            else {
+            } else {
                 return array("error" => 1, "msg" => "支付错误：付款失败！请联系管理员。");
             }
-        }
-        else {
+        } else {
             return array("error" => 1, "msg" => "支付错误：认证签名失败！请联系管理员。");
         }
     }
@@ -194,6 +186,3 @@ class Alipay
         return array("error" => 1, "msg" => "支付宝退款暂未开通");
     }
 }
-
-
-?>
