@@ -21,14 +21,13 @@ class Tenpay
 
     public function pay()
     {
-        if ($this->pay_config["pay_tenpay_partnerid"] || $this->pay_config["pay_tenpay_partnerkey"]) {
+        if (empty($this->pay_config["pay_tenpay_partnerid"]) || empty($this->pay_config["pay_tenpay_partnerkey"])) {
             return array("error" => 1, "msg" => "财付通支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
         if ($this->is_mobile) {
             return $this->mobile_pay();
-        }
-        else {
+        } else {
             return $this->web_pay();
         }
     }
@@ -70,8 +69,7 @@ class Tenpay
             $reqHandler->setParameter("token_id", $token_id);
             $reqUrl = "http://wap.tenpay.com/cgi-bin/wappayv2.0/wappay_gate.cgi?token_id=" . $token_id;
             return array("error" => 0, "url" => $reqUrl);
-        }
-        else {
+        } else {
             return array("error" => 1, "msg" => "财付通信息校验失败，请重试。");
         }
     }
@@ -107,14 +105,13 @@ class Tenpay
 
     public function notice_url()
     {
-        if ($this->pay_config["pay_tenpay_partnerid"] || $this->pay_config["pay_tenpay_partnerkey"]) {
+        if (empty($this->pay_config["pay_tenpay_partnerid"]) || empty($this->pay_config["pay_tenpay_partnerkey"])) {
             return array("error" => 1, "msg" => "财付通支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
         if ($this->is_mobile) {
             return $this->mobile_notice();
-        }
-        else {
+        } else {
             return $this->web_notice();
         }
     }
@@ -131,14 +128,13 @@ class Tenpay
 
     public function return_url()
     {
-        if ($this->pay_config["pay_tenpay_partnerid"] || $this->pay_config["pay_tenpay_partnerkey"]) {
+        if (empty($this->pay_config["pay_tenpay_partnerid"]) || empty($this->pay_config["pay_tenpay_partnerkey"])) {
             return array("error" => 1, "msg" => "财付通支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
         if ($this->is_mobile) {
             return $this->mobile_return();
-        }
-        else {
+        } else {
             return $this->web_return();
         }
     }
@@ -166,12 +162,10 @@ class Tenpay
                 $order_param["third_id"] = $transaction_id;
                 $order_param["pay_money"] = $total_fee / 100;
                 return array("error" => 0, "order_param" => $order_param);
-            }
-            else {
+            } else {
                 return array("error" => 1, "msg" => "支付错误：付款失败！请联系管理员。");
             }
-        }
-        else {
+        } else {
             return array("error" => 1, "msg" => "支付错误：认证签名失败！请联系管理员。");
         }
     }
@@ -201,19 +195,17 @@ class Tenpay
                 $order_param["third_id"] = $transaction_id;
                 $order_param["pay_money"] = $total_fee / 100;
                 return array("error" => 0, "order_param" => $order_param);
-            }
-            else {
+            } else {
                 return array("error" => 1, "msg" => "支付错误：付款失败！请联系管理员。");
             }
-        }
-        else {
+        } else {
             return array("error" => 1, "msg" => "支付错误：认证签名失败！请联系管理员。");
         }
     }
 
     public function refund()
     {
-        if ($this->pay_config["pay_tenpay_partnerid"] || $this->pay_config["pay_tenpay_partnerkey"]) {
+        if (empty($this->pay_config["pay_tenpay_partnerid"]) || empty($this->pay_config["pay_tenpay_partnerkey"])) {
             return array("error" => 1, "msg" => "财付通支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
@@ -252,20 +244,15 @@ class Tenpay
                 $refund_param["refund_id"] = $resHandler->getParameter("out_refund_no_0");
                 $refund_param["refund_time"] = $refundResult["timestamp"];
                 return array("error" => 0, "type" => "ok", "msg" => "退款申请成功！5到10个工作日款项会自动流入您支付时使用的银行卡内。", "refund_param" => $refund_param);
-            }
-            else {
+            } else {
                 $refund_param["err_msg"] = "验证签名失败 或 业务错误信息:retcode= " . $resHandler->getParameter("retcode") . ",retmsg= " . $resHandler->getParameter("retmsg");
                 $refund_param["refund_time"] = time();
                 return array("error" => 1, "type" => "fail", "msg" => "退款申请失败！如果重试多次还是失败请联系系统管理员。", "refund_param" => $refund_param);
             }
-        }
-        else {
+        } else {
             $refund_param["err_msg"] = "call err:" . $httpClient->getResponseCode() . "," . $httpClient->getErrInfo();
             $refund_param["refund_time"] = time();
             return array("error" => 1, "type" => "fail", "msg" => "退款申请失败！如果重试多次还是失败请联系系统管理员。", "refund_param" => $refund_param);
         }
     }
 }
-
-
-?>

@@ -21,14 +21,13 @@ class Yeepay
 
     public function pay()
     {
-        if ($this->pay_config["pay_yeepay_merchantaccount"] || $this->pay_config["pay_yeepay_merchantprivatekey"] || $this->pay_config["pay_yeepay_merchantpublickey"] || $this->pay_config["pay_yeepay_yeepaypublickey"] || $this->pay_config["pay_yeepay_productcatalog"]) {
+        if (empty($this->pay_config["pay_yeepay_merchantaccount"]) || empty($this->pay_config["pay_yeepay_merchantprivatekey"]) || empty($this->pay_config["pay_yeepay_merchantpublickey"]) || empty($this->pay_config["pay_yeepay_yeepaypublickey"]) || empty($this->pay_config["pay_yeepay_productcatalog"])) {
             return array("error" => 1, "msg" => "易宝支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
         if ($this->is_mobile) {
             return $this->mobile_pay();
-        }
-        else {
+        } else {
             return $this->web_pay();
         }
     }
@@ -78,14 +77,13 @@ class Yeepay
 
     public function notice_url()
     {
-        if ($this->pay_config["pay_yeepay_merchantaccount"] || $this->pay_config["pay_yeepay_merchantprivatekey"] || $this->pay_config["pay_yeepay_merchantpublickey"] || $this->pay_config["pay_yeepay_yeepaypublickey"] || $this->pay_config["pay_yeepay_productcatalog"]) {
+        if (empty($this->pay_config["pay_yeepay_merchantaccount"]) || empty($this->pay_config["pay_yeepay_merchantprivatekey"]) || empty($this->pay_config["pay_yeepay_merchantpublickey"]) || empty($this->pay_config["pay_yeepay_yeepaypublickey"]) || empty($this->pay_config["pay_yeepay_productcatalog"])) {
             return array("error" => 1, "msg" => "易宝支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
         if ($this->is_mobile) {
             return $this->mobile_notice();
-        }
-        else {
+        } else {
             return $this->web_notice();
         }
     }
@@ -102,10 +100,9 @@ class Yeepay
 
     public function return_url()
     {
-        if ($this->pay_config["pay_yeepay_merchantaccount"] || $this->pay_config["pay_yeepay_merchantprivatekey"] || $this->pay_config["pay_yeepay_merchantpublickey"] || $this->pay_config["pay_yeepay_yeepaypublickey"] || $this->pay_config["pay_yeepay_productcatalog"]) {
+        if (empty($this->pay_config["pay_yeepay_merchantaccount"]) || empty($this->pay_config["pay_yeepay_merchantprivatekey"]) || empty($this->pay_config["pay_yeepay_merchantpublickey"]) || empty($this->pay_config["pay_yeepay_yeepaypublickey"]) || empty($this->pay_config["pay_yeepay_productcatalog"])) {
             return array("error" => 1, "msg" => "易宝支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
-
         import("@.ORG.pay.Yeepay.yeepayMPay");
         $yeepay = new yeepayMPay($this->pay_config["pay_yeepay_merchantaccount"], $this->pay_config["pay_yeepay_merchantpublickey"], $this->pay_config["pay_yeepay_merchantprivatekey"], $this->pay_config["pay_yeepay_yeepaypublickey"]);
 
@@ -119,15 +116,14 @@ class Yeepay
             $order_param["third_id"] = $return["yborderid"];
             $order_param["pay_money"] = $return["amount"] / 100;
             return array("error" => 0, "order_param" => $order_param);
-        }
-        catch (yeepayMPayException $e) {
+        } catch (yeepayMPayException $e) {
             return array("error" => 1, "msg" => "支付时发生错误！<br/>错误提示：" . $e->GetMessage() . "<br/>错误代码：" . $e->Getcode());
         }
     }
 
     public function refund()
     {
-        if ($this->pay_config["pay_yeepay_merchantaccount"] || $this->pay_config["pay_yeepay_merchantprivatekey"] || $this->pay_config["pay_yeepay_merchantpublickey"] || $this->pay_config["pay_yeepay_yeepaypublickey"] || $this->pay_config["pay_yeepay_productcatalog"]) {
+        if (empty($this->pay_config["pay_yeepay_merchantaccount"]) || empty($this->pay_config["pay_yeepay_merchantprivatekey"]) || empty($this->pay_config["pay_yeepay_merchantpublickey"]) || empty($this->pay_config["pay_yeepay_yeepaypublickey"]) || empty($this->pay_config["pay_yeepay_productcatalog"])) {
             return array("error" => 1, "msg" => "易宝支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
@@ -140,14 +136,10 @@ class Yeepay
             $refund_param["refund_id"] = $refundResult["yborderid"];
             $refund_param["refund_time"] = $refundResult["timestamp"];
             return array("error" => 0, "type" => "ok", "msg" => "退款申请成功！5到10个工作日款项会自动流入您支付时使用的银行卡内。", "refund_param" => $refund_param);
-        }
-        catch (yeepayMPayException $e) {
+        } catch (yeepayMPayException $e) {
             $refund_param["err_msg"] = "退款时发生错误！<br/>错误提示：" . $e->GetMessage() . "<br/>错误代码：" . $e->Getcode();
             $refund_param["refund_time"] = time();
             return array("error" => 1, "type" => "fail", "msg" => "退款申请失败！如果重试多次还是失败请联系系统管理员。", "refund_param" => $refund_param);
         }
     }
 }
-
-
-?>

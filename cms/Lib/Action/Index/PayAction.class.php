@@ -153,7 +153,9 @@ class PayAction extends BaseAction
     //异步通知
     public function notify_url()
     {
+
         $pay_method = D('Config')->get_pay_method();
+
         if (empty($pay_method)) {
             $this->error_tips('系统管理员没开启任一一种支付方式！');
         }
@@ -163,6 +165,7 @@ class PayAction extends BaseAction
 
         $pay_class_name = ucfirst($_GET['pay_type']);
         $import_result = import('@.ORG.pay.' . $pay_class_name);
+
         if (empty($import_result)) {
             $this->error_tips('系统管理员暂未开启该支付方式，请更换其他的支付方式');
         }
@@ -185,17 +188,20 @@ class PayAction extends BaseAction
         if (empty($pay_method)) {
             $this->error_tips('系统管理员没开启任一一种支付方式！');
         }
+
         if (empty($pay_method[$pay_type])) {
             $this->error_tips('您选择的支付方式不存在，请更新支付方式！');
         }
 
         $pay_class_name = ucfirst($pay_type);
         $import_result = import('@.ORG.pay.' . $pay_class_name);
+
         if (empty($import_result)) {
             $this->error_tips('系统管理员暂未开启该支付方式，请更换其他的支付方式');
         }
 
         $pay_class = new $pay_class_name('', '', $pay_type, $pay_method[$pay_type]['config'], $this->user_session, 0);
+
         $get_pay_param = $pay_class->return_url();
         if (empty($get_pay_param['error'])) {
             if ($get_pay_param['order_param']['order_type'] == 'group') {

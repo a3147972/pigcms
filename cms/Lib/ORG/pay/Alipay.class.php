@@ -54,7 +54,7 @@ class Alipay
 
     public function notice_url()
     {
-        if ($this->pay_config["pay_alipay_name"] || $this->pay_config["pay_alipay_pid"] || $this->pay_config["pay_alipay_key"]) {
+        if (empty($this->pay_config["pay_alipay_name"]) || empty($this->pay_config["pay_alipay_pid"]) || empty($this->pay_config["pay_alipay_key"])) {
             return array("error" => 1, "msg" => "支付宝支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
@@ -77,7 +77,7 @@ class Alipay
 
     public function return_url()
     {
-        if ($this->pay_config["pay_alipay_name"] || $this->pay_config["pay_alipay_pid"] || $this->pay_config["pay_alipay_key"]) {
+        if (empty($this->pay_config["pay_alipay_name"]) || empty($this->pay_config["pay_alipay_pid"]) || empty($this->pay_config["pay_alipay_key"])) {
             return array("error" => 1, "msg" => "支付宝支付缺少配置信息！请联系管理员处理或选择其他支付方式。");
         }
 
