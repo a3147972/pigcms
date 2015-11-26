@@ -34,7 +34,7 @@ function next()
 				success: function(res){
 					islock=false;
 					$('#nextstep').removeClass('gray disabled').addClass('orange show');
-					if (res.error ==0) { 
+					if (res.error ==0) {
 					  window.location.href = "{pigcms{:U('Food/cart', array('mer_id' => $mer_id, 'store_id' => $store_id, 'orid' => $orid))}";
 					} else {
 					  alert(res.msg);
@@ -57,7 +57,7 @@ function next()
 				<div id="ILike"><a><span class="icon hartblckgray"></span>我喜欢</a></div>
 			</div>
 			<div class="top">
-				<div id="all_dish"><a><span></span>全部菜</a></div>
+				<div id="all_dish"><a><span></span>全部宝贝</a></div>
 			</div>
 			<div class="content">
 				<ul id="typeList"><!--class="on"-->
@@ -103,11 +103,11 @@ function next()
 		</div>
 	</section>
 </div>
-<footer data-role="footer">			
+<footer data-role="footer">
 	<nav class="g_nav">
 		<div>
 			<span class="cart"></span>
-			<span> <span class="money">￥<label id="allmoney">0</label> </span>/<label id="menucount">0</label>个菜</span>
+			<span> <span class="money">￥<label id="allmoney">0</label> </span>/<label id="menucount">0</label>个宝贝</span>
 			<a href="javascript:next();" class="btn gray disabled" id="nextstep">选好了</a>
 		</div>
 	</nav>
@@ -129,10 +129,10 @@ function next()
 </div>
 <include file="kefu" />
 <script type="text/javascript">
-window.shareData = {  
+window.shareData = {
             "moduleName":"Food",
             "moduleID":"0",
-            "imgUrl": "{pigcms{$store.image}", 
+            "imgUrl": "{pigcms{$store.image}",
             "sendFriendLink": "{pigcms{$config.site_url}{pigcms{:U('Food/menu',array('mer_id' => $mer_id, 'store_id' => $store_id))}",
             "tTitle": "{pigcms{$store.name}",
             "tContent": "{pigcms{$store.txt_info}"

@@ -25,7 +25,7 @@
 					</li>
 				</if>
 				<li>
-					<a href="{pigcms{:U('Food/shop_detail', array('mer_id' => $mer_id, 'store_id' => $store_id))}">营业时间、餐厅简介<span class="right_adron"></span></a>
+					<a href="{pigcms{:U('Food/shop_detail', array('mer_id' => $mer_id, 'store_id' => $store_id))}">营业时间、店铺简介<span class="right_adron"></span></a>
 				</li>
 			</ul>
 			<div class="btndiv">
@@ -34,7 +34,7 @@
 				</div>
 				<div>
 					<a href="{pigcms{:U('Food/menu', array('mer_id' => $mer_id, 'store_id' => $store_id))}" class="order"><span class="btn green bigfont big">我要点菜</span></a>
-				</div>				
+				</div>
 			</div>
 		</section>
 		<footer data-role="footer">
@@ -43,19 +43,19 @@
 					<li>
 						<a href="{pigcms{:U('Index/index', array('mer_id' => $mer_id, 'store_id' => $store_id))}">
 							<span class="home">&nbsp;</span>
-							<label>首页</label>				
+							<label>首页</label>
 						</a>
 					</li>
 					<li >
 						<a href="{pigcms{:U('Food/menu', array('mer_id' => $mer_id, 'store_id' => $store_id))}">
 							<span class="order">&nbsp;</span>
-							<label>在线点餐</label>				
+							<label>在线点餐</label>
 						</a>
 					</li>
 					<li>
 						<a href="{pigcms{:U('Food/sureorder', array('mer_id' => $mer_id, 'store_id' => $store_id, 'deposit' => 0))}">
 							<span class="book">&nbsp;</span>
-							<label>在线订位</label>				
+							<label>在线预定</label>
 						</a>
 					</li>
 					<li >
@@ -70,10 +70,10 @@
 	</div>
 <include file="kefu" />
 <script type="text/javascript">
-window.shareData = {  
+window.shareData = {
             "moduleName":"Food",
             "moduleID":"0",
-            "imgUrl": "{pigcms{$store.image}", 
+            "imgUrl": "{pigcms{$store.image}",
             "sendFriendLink": "{pigcms{$config.site_url}{pigcms{:U('Food/index',array('mer_id' => $mer_id, 'store_id' => $store_id))}",
             "tTitle": "{pigcms{$store.name}",
             "tContent": "{pigcms{$store.txt_info}"
