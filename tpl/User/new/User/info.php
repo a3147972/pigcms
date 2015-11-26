@@ -167,6 +167,30 @@ body{behavior:url("{pigcms{$static_path}css/csshover.htc");}
                                 <input type="text" name="email" value="{pigcms{$info.email}">
                             </div>
                             <div>
+                                <label for="">银行</label>
+                                <input type="text" name="bank_name" value="{pigcms{$info.bank_name}">
+                            </div>
+                            <div>
+                                <label for="">开户行</label>
+                                <input type="text" name="bank_address" value="{pigcms{$info.bank_address}">
+                            </div>
+                            <div>
+                                <label for="">卡号</label>
+                                <input type="text" name="bank_code" value="{pigcms{$info.bank_code}">
+                            </div>
+                            <div>
+                                <label for="">户主</label>
+                                <input type="text" name="bank_account" value="{pigcms{$info.bank_account}">
+                            </div>
+                            <div>
+                                <label for="">支付宝号</label>
+                                <input type="text" name="alipay_account" value="{pigcms{$info.alipay_account}">
+                            </div>
+                            <div>
+                                <label for="">支付宝名称</label>
+                                <input type="text" name="alipay_name" value="{pigcms{$info.alipay_name}">
+                            </div>
+                            <div>
                                 <input type="submit" value="提交">
                             </div>
                         </form>
